@@ -97,7 +97,7 @@ def main():
                     #print(df)
                     df_toupdate.append(df)
 
-                df = pd.concat(df_toupdate)
+                    df = pd.concat(df_toupdate)
                 return df
 
             def requestswg():
