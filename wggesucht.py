@@ -16,12 +16,6 @@ def main():
     pd.set_option('display.max_columns', None)
 
     #Streamlit
-    st.set_page_config(page_title="WG Gesucht Analysis", layout="wide", initial_sidebar_state="expanded", menu_items={
-        'Get Help': 'https://www.extremelycoolapp.com/help',
-        'Report a bug': "https://www.extremelycoolapp.com/bug",
-        'About': "# This is a header. This is an *extremely* cool app!"
-    })
-
     #Pages
     page_real_estate_general_dashboard = "wggesucht.py"
     page_maps = "pages/maps.py"
@@ -32,6 +26,14 @@ def main():
             Page(page_maps, "Maps", "🗺️"),
         ]
     )
+
+    st.set_page_config(page_title="WG Gesucht Analysis", layout="wide", initial_sidebar_state="expanded", menu_items={
+        'Get Help': 'https://www.extremelycoolapp.com/help',
+        'Report a bug': "https://www.extremelycoolapp.com/bug",
+        'About': "# This is a header. This is an *extremely* cool app!"
+    })
+
+
 
     nameofdataframe = "df_concat.csv"
 
