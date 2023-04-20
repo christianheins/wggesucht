@@ -727,37 +727,7 @@ def main():
     dataframe_filter2 = df_concat["Miete"] > 9
     df_concat = df_concat[dataframe_filter1]
 
-    def add_logo():
-        st.markdown(
-            """
-            <style>
-                [data-testid="stHeader"] {
-                    background-image: url(https://www.lautgegennazis.de/wp-content/uploads/2016/10/WG_Banner.jpg);
-                    background-repeat: no-repeat;
-                    background-position: 62%;
-                    background-size: contain;
-                    padding-top: 100px;
-                }
-                [data-testid="stSidebarNav"] {
-                    background-image: url(https://raw.githubusercontent.com/christianheins/wggesucht/main/images/2.jpg);
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                    background-position: 50% 0%;
-                    padding-top: 130px;
-                }
-                [data-testid="stSidebarNav"]::before {
-                    content: "Pages";
-                    margin-left: 20px;
-                    margin-top: 20px;
-                    font-size: 30px;
-                    position: relative;
-                    top: 100px;
-                }
-            </style>
-            """,
-            unsafe_allow_html=True,
-        )
-    add_logo()
+
     col1, col2 = st.columns([0.2, 0.8])
     with col1:
         st.markdown("<a href='https://www.linkedin.com/in/christian-h-0545aaa1/'>🔗 Find me on LinkedIn</a>", unsafe_allow_html=True)
