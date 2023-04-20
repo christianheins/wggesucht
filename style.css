@@ -11,13 +11,14 @@ div.css-12w0qpk.e1tzin5v1 {
 /*    border: 1px solid #DCDCDC; */
     padding: 1%;
     border-radius: 10px;
+    text-align: center;
+
 }
 
 
 /* Columns of each average */
 div.css-1fcdlhc.e1s6o5jp0 {
     background-color: #EEEEEE;
-    text-align: center;
 
 /*    border: 4px solid #DCDCDC; */
 }
