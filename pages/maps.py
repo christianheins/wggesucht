@@ -19,7 +19,7 @@ st.set_page_config(page_title="WG Gesucht Analysis", layout="wide", initial_side
 st.markdown("<h1 style='text-align: center; color: orange;'>Property Analysis</h1>", unsafe_allow_html=True)
 
 #Pages
-page_real_estate_general_dashboard = "streamlit_app.py"
+page_real_estate_general_dashboard = "wggesucht.py"
 page_maps = "pages/maps.py"
 #page_payments = "/Users/christianheins/Documents/Coding/Projects/WGGesucht/pages/wggesucht3.py"
 
