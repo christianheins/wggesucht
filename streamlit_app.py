@@ -13,11 +13,9 @@ def main():
     from github import Github
     from github import InputFileContent
 
-    pd.set_option('display.max_columns', None)
-
     #Streamlit
     #Pages
-    page_real_estate_general_dashboard = "wggesucht.py"
+    page_real_estate_general_dashboard = "streamlit_app.py"
     page_maps = "pages/maps.py"
 
     show_pages(
@@ -33,7 +31,7 @@ def main():
         'About': "# This is a header. This is an *extremely* cool app!"
     })
 
-
+    pd.set_option('display.max_columns', None)
 
     nameofdataframe = "df_concat.csv"
 
