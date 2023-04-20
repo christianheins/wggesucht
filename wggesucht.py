@@ -923,7 +923,11 @@ def main():
 
         st.header("📈 Rent timeline")
 
-        df_old = pd.read_csv("df_concat_20230418.csv")
+        df_old = pd.read_csv("df_concat_20230412.csv")
+        df_old["Dataframe Date"] = "20230412"
+
+        df_concat["Dataframe Date"] = "20230420"
+
         df_timeline = pd.concat([df_concat, df_old])
         st.write(df_timeline)
         st.write(len(df_timeline))
