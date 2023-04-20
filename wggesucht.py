@@ -921,6 +921,13 @@ def main():
 
         st.write("This is outside the container")
 
+        st.header("📈 Rent timeline")
+
+        df_old = pd.read_csv("df_concat_20230418.csv")
+        df_timeline = pd.concat([df_concat, df_old])
+        st.write(df_timeline)
+        st.write(len(df_timeline))
+
     if selected == "🫂 Neighbourhoods":
         st.markdown("<h1 style='text-align: center; color: orange;'>Neighbourhood Analysis</h1>", unsafe_allow_html=True)
         st.write(df_concat)
