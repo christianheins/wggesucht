@@ -898,7 +898,7 @@ def main():
             wholechart = alt.layer(chart.mark_bar(color="orange"), chart.mark_text(align='left', dx=8, color="black"))
 
             st.altair_chart(wholechart.interactive(), use_container_width=True)
-        st.markdown("<h2 style='text-align: center; color: orange;'>💥 Scatter plots displaying the Price / Size relationship</h2>", unsafe_allow_html=True)
+        st.markdown("<h2 style='text-align: center; color: orange;'>💥 Scatter plots displaying the Rent / Size relationship</h2>", unsafe_allow_html=True)
 
         col1, col2 = st.columns([0.5,0.5])
 
