@@ -913,8 +913,8 @@ def main():
         with col2:
             chart = alt.Chart(df_concat).mark_point().encode(
                 x=alt.X('Größe:Q', title='Size', axis=alt.Axis(tickCount=5)),
-                y=alt.Y('Miete:Q', title='Rent', axis=alt.Axis(tickCount=5)),
-                tooltip=['Größe', 'Miete']
+                y=alt.Y('EUR / SQM:Q', title='Rent per SQM', axis=alt.Axis(tickCount=5)),
+                tooltip=['Größe', 'EUR / SQM']
             )
             # show the chart
             st.altair_chart(chart.interactive(), use_container_width=True)
@@ -977,22 +977,20 @@ def main():
             st.altair_chart(chart, use_container_width=True)
 
         with col2:
-            limit_min = float(df_kontoauswertung_pivoted_by_contract_pivoted_by_period["Bruttowarmmiete"].min()) - (float(df_kontoauswertung_pivoted_by_contract_pivoted_by_period["Bruttowarmmiete"].min()) * 0.03)
-            limit_max = float(df_kontoauswertung_pivoted_by_contract_pivoted_by_period["Bruttowarmmiete"].max()) + (float(df_kontoauswertung_pivoted_by_contract_pivoted_by_period["Bruttowarmmiete"].max()) * 0.03)
 
-            chart = alt.Chart(df_kontoauswertung_pivoted_by_contract_pivoted_by_period).mark_line(
+            chart = alt.Chart(df_timeline_pivotedby_dataframedate).mark_line(
                 color="red"
             ).encode(
-                x='year_month',
-                y=alt.Y('Bruttowarmmiete', scale=alt.Scale(domain=[limit_min, limit_max])),
+                x='Dataframe Date:O',
+                y=alt.Y('Mietemean:Q'),
             ).interactive()
 
-            chart2 = alt.Chart(df_kontoauswertung_pivoted_by_contract_pivoted_by_period).mark_bar(
+            chart2 = alt.Chart(df_timeline_pivotedby_dataframedate).mark_bar(
                 color="#95B5C3",
                 opacity=0.5,
             ).encode(
-                x='year_month:O',
-                y=alt.Y("Bruttowarmmiete:Q", scale=alt.Scale(domain=[limit_min, limit_max])),
+                x='Dataframe Date:O',
+                y=alt.Y('Mietemean:Q'),
             ).interactive()
 
 
@@ -1001,22 +999,20 @@ def main():
             st.altair_chart(chart, use_container_width=True)
 
         with col3:
-            limit_min = float(df_kontoauswertung_pivoted_by_contract_pivoted_by_period["Bruttowarmmiete"].min()) - (float(df_kontoauswertung_pivoted_by_contract_pivoted_by_period["Bruttowarmmiete"].min()) * 0.03)
-            limit_max = float(df_kontoauswertung_pivoted_by_contract_pivoted_by_period["Bruttowarmmiete"].max()) + (float(df_kontoauswertung_pivoted_by_contract_pivoted_by_period["Bruttowarmmiete"].max()) * 0.03)
 
-            chart = alt.Chart(df_kontoauswertung_pivoted_by_contract_pivoted_by_period).mark_line(
+            chart = alt.Chart(df_timeline_pivotedby_dataframedate).mark_line(
                 color="red"
             ).encode(
-                x='year_month',
-                y=alt.Y('Bruttowarmmiete', scale=alt.Scale(domain=[limit_min, limit_max])),
+                x='Dataframe Date:O',
+                y=alt.Y('Mietemean:Q'),
             ).interactive()
 
-            chart2 = alt.Chart(df_kontoauswertung_pivoted_by_contract_pivoted_by_period).mark_bar(
+            chart2 = alt.Chart(df_timeline_pivotedby_dataframedate).mark_bar(
                 color="#95B5C3",
                 opacity=0.5,
             ).encode(
-                x='year_month:O',
-                y=alt.Y("Bruttowarmmiete:Q", scale=alt.Scale(domain=[limit_min, limit_max])),
+                x='Dataframe Date:O',
+                y=alt.Y('Mietemean:Q'),
             ).interactive()
 
 
