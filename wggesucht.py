@@ -951,7 +951,7 @@ def main():
         df_timeline = pd.concat([df_concat, df_old])
         st.write(df_timeline)
         st.write(len(df_timeline))
-        df_timeline_pivotedby_dataframedate = df_timeline.pivot_table(index="Dataframe Date", aggfunc={"Miete":"mean", "Miete":"sum"})
+        df_timeline_pivotedby_dataframedate = df_timeline.pivot_table(index="Dataframe Date", aggfunc={"Miete":["count","mean","sum"]})
         st.write(df_timeline_pivotedby_dataframedate)
         col1, col2, col3 = st.columns([0.3, 0.3, 0.3])
         with col1:
