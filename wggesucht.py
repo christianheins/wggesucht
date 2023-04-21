@@ -31,6 +31,10 @@ def main():
         'About': "# This is a header. This is an *extremely* cool app!"
     })
 
+
+    with open('style.css') as f:
+        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
     pd.set_option('display.max_columns', None)
 
     nameofdataframe = "df_concat.csv"
@@ -1033,9 +1037,6 @@ def main():
         st.write(df_concat)
         df_concat_pivot_neighbourhoods = df_concat.pivot_table(index="Neighbourhood", aggfunc={"Miete":["count","mean","sum"], "Größe":["count", "mean", "sum"]})
         st.write(df_concat_pivot_neighbourhoods)
-
-    with open('style.css') as f:
-        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 
 if __name__ == "__main__":
