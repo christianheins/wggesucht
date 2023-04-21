@@ -961,8 +961,6 @@ def main():
 
         df_timeline_pivotedby_dataframedate.rename(columns = {miete_average:"Rent - average", miete_sum:"Rent - sum", "Dataframe Date":"Dataframe Date 2"}, inplace=True)
         df_timeline_pivotedby_dataframedate.reset_index(inplace=True)
-        df_timeline_pivotedby_dataframedate["Rent - average"] = df_timeline_pivotedby_dataframedate["Rent - average"].astype(float)
-        df_timeline_pivotedby_dataframedate["Rent - sum"] = df_timeline_pivotedby_dataframedate["Rent - sum"].astype(float)
 
         st.write(df_timeline_pivotedby_dataframedate)
         st.write(df_timeline_pivotedby_dataframedate.columns)
