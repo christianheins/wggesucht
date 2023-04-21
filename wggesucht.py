@@ -965,6 +965,7 @@ def main():
 
         df_timeline_pivotedby_dataframedate.rename(columns = {miete_average:"Rent - average",miete_sum:"Rent - sum", "Dataframe Date":"Dataframe Date 2"}, inplace=True)
         st.write(df_timeline_pivotedby_dataframedate)
+        st.write(df_timeline_pivotedby_dataframedate.columns)
         col1, col2, col3 = st.columns([0.3, 0.3, 0.3])
         with col1:
 
