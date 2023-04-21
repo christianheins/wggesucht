@@ -963,7 +963,6 @@ def main():
         df_timeline_pivotedby_dataframedate.columns = ['_'.join(col).strip() for col in df_timeline_pivotedby_dataframedate.columns.values]
         st.write(df_timeline_pivotedby_dataframedate)
 
-        df_timeline_pivotedby_dataframedate.rename(columns = {miete_average:"Average", miete_sum:"Sum", "Dataframe Date":"Dataframe Date 2"}, inplace=True)
 
         st.write(df_timeline_pivotedby_dataframedate)
         st.write(df_timeline_pivotedby_dataframedate.columns)
@@ -974,7 +973,7 @@ def main():
                 color="red"
             ).encode(
                 x='Dataframe Date 2:O',
-                y=alt.Y('Average:Q'),
+                y=alt.Y('Miete_mean:Q'),
             ).interactive()
 
             chart2 = alt.Chart(df_timeline_pivotedby_dataframedate).mark_bar(
@@ -982,7 +981,7 @@ def main():
                 opacity=0.5,
             ).encode(
                 x='Dataframe Date 2:O',
-                y=alt.Y('Average:Q'),
+                y=alt.Y('Miete_mean:Q'),
             ).interactive()
 
 
