@@ -971,7 +971,7 @@ def main():
                 color="red"
             ).encode(
                 x='Dataframe Date 2:O',
-                y=alt.Y('("Miete", "mean"):Q'),
+                y=alt.Y('Average:Q'),
             ).interactive()
 
             chart2 = alt.Chart(df_timeline_pivotedby_dataframedate).mark_bar(
@@ -979,7 +979,7 @@ def main():
                 opacity=0.5,
             ).encode(
                 x='Dataframe Date 2:O',
-                y=alt.Y('("Miete", "mean"):Q'),
+                y=alt.Y('Average:Q'),
             ).interactive()
 
 
