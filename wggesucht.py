@@ -954,6 +954,8 @@ def main():
         df_timeline_pivotedby_dataframedate = df_timeline.pivot_table(index="Dataframe Date", aggfunc={"Miete":["count","mean","sum"]}).reset_index()
         st.write(df_timeline_pivotedby_dataframedate)
         st.write(df_timeline_pivotedby_dataframedate.columns)
+        miete_average = df_timeline_pivotedby_dataframedate.columns[2]
+        st.write(miete_average)
         col1, col2, col3 = st.columns([0.3, 0.3, 0.3])
         with col1:
             limit_min = float(df_timeline_pivotedby_dataframedate["Bruttowarmmiete"].min()) - (float(df_timeline_pivotedby_dataframedate["Bruttowarmmiete"].min()) * 0.03)
