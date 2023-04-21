@@ -828,6 +828,9 @@ def main():
             chart = chart.configure_legend(
                 orient='left'
             )
+            chart = chart.properties(
+                height=300
+            )
             st.altair_chart(chart.interactive(), use_container_width=True)
 
             st.markdown("<h6 style='text-align: center; color: orange;'>Lease term Bar Chart</h6>", unsafe_allow_html=True)
@@ -839,7 +842,7 @@ def main():
             #Combine bar chart with text chart, weird isnt?
             wholechart = alt.layer(chart.mark_bar(color="orange"), chart.mark_text(align='center', dy=-5, color="black"))
             wholechart = wholechart.properties(
-                height=300
+                height=600
             )
 
             st.altair_chart(wholechart.interactive(), use_container_width=True)
@@ -858,6 +861,10 @@ def main():
             chart = chart.configure_legend(
                 orient='left'
             )
+            chart = chart.properties(
+                height=300
+            )
+
             st.altair_chart(chart.interactive(), use_container_width=True)
 
             df_concat_neighbourhoods_filtered = df_concat_neighbourhoods.iloc[:20]
@@ -873,7 +880,7 @@ def main():
             wholechart = alt.layer(chart.mark_bar(color="orange"), chart.mark_text(align='left', dx=8, color="black"))
 
             wholechart = wholechart.properties(
-                height=300
+                height=600
             )
 
             st.markdown("<h6 style='text-align: center; color: orange;'>Top 20 Neighbourhoods Bar Chart</h6>", unsafe_allow_html=True)
@@ -889,7 +896,7 @@ def main():
             chart = chart.configure_legend(
                 orient='left'
             ).properties(
-                height=300
+                height=600
             )
             st.altair_chart(chart.interactive(), use_container_width=True)
 
