@@ -980,7 +980,7 @@ def main():
                 opacity=0.5,
             ).encode(
                 x='Dataframe Date 2:O',
-                y=alt.Y(f"{miete_average}:Q"),
+                y=alt.Y(f'{miete_average}:Q'),
             ).interactive()
 
 
