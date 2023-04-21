@@ -960,7 +960,7 @@ def main():
         miete_sum = df_timeline_pivotedby_dataframedate.columns.values[2]
         st.write(miete_sum)
 
-        df_timeline_pivotedby_dataframedate.columns = ['_'.join(col).strip() for col in df_timeline_pivotedby_dataframedate.columns.values]
+        df_timeline_pivotedby_dataframedate.columns[1:2] = ['_'.join(col).strip() for col in df_timeline_pivotedby_dataframedate.columns.values]
         st.write(df_timeline_pivotedby_dataframedate)
 
 
