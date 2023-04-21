@@ -953,24 +953,25 @@ def main():
         st.write(len(df_timeline))
         df_timeline_pivotedby_dataframedate = df_timeline.pivot_table(index="Dataframe Date", aggfunc={"Miete":["count","mean","sum"]}).reset_index()
         st.write(df_timeline_pivotedby_dataframedate)
+        st.write(df_timeline_pivotedby_dataframedate.columns)
         col1, col2, col3 = st.columns([0.3, 0.3, 0.3])
         with col1:
-            limit_min = float(df_kontoauswertung_pivoted_by_contract_pivoted_by_period["Bruttowarmmiete"].min()) - (float(df_kontoauswertung_pivoted_by_contract_pivoted_by_period["Bruttowarmmiete"].min()) * 0.03)
-            limit_max = float(df_kontoauswertung_pivoted_by_contract_pivoted_by_period["Bruttowarmmiete"].max()) + (float(df_kontoauswertung_pivoted_by_contract_pivoted_by_period["Bruttowarmmiete"].max()) * 0.03)
+            limit_min = float(df_timeline_pivotedby_dataframedate["Bruttowarmmiete"].min()) - (float(df_timeline_pivotedby_dataframedate["Bruttowarmmiete"].min()) * 0.03)
+            limit_max = float(df_timeline_pivotedby_dataframedate["Bruttowarmmiete"].max()) + (float(df_timeline_pivotedby_dataframedate["Bruttowarmmiete"].max()) * 0.03)
 
-            chart = alt.Chart(df_kontoauswertung_pivoted_by_contract_pivoted_by_period).mark_line(
+            chart = alt.Chart(df_timeline_pivotedby_dataframedate).mark_line(
                 color="red"
             ).encode(
-                x='year_month',
-                y=alt.Y('Bruttowarmmiete', scale=alt.Scale(domain=[limit_min, limit_max])),
+                x='Dataframe Date:O',
+                y=alt.Y('Miete sum:Q', scale=alt.Scale(domain=[limit_min, limit_max])),
             ).interactive()
 
-            chart2 = alt.Chart(df_kontoauswertung_pivoted_by_contract_pivoted_by_period).mark_bar(
+            chart2 = alt.Chart(df_timeline_pivotedby_dataframedate).mark_bar(
                 color="#95B5C3",
                 opacity=0.5,
             ).encode(
-                x='year_month:O',
-                y=alt.Y("Bruttowarmmiete:Q", scale=alt.Scale(domain=[limit_min, limit_max])),
+                x='Dataframe Date:O',
+                y=alt.Y("Miete sum:Q", scale=alt.Scale(domain=[limit_min, limit_max])),
             ).interactive()
 
 
