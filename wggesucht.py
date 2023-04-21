@@ -951,6 +951,82 @@ def main():
         df_timeline = pd.concat([df_concat, df_old])
         st.write(df_timeline)
         st.write(len(df_timeline))
+        df_timeline_pivotedby_dataframedate = df_timeline.pivot_table(index="Dataframe Date", aggfunc={"Miete":"mean", "Miete":"sum"})
+        st.write(df_timeline_pivotedby_dataframedate)
+        col1, col2, col3 = st.columns([0.3, 0.3, 0.3])
+        with col1:
+            limit_min = float(df_kontoauswertung_pivoted_by_contract_pivoted_by_period["Bruttowarmmiete"].min()) - (float(df_kontoauswertung_pivoted_by_contract_pivoted_by_period["Bruttowarmmiete"].min()) * 0.03)
+            limit_max = float(df_kontoauswertung_pivoted_by_contract_pivoted_by_period["Bruttowarmmiete"].max()) + (float(df_kontoauswertung_pivoted_by_contract_pivoted_by_period["Bruttowarmmiete"].max()) * 0.03)
+
+            chart = alt.Chart(df_kontoauswertung_pivoted_by_contract_pivoted_by_period).mark_line(
+                color="red"
+            ).encode(
+                x='year_month',
+                y=alt.Y('Bruttowarmmiete', scale=alt.Scale(domain=[limit_min, limit_max])),
+            ).interactive()
+
+            chart2 = alt.Chart(df_kontoauswertung_pivoted_by_contract_pivoted_by_period).mark_bar(
+                color="#95B5C3",
+                opacity=0.5,
+            ).encode(
+                x='year_month:O',
+                y=alt.Y("Bruttowarmmiete:Q", scale=alt.Scale(domain=[limit_min, limit_max])),
+            ).interactive()
+
+
+            chart = (chart + chart2)
+            chart = chart
+            st.altair_chart(chart, use_container_width=True)
+
+        with col2:
+            limit_min = float(df_kontoauswertung_pivoted_by_contract_pivoted_by_period["Bruttowarmmiete"].min()) - (float(df_kontoauswertung_pivoted_by_contract_pivoted_by_period["Bruttowarmmiete"].min()) * 0.03)
+            limit_max = float(df_kontoauswertung_pivoted_by_contract_pivoted_by_period["Bruttowarmmiete"].max()) + (float(df_kontoauswertung_pivoted_by_contract_pivoted_by_period["Bruttowarmmiete"].max()) * 0.03)
+
+            chart = alt.Chart(df_kontoauswertung_pivoted_by_contract_pivoted_by_period).mark_line(
+                color="red"
+            ).encode(
+                x='year_month',
+                y=alt.Y('Bruttowarmmiete', scale=alt.Scale(domain=[limit_min, limit_max])),
+            ).interactive()
+
+            chart2 = alt.Chart(df_kontoauswertung_pivoted_by_contract_pivoted_by_period).mark_bar(
+                color="#95B5C3",
+                opacity=0.5,
+            ).encode(
+                x='year_month:O',
+                y=alt.Y("Bruttowarmmiete:Q", scale=alt.Scale(domain=[limit_min, limit_max])),
+            ).interactive()
+
+
+            chart = (chart + chart2)
+            chart = chart
+            st.altair_chart(chart, use_container_width=True)
+
+        with col3:
+            limit_min = float(df_kontoauswertung_pivoted_by_contract_pivoted_by_period["Bruttowarmmiete"].min()) - (float(df_kontoauswertung_pivoted_by_contract_pivoted_by_period["Bruttowarmmiete"].min()) * 0.03)
+            limit_max = float(df_kontoauswertung_pivoted_by_contract_pivoted_by_period["Bruttowarmmiete"].max()) + (float(df_kontoauswertung_pivoted_by_contract_pivoted_by_period["Bruttowarmmiete"].max()) * 0.03)
+
+            chart = alt.Chart(df_kontoauswertung_pivoted_by_contract_pivoted_by_period).mark_line(
+                color="red"
+            ).encode(
+                x='year_month',
+                y=alt.Y('Bruttowarmmiete', scale=alt.Scale(domain=[limit_min, limit_max])),
+            ).interactive()
+
+            chart2 = alt.Chart(df_kontoauswertung_pivoted_by_contract_pivoted_by_period).mark_bar(
+                color="#95B5C3",
+                opacity=0.5,
+            ).encode(
+                x='year_month:O',
+                y=alt.Y("Bruttowarmmiete:Q", scale=alt.Scale(domain=[limit_min, limit_max])),
+            ).interactive()
+
+
+            chart = (chart + chart2)
+            chart = chart
+            st.altair_chart(chart, use_container_width=True)
+
+
 
     if selected == "🫂 Neighbourhoods":
         st.markdown("<h1 style='text-align: center; color: orange;'>Neighbourhood Analysis</h1>", unsafe_allow_html=True)
