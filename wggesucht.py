@@ -932,11 +932,28 @@ def main():
             )
             # show the chart
             st.altair_chart(chart.interactive(), use_container_width=True)
+
+            chart = alt.Chart(df_concat).mark_point().encode(
+                x=alt.X('Neighbourhood:Q', title='Size', axis=alt.Axis(tickCount=5)),
+                y=alt.Y('Miete:Q', title='Rent', axis=alt.Axis(tickCount=5)),
+                tooltip=['Neighbourhood', 'Miete']
+            )
+            # show the chart
+            st.altair_chart(chart.interactive(), use_container_width=True)
+
         with col2:
             chart = alt.Chart(df_concat).mark_point().encode(
-                x=alt.X('Größe:Q', title='Size', axis=alt.Axis(tickCount=5)),
+                x=alt.X('Neighbourhood:Q', title='Size', axis=alt.Axis(tickCount=5)),
                 y=alt.Y('EUR / SQM:Q', title='Rent per SQM', axis=alt.Axis(tickCount=5)),
-                tooltip=['Größe', 'EUR / SQM']
+                tooltip=['Neighbourhood', 'EUR / SQM']
+            )
+            # show the chart
+            st.altair_chart(chart.interactive(), use_container_width=True)
+
+            chart = alt.Chart(df_concat).mark_point().encode(
+                x=alt.X('Neighbourhood:Q', title='Size', axis=alt.Axis(tickCount=5)),
+                y=alt.Y('EUR / SQM:Q', title='Rent per SQM', axis=alt.Axis(tickCount=5)),
+                tooltip=['Neighbourhood', 'EUR / SQM']
             )
             # show the chart
             st.altair_chart(chart.interactive(), use_container_width=True)
