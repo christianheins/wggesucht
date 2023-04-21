@@ -902,14 +902,22 @@ def main():
 
         with col1:
             st.write(df_concat)
-            chart = alt.Chart(data).mark_point().encode(
-                x=alt.X('x:Q', title='X-axis', axis=alt.Axis(tickCount=5)),
-                y=alt.Y('y:Q', title='Y-axis', axis=alt.Axis(tickCount=5)),
-                tooltip=['x', 'y', 'label']
+            chart = alt.Chart(df_concat).mark_point().encode(
+                x=alt.X('Größe:Q', title='Size', axis=alt.Axis(tickCount=5)),
+                y=alt.Y('Miete:Q', title='Rent', axis=alt.Axis(tickCount=5)),
+                tooltip=['Größe', 'Miete']
             )
-
-        # show the chart
-        chart
+            # show the chart
+            st.altair_chart(wholechart.interactive(), use_container_width=True)
+        with col2:
+            st.write(df_concat)
+            chart = alt.Chart(df_concat).mark_point().encode(
+                x=alt.X('Größe:Q', title='Size', axis=alt.Axis(tickCount=5)),
+                y=alt.Y('Miete:Q', title='Rent', axis=alt.Axis(tickCount=5)),
+                tooltip=['Größe', 'Miete']
+            )
+            # show the chart
+            st.altair_chart(wholechart.interactive(), use_container_width=True)
 
         st.markdown("<h6 style='text-align: center; color: orange;'>Properties table</h6>", unsafe_allow_html=True)
         st.write(df_concat[['Name', 'Rubrik', 'Eintrag', 'Miete', 'Größe', 'EUR / SQM', 'Stadtteil', 'Neighbourhood', 'frei ab', 'frei bis','frei bis (Year - Month)', 'Lease term', 'Latitude', 'Longitude']])
