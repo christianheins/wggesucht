@@ -842,7 +842,7 @@ def main():
             #Combine bar chart with text chart, weird isnt?
             wholechart = alt.layer(chart.mark_bar(color="orange"), chart.mark_text(align='center', dy=-5, color="black"))
             wholechart = wholechart.properties(
-                height=300
+                height=500
             )
 
             st.altair_chart(wholechart.interactive(), use_container_width=True)
@@ -880,7 +880,7 @@ def main():
             wholechart = alt.layer(chart.mark_bar(color="orange"), chart.mark_text(align='left', dx=8, color="black"))
 
             wholechart = wholechart.properties(
-                height=300
+                height=500
             )
 
             st.markdown("<h6 style='text-align: center; color: orange;'>Top 20 Neighbourhoods Bar Chart</h6>", unsafe_allow_html=True)
@@ -917,7 +917,7 @@ def main():
 
             wholechart = alt.layer(chart.mark_bar(color="orange"), chart.mark_text(align='left', dx=8, color="black"))
             wholechart = wholechart.properties(
-                height=300
+                height=500
             )
             st.altair_chart(wholechart.interactive(), use_container_width=True)
         st.markdown("<h4 style='text-align: center; color: orange;'>💥 Scatter plots displaying the Rent / Size relationship</h4>", unsafe_allow_html=True)
