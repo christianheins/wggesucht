@@ -908,7 +908,7 @@ def main():
                 tooltip=['Größe', 'Miete']
             )
             # show the chart
-            st.altair_chart(wholechart.interactive(), use_container_width=True)
+            st.altair_chart(chart.interactive(), use_container_width=True)
         with col2:
             st.write(df_concat)
             chart = alt.Chart(df_concat).mark_point().encode(
@@ -917,7 +917,7 @@ def main():
                 tooltip=['Größe', 'Miete']
             )
             # show the chart
-            st.altair_chart(wholechart.interactive(), use_container_width=True)
+            st.altair_chart(chart.interactive(), use_container_width=True)
 
         st.markdown("<h6 style='text-align: center; color: orange;'>Properties table</h6>", unsafe_allow_html=True)
         st.write(df_concat[['Name', 'Rubrik', 'Eintrag', 'Miete', 'Größe', 'EUR / SQM', 'Stadtteil', 'Neighbourhood', 'frei ab', 'frei bis','frei bis (Year - Month)', 'Lease term', 'Latitude', 'Longitude']])
