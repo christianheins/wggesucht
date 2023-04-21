@@ -928,7 +928,8 @@ def main():
             chart = alt.Chart(df_concat).mark_point().encode(
                 x=alt.X('Größe:Q', title='Size', axis=alt.Axis(tickCount=5)),
                 y=alt.Y('Miete:Q', title='Rent', axis=alt.Axis(tickCount=5)),
-                tooltip=['Größe', 'Miete']
+                tooltip=['Größe', 'Miete'],
+                color="orange"
             )
             # show the chart
             st.altair_chart(chart.interactive(), use_container_width=True)
@@ -936,7 +937,8 @@ def main():
             chart = alt.Chart(df_concat).mark_point().encode(
                 x=alt.X('Neighbourhood:N', title='Size', axis=alt.Axis(tickCount=5)),
                 y=alt.Y('Miete:Q', title='Rent', axis=alt.Axis(tickCount=5)),
-                tooltip=['Neighbourhood', 'Miete']
+                tooltip=['Neighbourhood', 'Miete'],
+                color="orange"
             )
             # show the chart
             st.altair_chart(chart.interactive(), use_container_width=True)
@@ -945,7 +947,8 @@ def main():
             chart = alt.Chart(df_concat).mark_point().encode(
                 x=alt.X('Größe:Q', title='Size', axis=alt.Axis(tickCount=5)),
                 y=alt.Y('EUR / SQM:Q', title='Rent per SQM', axis=alt.Axis(tickCount=5)),
-                tooltip=['Größe', 'EUR / SQM']
+                tooltip=['Größe', 'EUR / SQM'],
+                color="orange"
             )
             # show the chart
             st.altair_chart(chart.interactive(), use_container_width=True)
@@ -953,7 +956,8 @@ def main():
             chart = alt.Chart(df_concat).mark_point().encode(
                 x=alt.X('Neighbourhood:N', title='Size', axis=alt.Axis(tickCount=5)),
                 y=alt.Y('EUR / SQM:Q', title='Rent per SQM', axis=alt.Axis(tickCount=5)),
-                tooltip=['Neighbourhood', 'EUR / SQM']
+                tooltip=['Neighbourhood', 'EUR / SQM'],
+                color="orange"
             )
             # show the chart
             st.altair_chart(chart.interactive(), use_container_width=True)
