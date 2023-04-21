@@ -960,7 +960,7 @@ def main():
             st.altair_chart(chart.interactive(), use_container_width=True)
 
         st.markdown("<h6 style='text-align: center; color: orange;'>Properties table</h6>", unsafe_allow_html=True)
-        with st.expander("Table")
+        with st.expander("Table"):
             st.write(df_concat[['Name', 'Rubrik', 'Eintrag', 'Miete', 'Größe', 'EUR / SQM', 'Stadtteil', 'Neighbourhood', 'frei ab', 'frei bis','frei bis (Year - Month)', 'Lease term', 'Latitude', 'Longitude']])
 
         st.markdown("""---""")
