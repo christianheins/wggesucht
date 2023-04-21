@@ -954,8 +954,8 @@ def main():
         df_timeline_pivotedby_dataframedate = df_timeline.pivot_table(index="Dataframe Date", aggfunc={"Miete":["count","mean","sum"]}).reset_index()
         st.write(df_timeline_pivotedby_dataframedate)
         st.write(df_timeline_pivotedby_dataframedate.columns)
-        miete_average = df_timeline_pivotedby_dataframedate.columns[2][0]
-        miete_sum = df_timeline_pivotedby_dataframedate.columns[3][0]
+        miete_average = df_timeline_pivotedby_dataframedate.columns[2]
+        miete_sum = df_timeline_pivotedby_dataframedate.columns[3]
         st.write(miete_average)
         st.write(miete_sum)
 
