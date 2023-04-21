@@ -972,16 +972,16 @@ def main():
             chart = alt.Chart(df_timeline_pivotedby_dataframedate).mark_line(
                 color="red"
             ).encode(
-                x='Dataframe Date 2:O',
-                y=alt.Y('Miete_mean:Q'),
+                x='Dataframe Date:O',
+                y=alt.Y('Mietemean:Q'),
             ).interactive()
 
             chart2 = alt.Chart(df_timeline_pivotedby_dataframedate).mark_bar(
                 color="#95B5C3",
                 opacity=0.5,
             ).encode(
-                x='Dataframe Date 2:O',
-                y=alt.Y('Miete_mean:Q'),
+                x='Dataframe Date:O',
+                y=alt.Y('Mietemean:Q'),
             ).interactive()
 
 
