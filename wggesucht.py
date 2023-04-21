@@ -903,7 +903,6 @@ def main():
         col1, col2 = st.columns([0.5,0.5])
 
         with col1:
-            st.write(df_concat)
             chart = alt.Chart(df_concat).mark_point().encode(
                 x=alt.X('Größe:Q', title='Size', axis=alt.Axis(tickCount=5)),
                 y=alt.Y('Miete:Q', title='Rent', axis=alt.Axis(tickCount=5)),
@@ -912,7 +911,6 @@ def main():
             # show the chart
             st.altair_chart(chart.interactive(), use_container_width=True)
         with col2:
-            st.write(df_concat)
             chart = alt.Chart(df_concat).mark_point().encode(
                 x=alt.X('Größe:Q', title='Size', axis=alt.Axis(tickCount=5)),
                 y=alt.Y('Miete:Q', title='Rent', axis=alt.Axis(tickCount=5)),
