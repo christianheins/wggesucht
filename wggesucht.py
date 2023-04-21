@@ -955,17 +955,17 @@ def main():
         st.write(df_timeline_pivotedby_dataframedate)
         st.write(df_timeline_pivotedby_dataframedate.columns)
         miete_average = df_timeline_pivotedby_dataframedate.columns[2]
+        miete_sum = df_timeline_pivotedby_dataframedate.columns[3]
         st.write(miete_average)
+        df_timeline_pivotedby_dataframedate.rename(columns = {miete_average:"Rent average",miete_sum:"Rent sum"}, inplace=True)
         col1, col2, col3 = st.columns([0.3, 0.3, 0.3])
         with col1:
-            limit_min = float(df_timeline_pivotedby_dataframedate["Bruttowarmmiete"].min()) - (float(df_timeline_pivotedby_dataframedate["Bruttowarmmiete"].min()) * 0.03)
-            limit_max = float(df_timeline_pivotedby_dataframedate["Bruttowarmmiete"].max()) + (float(df_timeline_pivotedby_dataframedate["Bruttowarmmiete"].max()) * 0.03)
 
             chart = alt.Chart(df_timeline_pivotedby_dataframedate).mark_line(
                 color="red"
             ).encode(
                 x='Dataframe Date:O',
-                y=alt.Y('Miete sum:Q', scale=alt.Scale(domain=[limit_min, limit_max])),
+                y=alt.Y('Rent average:Q'),
             ).interactive()
 
             chart2 = alt.Chart(df_timeline_pivotedby_dataframedate).mark_bar(
@@ -973,7 +973,7 @@ def main():
                 opacity=0.5,
             ).encode(
                 x='Dataframe Date:O',
-                y=alt.Y("Miete sum:Q", scale=alt.Scale(domain=[limit_min, limit_max])),
+                y=alt.Y("Rent average:Q"),
             ).interactive()
 
 
