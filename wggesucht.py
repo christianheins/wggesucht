@@ -97,7 +97,7 @@ def main():
                     #print(df)
                     df_toupdate.append(df)
 
-                    df = pd.concat(df_toupdate)
+                df = pd.concat(df_toupdate)
                 return df
 
             def requestswg():
@@ -898,6 +898,18 @@ def main():
             wholechart = alt.layer(chart.mark_bar(color="orange"), chart.mark_text(align='left', dx=8, color="black"))
 
             st.altair_chart(wholechart.interactive(), use_container_width=True)
+        col1, col2 = st.columns([0.5,0.5])
+
+        with col1:
+            st.write(df_concat)
+            chart = alt.Chart(data).mark_point().encode(
+                x=alt.X('x:Q', title='X-axis', axis=alt.Axis(tickCount=5)),
+                y=alt.Y('y:Q', title='Y-axis', axis=alt.Axis(tickCount=5)),
+                tooltip=['x', 'y', 'label']
+            )
+
+        # show the chart
+        chart
 
         st.markdown("<h6 style='text-align: center; color: orange;'>Properties table</h6>", unsafe_allow_html=True)
         st.write(df_concat[['Name', 'Rubrik', 'Eintrag', 'Miete', 'Größe', 'EUR / SQM', 'Stadtteil', 'Neighbourhood', 'frei ab', 'frei bis','frei bis (Year - Month)', 'Lease term', 'Latitude', 'Longitude']])
