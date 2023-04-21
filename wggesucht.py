@@ -960,6 +960,9 @@ def main():
         miete_sum = df_timeline_pivotedby_dataframedate.columns.values[2]
         st.write(miete_sum)
 
+        df_timeline_pivotedby_dataframedate_test = ['_'.join(col).strip() for col in df.columns.values]
+        st.write(df_timeline_pivotedby_dataframedate_test)
+
         df_timeline_pivotedby_dataframedate.rename(columns = {miete_average:"Average", miete_sum:"Sum", "Dataframe Date":"Dataframe Date 2"}, inplace=True)
 
         st.write(df_timeline_pivotedby_dataframedate)
