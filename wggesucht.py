@@ -872,6 +872,10 @@ def main():
 
             wholechart = alt.layer(chart.mark_bar(color="orange"), chart.mark_text(align='left', dx=8, color="black"))
 
+            wholechart = wholechart.properties(
+                height=300
+            )
+
             st.markdown("<h6 style='text-align: center; color: orange;'>Top 20 Neighbourhoods Bar Chart</h6>", unsafe_allow_html=True)
             st.altair_chart(wholechart.interactive(), use_container_width=True)
 
