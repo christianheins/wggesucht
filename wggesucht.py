@@ -748,6 +748,7 @@ def main():
         col1, col2, col3 = st.columns([0.2, 0.2, 0.6])
         with col1:
             st.metric("Available apartments", value="{:,.0f}".format(len(df_concat)))
+            st.write(df_concat)
         with col2:
             st.metric("Unique neighbourhoods", value="{:,.0f}".format(len(df_concat[['Rubrik', 'Eintrag', 'Miete', 'Größe', 'EUR / SQM', 'Stadtteil', 'Neighbourhood']].pivot_table(index="Neighbourhood", values="Eintrag", aggfunc="count").reset_index())))
         with col3:
