@@ -744,7 +744,7 @@ def main():
 
     if selected == "🏘️ Apartments":
         st.markdown("<h1 style='text-align: center; color: orange;'>🏘️ Property Analysis 🏘</h1>", unsafe_allow_html=True)
-
+        st.markdown("<h1 style='text-align: center; color: orange;'>🚧🏗️👷 UNDER MAINTENANCE 👷🏗️🚧</h1>", unsafe_allow_html=True)
         col1, col2, col3 = st.columns([0.2, 0.2, 0.6])
         with col1:
             st.metric("Available apartments", value="{:,.0f}".format(len(df_concat)))
