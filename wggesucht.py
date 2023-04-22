@@ -836,7 +836,7 @@ def main():
             st.markdown("<h6 style='text-align: center; color: orange;'>Lease term Bar Chart</h6>", unsafe_allow_html=True)
             chart = alt.Chart(df_concat_endofleaseterm).encode(
                 x=alt.X('Lease term:Q'),
-                y=alt.Y('Eintrag:Q', sort=None), #use 'sort=None' to preserve the order of categories
+                y=alt.Y('Eintrag:Q', sort=None, axis=alt.Axis(title='Count')), #use 'sort=None' to preserve the order of categories
                 text=alt.Text('Eintrag', format='.1f')
             )
             #Combine bar chart with text chart, weird isnt?
@@ -867,9 +867,10 @@ def main():
 
             st.altair_chart(chart.interactive(), use_container_width=True)
 
+
             df_concat_neighbourhoods_filtered = df_concat_neighbourhoods.iloc[:20]
             chart = alt.Chart(df_concat_neighbourhoods_filtered).encode(
-                x=alt.X('Eintrag:Q'),
+                x=alt.X('Eintrag:Q', axis=alt.Axis(title='Count')),
                 y=alt.Y('Neighbourhood:N', sort=None), #use 'sort=None' to preserve the order of categories
                 text=alt.Text('Eintrag:Q', format='.1f'),
             )
@@ -907,7 +908,7 @@ def main():
 
             st.markdown("<h6 style='text-align: center; color: orange;'>Number of entries per release date</h6>", unsafe_allow_html=True)
             chart = alt.Chart(df_concat_pivot_releasedate).encode(
-                x=alt.X('count:Q'),
+                x=alt.X('count:Q', axis=alt.Axis(title='Count')),
                 y=alt.Y('Eintrag:N', sort=None), #use 'sort=None' to preserve the order of categories
                 text=alt.Text('count', format='.1f')
             )
