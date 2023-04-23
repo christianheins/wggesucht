@@ -608,7 +608,7 @@ def main():
             df_concat_pivot_releasedate = df_concat[['Rubrik', 'Eintrag', 'Miete', 'Größe', 'EUR / SQM', 'Stadtteil', 'Neighbourhood']].pivot_table(index="Eintrag", values="Miete", aggfunc={"Miete":["count","mean"]}).reset_index()
             df_concat_pivot_releasedate['Eintrag'] = pd.to_datetime(df_concat_pivot_releasedate['Eintrag'], format='%d.%m.%Y', dayfirst=True)
             df_concat_pivot_releasedate.sort_values(by=["Eintrag"], ascending=[False], inplace=True)
-            df_concat_pivot_releasedate['Eintrag'] = df_concat_pivot_releasedate['Eintrag'].datetime.strftime('%Y/%m/%d')
+            df_concat_pivot_releasedate['Eintrag'] = df_concat_pivot_releasedate['Eintrag'].dt.strftime('%Y/%m/%d')
 
             st.markdown("<h6 style='text-align: center; color: orange;'>Number of entries per release date</h6>", unsafe_allow_html=True)
             chart = alt.Chart(df_concat_pivot_releasedate).encode(
