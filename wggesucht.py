@@ -484,10 +484,10 @@ def main():
             st.write(df_concat[["Miete", "Größe", 'EUR / SQM', "Lease term"]].describe())
 
         st.markdown("""---""")
-        df_concat_neighbourhoods = df_concat[['Rubrik', 'Eintrag', 'Miete', 'Größe', 'EUR / SQM', 'Stadtteil', 'Neighbourhood']].pivot_table(index="Neighbourhood", values="Eintrag", aggfunc="count").reset_index()
+        df_concat_neighbourhoods = df_concat[['Eintrag', 'Miete', 'Größe', 'EUR / SQM', 'Stadtteil', 'Neighbourhood']].pivot_table(index="Neighbourhood", values="Eintrag", aggfunc="count").reset_index()
         df_concat_neighbourhoods.sort_values(by=["Eintrag"], ascending=[False], inplace=True)
 
-        df_concat_endofleaseterm = df_concat[['Rubrik', 'Eintrag', 'Miete', 'Größe', 'EUR / SQM', 'Stadtteil', 'Neighbourhood', 'Lease term']].pivot_table(index="Lease term", values="Eintrag", aggfunc="count").reset_index()
+        df_concat_endofleaseterm = df_concat[['Eintrag', 'Miete', 'Größe', 'EUR / SQM', 'Stadtteil', 'Neighbourhood', 'Lease term']].pivot_table(index="Lease term", values="Eintrag", aggfunc="count").reset_index()
         df_concat_endofleaseterm.sort_values(by=["Eintrag"], ascending=[False], inplace=True)
 
         col1, col2, col3= st.columns([0.3, 0.3, 0.3])
