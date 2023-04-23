@@ -8,7 +8,7 @@ def main():
     import altair as alt
     import urllib.parse
     import os
-    import datetime as dt
+    import datetime
     import base64
     from github import Github
     from github import InputFileContent
@@ -25,7 +25,7 @@ def main():
     import pytz
 
     def deftime():
-        now = dt.now()
+        now = datetime.now()
         berlin_tzinfo = pytz.timezone("Europe/Berlin")
         berlin_time = now.astimezone(berlin_tzinfo)
         now = berlin_time
@@ -124,323 +124,6 @@ def main():
                 df = pd.concat(df_toupdate)
                 return df
 
-            def requestswg():
-
-                '''
-                url = "https://www.wg-gesucht.de/1-zimmer-wohnungen-und-wohnungen-in-Berlin.8.1+2.0.0.html"
-
-                # Add headers to mimic a browser request
-                headers = {
-                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
-                }
-
-                response = requests.get(url, headers=headers)
-
-                # check the status code of the response
-                print(response.status_code)
-
-                # access the content of the response
-                html_content = response.content
-                print(html_content)
-                '''
-
-                #url = "https://www.wg-gesucht.de/1-zimmer-wohnungen-und-wohnungen-in-Berlin.8.1+2.0.0.html"
-                url = "https://www.wg-gesucht.de/1-zimmer-wohnungen-und-wohnungen-in-Berlin.8.1+2.0.0.html?offer_filter=1&city_id=8&sort_order=0&noDeact=1&categories%5B%5D=1&categories%5B%5D=2&rent_types%5B%5D=0#back_to_ad_9597345"
-                headers = {
-                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
-                }
-                response = requests.get(url, headers=headers)
-                print(response)
-
-                dfs = pd.read_html(response.content)
-                df = dfs[0]  # assuming the desired table is the first one on the page
-                #for df in dfs:
-                #    print(df)
-
-                # Format the dataframe
-                df['frei bis'] = pd.to_datetime(df['frei bis'], dayfirst=True)
-                df['frei ab'] = pd.to_datetime(df['frei ab'], dayfirst=True)
-                df["Größe"] = df['Größe'].str.replace("m²","")
-                df["Miete"] = df['Miete'].str.replace(" €","")
-                df["Miete"] = df['Miete'].str.replace("€","")
-                df[["Miete", "Größe"]] = df[["Miete", "Größe"]].astype(float)
-                df["Lease term"] = df["frei bis"] - df["frei ab"]
-                #print(df.columns)
-                #print(df["Lease term"])
-
-                # Create two date objects
-                date1 = pd.to_datetime('2022-03-20')
-                date2 = pd.to_datetime('2022-03-25')
-
-                # Calculate the difference between the two dates
-                diff = date2 - date1
-
-                # Print the difference in days
-
-                #print(diff.days)
-
-
-                df['Lease term'] = (df['frei bis'].dt.year - df['frei ab'].dt.year) * 12 + (df['frei bis'].dt.month - df['frei ab'].dt.month)
-
-                df["EUR / SQM"] = df["Miete"] / df["Größe"]
-                #print(df)
-                return df
-
-            def requestswg2():
-
-                '''
-                url = "https://www.wg-gesucht.de/1-zimmer-wohnungen-und-wohnungen-in-Berlin.8.1+2.0.0.html"
-
-                # Add headers to mimic a browser request
-                headers = {
-                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
-                }
-
-                response = requests.get(url, headers=headers)
-
-                # check the status code of the response
-                print(response.status_code)
-
-                # access the content of the response
-                html_content = response.content
-                print(html_content)
-                '''
-
-                #url1 = "https://www.wg-gesucht.de/1-zimmer-wohnungen-und-wohnungen-in-Berlin.8.1+2.0.0.html"
-                url2 = "https://www.wg-gesucht.de/1-zimmer-wohnungen-und-wohnungen-in-Berlin.8.1+2.0.1.html?pagination=1&pu="
-                url3 = "https://www.wg-gesucht.de/1-zimmer-wohnungen-und-wohnungen-in-Berlin.8.1+2.0.2.html?pagination=1&pu="
-                url4 = "https://www.wg-gesucht.de/1-zimmer-wohnungen-und-wohnungen-in-Berlin.8.1+2.0.3.html?pagination=1&pu="
-
-                headers = {
-                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
-                }
-                response = requests.get(url2, headers=headers)
-
-                dfs = pd.read_html(response.content)
-                df = dfs[0]  # assuming the desired table is the first one on the page
-
-                # Format the dataframe
-                df['frei bis'] = pd.to_datetime(df['frei bis'], dayfirst=True)
-                df['frei ab'] = pd.to_datetime(df['frei ab'], dayfirst=True)
-                df["Größe"] = df['Größe'].str.replace("m²","")
-                df["Miete"] = df['Miete'].str.replace(" €","")
-                df["Miete"] = df['Miete'].str.replace("€","")
-                df[["Miete", "Größe"]] = df[["Miete", "Größe"]].astype(float)
-                df["Lease term"] = df["frei bis"] - df["frei ab"]
-                #print(df.columns)
-                #print(df["Lease term"])
-
-                # Create two date objects
-                date1 = pd.to_datetime('2022-03-20')
-                date2 = pd.to_datetime('2022-03-25')
-
-                # Calculate the difference between the two dates
-                diff = date2 - date1
-
-                # Print the difference in days
-
-                #print(diff.days)
-
-
-                df['Lease term'] = (df['frei bis'].dt.year - df['frei ab'].dt.year) * 12 + (df['frei bis'].dt.month - df['frei ab'].dt.month)
-
-                df["EUR / SQM"] = df["Miete"] / df["Größe"]
-                #print(df)
-                return df
-
-            def requestswg3():
-
-                '''
-                url = "https://www.wg-gesucht.de/1-zimmer-wohnungen-und-wohnungen-in-Berlin.8.1+2.0.0.html"
-
-                # Add headers to mimic a browser request
-                headers = {
-                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
-                }
-
-                response = requests.get(url, headers=headers)
-
-                # check the status code of the response
-                print(response.status_code)
-
-                # access the content of the response
-                html_content = response.content
-                print(html_content)
-                '''
-
-                #url1 = "https://www.wg-gesucht.de/1-zimmer-wohnungen-und-wohnungen-in-Berlin.8.1+2.0.0.html"
-                url2 = "https://www.wg-gesucht.de/1-zimmer-wohnungen-und-wohnungen-in-Berlin.8.1+2.0.1.html?pagination=1&pu="
-                url3 = "https://www.wg-gesucht.de/1-zimmer-wohnungen-und-wohnungen-in-Berlin.8.1+2.0.2.html?pagination=1&pu="
-                url4 = "https://www.wg-gesucht.de/1-zimmer-wohnungen-und-wohnungen-in-Berlin.8.1+2.0.3.html?pagination=1&pu="
-
-                headers = {
-                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
-                }
-                response = requests.get(url3, headers=headers)
-
-                dfs = pd.read_html(response.content)
-                df = dfs[0]  # assuming the desired table is the first one on the page
-
-                # Format the dataframe
-                df['frei bis'] = pd.to_datetime(df['frei bis'], dayfirst=True)
-                df['frei ab'] = pd.to_datetime(df['frei ab'], dayfirst=True)
-                df["Größe"] = df['Größe'].str.replace("m²","")
-                df["Miete"] = df['Miete'].str.replace(" €","")
-                df["Miete"] = df['Miete'].str.replace("€","")
-                df[["Miete", "Größe"]] = df[["Miete", "Größe"]].astype(float)
-                df["Lease term"] = df["frei bis"] - df["frei ab"]
-                #print(df.columns)
-                #print(df["Lease term"])
-
-                # Create two date objects
-                date1 = pd.to_datetime('2022-03-20')
-                date2 = pd.to_datetime('2022-03-25')
-
-                # Calculate the difference between the two dates
-                diff = date2 - date1
-
-                # Print the difference in days
-
-                #print(diff.days)
-
-
-                df['Lease term'] = (df['frei bis'].dt.year - df['frei ab'].dt.year) * 12 + (df['frei bis'].dt.month - df['frei ab'].dt.month)
-
-                df["EUR / SQM"] = df["Miete"] / df["Größe"]
-                #print(df)
-                return df
-
-            def requestswg4():
-
-                '''
-                url = "https://www.wg-gesucht.de/1-zimmer-wohnungen-und-wohnungen-in-Berlin.8.1+2.0.0.html"
-
-                # Add headers to mimic a browser request
-                headers = {
-                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
-                }
-
-                response = requests.get(url, headers=headers)
-
-                # check the status code of the response
-                print(response.status_code)
-
-                # access the content of the response
-                html_content = response.content
-                print(html_content)
-                '''
-
-                #url1 = "https://www.wg-gesucht.de/1-zimmer-wohnungen-und-wohnungen-in-Berlin.8.1+2.0.0.html"
-                url2 = "https://www.wg-gesucht.de/1-zimmer-wohnungen-und-wohnungen-in-Berlin.8.1+2.0.1.html?pagination=1&pu="
-                url3 = "https://www.wg-gesucht.de/1-zimmer-wohnungen-und-wohnungen-in-Berlin.8.1+2.0.2.html?pagination=1&pu="
-                url4 = "https://www.wg-gesucht.de/1-zimmer-wohnungen-und-wohnungen-in-Berlin.8.1+2.0.3.html?pagination=1&pu="
-
-                headers = {
-                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
-                }
-                response = requests.get(url4, headers=headers)
-
-                dfs = pd.read_html(response.content)
-                df = dfs[0]  # assuming the desired table is the first one on the page
-
-                # Format the dataframe
-                df['frei bis'] = pd.to_datetime(df['frei bis'], dayfirst=True)
-                df['frei ab'] = pd.to_datetime(df['frei ab'], dayfirst=True)
-                df["Größe"] = df['Größe'].str.replace("m²","")
-                df["Miete"] = df['Miete'].str.replace(" €","")
-                df["Miete"] = df['Miete'].str.replace("€","")
-                df[["Miete", "Größe"]] = df[["Miete", "Größe"]].astype(float)
-                df["Lease term"] = df["frei bis"] - df["frei ab"]
-                #print(df.columns)
-                #print(df["Lease term"])
-
-                # Create two date objects
-                date1 = pd.to_datetime('2022-03-20')
-                date2 = pd.to_datetime('2022-03-25')
-
-                # Calculate the difference between the two dates
-                diff = date2 - date1
-
-                # Print the difference in days
-                #print(diff.days)
-
-
-                df['Lease term'] = (df['frei bis'].dt.year - df['frei ab'].dt.year) * 12 + (df['frei bis'].dt.month - df['frei ab'].dt.month)
-
-                df["EUR / SQM"] = df["Miete"] / df["Größe"]
-                #print(df)
-                return df
-
-            def requestswg5():
-
-                '''
-                url = "https://www.wg-gesucht.de/1-zimmer-wohnungen-und-wohnungen-in-Berlin.8.1+2.0.0.html"
-
-                # Add headers to mimic a browser request
-                headers = {
-                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
-                }
-
-                response = requests.get(url, headers=headers)
-
-                # check the status code of the response
-                print(response.status_code)
-
-                # access the content of the response
-                html_content = response.content
-                print(html_content)
-                '''
-
-                url1 = "https://www.wg-gesucht.de/1-zimmer-wohnungen-und-wohnungen-in-Berlin.8.1+2.0.0.html"
-                url2 = "https://www.wg-gesucht.de/1-zimmer-wohnungen-und-wohnungen-in-Berlin.8.1+2.0.1.html?pagination=1&pu="
-                url3 = "https://www.wg-gesucht.de/1-zimmer-wohnungen-und-wohnungen-in-Berlin.8.1+2.0.2.html?pagination=1&pu="
-                url4 = "https://www.wg-gesucht.de/1-zimmer-wohnungen-und-wohnungen-in-Berlin.8.1+2.0.3.html?pagination=1&pu="
-                url5 = "https://www.wg-gesucht.de/1-zimmer-wohnungen-und-wohnungen-in-Berlin.8.1+2.0.4.html?pagination=1&pu="
-
-
-                headers = {
-                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
-                }
-                response = requests.get(url5, headers=headers)
-
-                dfs = pd.read_html(response.content)
-                df = dfs[0]  # assuming the desired table is the first one on the page
-
-                # Format the dataframe
-                df['frei bis'] = pd.to_datetime(df['frei bis'], dayfirst=True)
-                df['frei ab'] = pd.to_datetime(df['frei ab'], dayfirst=True)
-                df["Größe"] = df['Größe'].str.replace("m²","")
-                df["Miete"] = df['Miete'].str.replace(" €","")
-                df["Miete"] = df['Miete'].str.replace("€","")
-                df[["Miete", "Größe"]] = df[["Miete", "Größe"]].astype(float)
-                df["Lease term"] = df["frei bis"] - df["frei ab"]
-                #print(df.columns)
-                #print(df["Lease term"])
-
-                # Create two date objects
-                date1 = pd.to_datetime('2022-03-20')
-                date2 = pd.to_datetime('2022-03-25')
-
-                # Calculate the difference between the two dates
-                diff = date2 - date1
-
-                # Print the difference in days
-                #print(diff.days)
-
-
-                df['Lease term'] = (df['frei bis'].dt.year - df['frei ab'].dt.year) * 12 + (df['frei bis'].dt.month - df['frei ab'].dt.month)
-
-                df["EUR / SQM"] = df["Miete"] / df["Größe"]
-                #print(df)
-                return df
-
-            #df1 = requestswg()
-            #df2 = requestswg2()
-            #df3 = requestswg3()
-            #df4 = requestswg4()
-            #df5 = requestswg5()
-
-            #df_concat = pd.concat([df1, df2, df3, df4, df5])
             df_concat = requestswg_all()
             df_concat.dropna(subset=["Eintrag"], inplace=True)
             df_concat.reset_index(drop=True, inplace=True)
@@ -739,7 +422,7 @@ def main():
         # file modification timestamp of a file
         m_time = os.path.getctime(path)
         # convert timestamp into DateTime object
-        dt_m = dt.datetime.fromtimestamp(m_time).strftime("%d/%m/%Y - %H:%M:%S")
+        dt_m = datetime.datetime.fromtimestamp(m_time).strftime("%d/%m/%Y - %H:%M:%S")
         st.write(f'File last created on: {dt_m}')
         st.markdown("""---""")
 
@@ -925,7 +608,7 @@ def main():
             df_concat_pivot_releasedate = df_concat[['Rubrik', 'Eintrag', 'Miete', 'Größe', 'EUR / SQM', 'Stadtteil', 'Neighbourhood']].pivot_table(index="Eintrag", values="Miete", aggfunc={"Miete":["count","mean"]}).reset_index()
             df_concat_pivot_releasedate['Eintrag'] = pd.to_datetime(df_concat_pivot_releasedate['Eintrag'], format='%d.%m.%Y', dayfirst=True)
             df_concat_pivot_releasedate.sort_values(by=["Eintrag"], ascending=[False], inplace=True)
-            df_concat_pivot_releasedate['Eintrag'] = df_concat_pivot_releasedate['Eintrag'].dt.strftime('%Y/%m/%d')
+            df_concat_pivot_releasedate['Eintrag'] = df_concat_pivot_releasedate['Eintrag'].datetime.strftime('%Y/%m/%d')
 
             st.markdown("<h6 style='text-align: center; color: orange;'>Number of entries per release date</h6>", unsafe_allow_html=True)
             chart = alt.Chart(df_concat_pivot_releasedate).encode(
