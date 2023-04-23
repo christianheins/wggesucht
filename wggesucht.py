@@ -24,15 +24,6 @@ def main():
     import slack
     import pytz
 
-    def deftime():
-        now = datetime.now()
-        berlin_tzinfo = pytz.timezone("Europe/Berlin")
-        berlin_time = now.astimezone(berlin_tzinfo)
-        now = berlin_time
-        # Format: dd/mm/YY H:M:S
-        dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
-        return(dt_string)
-
     #Streamlit
     #Pages
     page_real_estate_general_dashboard = "wggesucht.py"
@@ -844,7 +835,7 @@ def main():
                         client = slack.WebClient(token='ihw5TVZLOcDBIW4n58A8mrzL')
 
                         #Tell the client to select a channel and include the specified text.
-                        client.chat_postMessage(channel='#special-projects', text= '\n\n START ====================================== \n\n :rocket: A new process tooked place! :rocket: \n\n :ID: - SYNC REDB <> Location & IDs \n\n :question: Method: Python in the background :snake: \n\n :clock1: Frequency: Every 5 min. \n\n' + ":calendar: Date and Time: " + str(deftime()) + "\n\n" + "Template last updated: 23.11.2021" + "\n\n" + "====================================== END")
+                        client.chat_postMessage(channel='#special-projects', text= '\n\n START ====================================== \n\n :rocket: A new process tooked place! :rocket: \n\n :ID: - SYNC REDB <> Location & IDs \n\n :question: Method: Python in the background :snake: \n\n :clock1: Frequency: Every 5 min. \n\n' + ":calendar: Date and Time: " + "time" + "\n\n" + "Template last updated: 23.11.2021" + "\n\n" + "====================================== END")
                         print("Done: Sync REDB <> Location & IDs")
                     sendslack()
 
