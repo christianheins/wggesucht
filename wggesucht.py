@@ -760,7 +760,7 @@ def main():
             st.markdown("<p style='text-align: center; color: red;'>Send in an email!</p>", unsafe_allow_html=True)
             col1, col2 = st.columns([0.5,0.5])
             with col1:
-                email_input = st.text_input('Enter an email', 'Enter your email here')
+                email_input = st.text_input('Enter an email', '')
                 st.write('The current email is', email_input)
             with col2:
                 st.markdown("<p style='text-align: center; color: red;'>Click the button!</p>", unsafe_allow_html=True)
