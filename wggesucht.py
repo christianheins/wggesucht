@@ -50,7 +50,7 @@ def main():
 
     pd.set_option('display.max_columns', None)
 
-    nameofdataframe = "df_concat_20230422.csv"
+    nameofdataframe = "df_concat.csv"
 
     with st.sidebar:
         st.sidebar.header("Sections")
