@@ -426,7 +426,7 @@ def main():
         with col1:
             st.metric("Available apartments", value="{:,.0f}".format(len(df_concat)))
         with col2:
-            st.metric("Unique neighbourhoods", value="{:,.0f}".format(len(df_concat[['Rubrik', 'Eintrag', 'Miete', 'Größe', 'EUR / SQM', 'Stadtteil', 'Neighbourhood']].pivot_table(index="Neighbourhood", values="Eintrag", aggfunc="count").reset_index())))
+            st.metric("Unique neighbourhoods", value="{:,.0f}".format(len(df_concat[['Eintrag', 'Miete', 'Größe', 'EUR / SQM', 'Stadtteil', 'Neighbourhood']].pivot_table(index="Neighbourhood", values="Eintrag", aggfunc="count").reset_index())))
         with col3:
             df_concat['Eintrag'] = pd.to_datetime(df_concat['Eintrag'], format='%d.%m.%Y', dayfirst=True)
             oldestdate = df_concat["Eintrag"].min()
