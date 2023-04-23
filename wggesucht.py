@@ -835,7 +835,7 @@ def main():
                         client = slack.WebClient(token=st.secrets.slack_bot_token)
 
                         #Tell the client to select a channel and include the specified text.
-                        client.chat_postMessage(channel='#special-projects', text="Hi")
+                        client.chat_postMessage(channel='#special-projects', text="Someone pressed the button on https://christianheins-wggesucht-wggesucht-2lmx07.streamlit.app")
                         print("Sending slack message")
                     sendslack()
 
