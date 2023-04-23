@@ -835,8 +835,8 @@ def main():
                         client = slack.WebClient(token=st.secrets.slack_bot_token)
 
                         #Tell the client to select a channel and include the specified text.
-                        client.chat_postMessage(channel='#special-projects', text= "Hi")
-                        print("Sending slack message")
+                        client.chat_postMessage(channel='#special-projects', text= '\n\n START ====================================== \n\n :rocket: A new process tooked place! :rocket: \n\n :ID: - SYNC REDB <> Location & IDs \n\n :question: Method: Python in the background :snake: \n\n :clock1: Frequency: Every 5 min. \n\n' + ":calendar: Date and Time: " + "time" + "\n\n" + "Template last updated: 23.11.2021" + "\n\n" + "====================================== END")
+                        print("Done: Sync REDB <> Location & IDs")
                     sendslack()
 
                     button_pressed_2 = False
