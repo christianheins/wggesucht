@@ -12,7 +12,18 @@ def main():
     import base64
     from github import Github
     from github import InputFileContent
+    import smtplib, email
+    from email import encoders
+    from email.mime.base import MIMEBase
+    from email.mime.application import MIMEApplication
+    from email.mime.multipart import MIMEMultipart
+    from email.mime.text import MIMEText
+    from email.utils import COMMASPACE, formatdate
+    from email.mime.image import MIMEImage
+    import ssl
     import slack
+    import datetime
+    import pytz
 
 
     #Streamlit
