@@ -91,25 +91,9 @@ def main():
                     df["Miete"] = df['Miete'].str.replace("€","")
                     df[["Miete", "Größe"]] = df[["Miete", "Größe"]].astype(float)
                     df["Lease term"] = df["frei bis"] - df["frei ab"]
-                    #print(df.columns)
-                    #print(df["Lease term"])
-
-                    # Create two date objects
-                    date1 = pd.to_datetime('2022-03-20')
-                    date2 = pd.to_datetime('2022-03-25')
-
-                    # Calculate the difference between the two dates
-                    diff = date2 - date1
-
-                    # Print the difference in days
-
-                    #print(diff.days)
-
-
                     df['Lease term'] = (df['frei bis'].dt.year - df['frei ab'].dt.year) * 12 + (df['frei bis'].dt.month - df['frei ab'].dt.month)
-
                     df["EUR / SQM"] = df["Miete"] / df["Größe"]
-                    #print(df)
+
                     df_toupdate.append(df)
 
                 df = pd.concat(df_toupdate)
