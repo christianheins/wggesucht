@@ -755,100 +755,100 @@ def main():
             chart = chart
             st.altair_chart(chart, use_container_width=True)
 
-            #Create a button
-            st.markdown("""---""")
-            st.markdown("<p style='text-align: center; color: red;'>Send in an email!</p>", unsafe_allow_html=True)
-            col1, col2 = st.columns([0.5,0.5])
-            with col1:
-                email_input = st.text_input('Enter an email', '')
-                st.write('The current email is', email_input)
-            with col2:
-                st.markdown("<p style='text-align: center; color: red;'>Click the button!</p>", unsafe_allow_html=True)
+        #Create a button
+        st.markdown("""---""")
+        st.markdown("<p style='text-align: center; color: red;'>Send in an email!</p>", unsafe_allow_html=True)
+        col1, col2 = st.columns([0.5,0.5])
+        with col1:
+            email_input = st.text_input('Enter an email', '')
+            st.write('The current email is', email_input)
+        with col2:
+            st.markdown("<p style='text-align: center; color: red;'>Click the button!</p>", unsafe_allow_html=True)
 
-                if st.button("Send email", use_container_width=True):
-                    button_pressed_2 = True
-                    st.write("Button pressed!")
-                    def sendemail():
+            if st.button("Send email", use_container_width=True):
+                button_pressed_2 = True
+                st.write("Button pressed!")
+                def sendemail():
 
-                        from_addr = st.secrets.email_address
-                        password = st.secrets.gmailpassword
+                    from_addr = st.secrets.email_address
+                    password = st.secrets.gmailpassword
 
-                        review = [email_input]
+                    review = [email_input]
 
-                        # Create MIMEMultipart object
-                        msg = MIMEMultipart("application", "octet-stream")
-                        msg["Subject"] = "Monthly Real Estate Report - End of March 2023"
-                        msg["From"] = from_addr
-                        # msg["To"] = to_addr
-                        msg["To"] = ", ".join(review)
+                    # Create MIMEMultipart object
+                    msg = MIMEMultipart("application", "octet-stream")
+                    msg["Subject"] = "Monthly Real Estate Report - End of March 2023"
+                    msg["From"] = from_addr
+                    # msg["To"] = to_addr
+                    msg["To"] = ", ".join(review)
 
-                        text = MIMEText(
-                            '''
-                            <html>
-                                <head>
-                                <title>ELT Real Estate Report</title>
-                                <style>
-                                
-                                body {background-color: #FFFFFF;}
-                                
-                                .mainDiv {
-                                    box-shadow: 0;          
-                                }
-                                
-                                </style>
-                                </head> 
-                                <body>
-                                <div class="mainDiv">
-                                    <div class="myDiv"> 
-                                    <br>
-                                    <p style="font-style: italic; font-size: 12px;">Please open full screen on a desktop or laptop.</p>
-                                    </div>
+                    text = MIMEText(
+                        '''
+                        <html>
+                            <head>
+                            <title>ELT Real Estate Report</title>
+                            <style>
+                            
+                            body {background-color: #FFFFFF;}
+                            
+                            .mainDiv {
+                                box-shadow: 0;          
+                            }
+                            
+                            </style>
+                            </head> 
+                            <body>
+                            <div class="mainDiv">
+                                <div class="myDiv"> 
+                                <br>
+                                <p style="font-style: italic; font-size: 12px;">Please open full screen on a desktop or laptop.</p>
                                 </div>
-                                </body> 
-                            </html>
-                            ''', 'html', 'utf-8')
+                            </div>
+                            </body> 
+                        </html>
+                        ''', 'html', 'utf-8')
 
-                        msg.attach(text)
+                    msg.attach(text)
 
 
-                        file = "Case Study_Asset Management.xlsx"
-                        fp = open(file, 'rb')
-                        part = MIMEBase('application', 'vnd.ms-excel')
-                        part.set_payload(fp.read())
-                        fp.close()
-                        encoders.encode_base64(part)
-                        part.add_header('Content-Disposition', 'attachment', filename=file)
-                        msg.attach(part)
+                    file = "Case Study_Asset Management.xlsx"
+                    fp = open(file, 'rb')
+                    part = MIMEBase('application', 'vnd.ms-excel')
+                    part.set_payload(fp.read())
+                    fp.close()
+                    encoders.encode_base64(part)
+                    part.add_header('Content-Disposition', 'attachment', filename=file)
+                    msg.attach(part)
 
-                        context = ssl.create_default_context()
-                        with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
-                            server.login(from_addr, password)
-                            server.sendmail(from_addr, review, msg.as_string())
-                            st.text(f"Email has been sent to {email_input}")
-                    sendemail()
+                    context = ssl.create_default_context()
+                    with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
+                        server.login(from_addr, password)
+                        server.sendmail(from_addr, review, msg.as_string())
+                        st.text(f"Email has been sent to {email_input}")
+                sendemail()
 
-                    def sendslack():
-                        # Eliminate the need to check for ssl
-                        ssl._create_default_https_context = ssl._create_unverified_context
-                        #Create a slack client and define todays date or moment date
-                        client = slack.WebClient(token=st.secrets.slack_bot_token)
+                def sendslack():
+                    # Eliminate the need to check for ssl
+                    ssl._create_default_https_context = ssl._create_unverified_context
+                    #Create a slack client and define todays date or moment date
+                    client = slack.WebClient(token=st.secrets.slack_bot_token)
 
-                        #Tell the client to select a channel and include the specified text.
-                        client.chat_postMessage(channel='#special-projects', text="Someone pressed the button on https://christianheins-wggesucht-wggesucht-2lmx07.streamlit.app")
-                        print("Sending slack message")
-                    sendslack()
+                    #Tell the client to select a channel and include the specified text.
+                    client.chat_postMessage(channel='#special-projects', text="Someone pressed the button on https://christianheins-wggesucht-wggesucht-2lmx07.streamlit.app")
+                    print("Sending slack message")
+                sendslack()
 
-                    button_pressed_2 = False
+                button_pressed_2 = False
 
-                    if button_pressed_2:
-                        st.write("Processing...")
-                    else:
-                        st.write("Ready to refresh again!")
-            col1, col2 = st.columns([0.5,0.5])
-            with col1:
-                st.image('https://media.giphy.com/media/XathaB5ILqSME/giphy.gif?cid=ecf05e479myrqtfsmnw3tsf81zg8em7pdz1ykm97adrjzwxu&rid=giphy.gif&ct=g', use_column_width=True)
-            with col2:
-                st.image('https://media.giphy.com/media/XathaB5ILqSME/giphy.gif?cid=ecf05e479myrqtfsmnw3tsf81zg8em7pdz1ykm97adrjzwxu&rid=giphy.gif&ct=g', use_column_width=True)
+                if button_pressed_2:
+                    st.write("Processing...")
+                else:
+                    st.write("Ready to refresh again!")
+                col1, col2 = st.columns([0.5,0.5])
+                with col1:
+                    st.image('https://media.giphy.com/media/XathaB5ILqSME/giphy.gif?cid=ecf05e479myrqtfsmnw3tsf81zg8em7pdz1ykm97adrjzwxu&rid=giphy.gif&ct=g', use_column_width=True)
+                with col2:
+                    st.image('https://media.giphy.com/media/XathaB5ILqSME/giphy.gif?cid=ecf05e479myrqtfsmnw3tsf81zg8em7pdz1ykm97adrjzwxu&rid=giphy.gif&ct=g', use_column_width=True)
 
 
     if selected == "🫂 Neighbourhoods":
