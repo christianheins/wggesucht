@@ -22,9 +22,16 @@ def main():
     from email.mime.image import MIMEImage
     import ssl
     import slack
-    import datetime
     import pytz
 
+    def deftime():
+        now = dt.now()
+        berlin_tzinfo = pytz.timezone("Europe/Berlin")
+        berlin_time = now.astimezone(berlin_tzinfo)
+        now = berlin_time
+        # Format: dd/mm/YY H:M:S
+        dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+        return(dt_string)
 
     #Streamlit
     #Pages
