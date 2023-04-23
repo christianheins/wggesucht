@@ -12,6 +12,8 @@ def main():
     import base64
     from github import Github
     from github import InputFileContent
+    import slack
+
 
     #Streamlit
     #Pages
