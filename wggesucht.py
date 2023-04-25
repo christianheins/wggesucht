@@ -395,6 +395,7 @@ def main():
 
     df_concat = pd.read_csv(nameofdataframe)
     df_concat.drop(columns=["Unnamed: 0.1", "Unnamed: 0"], inplace=True)
+    df_concat.rename(columns = {"index":"Data ID"}, inplace=True)
 
     st.write(df_concat)
     st.write(df_concat.columns)
