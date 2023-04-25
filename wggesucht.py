@@ -395,6 +395,9 @@ def main():
 
     df_concat = pd.read_csv(nameofdataframe)
     st.write(df_concat)
+    st.write(df_concat.columns)
+
+    df_concat.drop(columns=["Unn"])
 
     #Filtering a bit more the dataframe
     dataframe_filter1 = df_concat["Größe"] > 9
