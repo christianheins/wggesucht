@@ -450,7 +450,7 @@ def main():
             col1, col2, col3, col4 = st.columns([1, 1, 1, 1])
             with col1:
                 #st.metric("Min rent", value="{:,.0f} €".format(df_concat["Miete"].min()))
-                chart = alt.Chart(df_statistics.reset_index()).mark_boxplot().encode(
+                chart = alt.Chart(df_concat).mark_boxplot().encode(
                     y='Miete:Q'
                 ).properties(
                     height=400,
@@ -480,7 +480,7 @@ def main():
                 st.metric("Max size", value="{:,.0f} SQM".format(df_concat["Größe"].max()))
             with col3:
                 #st.metric("Min EUR per SQM", value="{:,.0f} € per SQM".format(df_concat["EUR / SQM"].min()))
-                chart = alt.Chart(df_statistics.reset_index()).mark_boxplot().encode(
+                chart = alt.Chart(df_concat).mark_boxplot().encode(
                     y='EUR / SQM:Q'
                 ).properties(
                     height=400,
@@ -494,7 +494,7 @@ def main():
                 st.metric("Max EUR per SQM", value="{:,.0f} € per SQM".format(df_concat["EUR / SQM"].max()))
             with col4:
                 #st.metric("Min lease term", value="{:,.0f} months".format(df_concat["Lease term"].min()))
-                chart = alt.Chart(df_statistics.reset_index()).mark_boxplot().encode(
+                chart = alt.Chart(df_concat).mark_boxplot().encode(
                     y='Lease term:Q'
                 ).properties(
                     height=400,
