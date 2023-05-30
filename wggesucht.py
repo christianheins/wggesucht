@@ -466,7 +466,7 @@ def main():
 
             with col2:
                 #st.metric("Min size", value="{:,.0f} SQM".format(df_concat["Größe"].min()))
-                chart = alt.Chart(df_statistics.reset_index().drop(1)).mark_boxplot().encode(
+                chart = alt.Chart(df_concat["Miete"]).mark_boxplot().encode(
                     y='Größe:Q'
                 ).properties(
                     height=400,
