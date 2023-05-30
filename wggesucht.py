@@ -459,7 +459,8 @@ def main():
                 chart = alt.Chart(df_statistics.reset_index()).mark_boxplot().encode(
                     y='Miete:Q'
                 ).properties(
-                    height=500
+                    height=500,
+                    width=300
                 )
                 st.altair_chart(chart)
             with col2:
