@@ -455,6 +455,11 @@ def main():
                 st.metric("50% of the leases are up to", value="{:,.0f} €".format(df_statistics.loc["50%"]["Miete"]))
                 st.metric("75% of the leases are up to", value="{:,.0f} €".format(df_statistics.loc["75%"]["Miete"]))
                 st.metric("Max rent", value="{:,.0f} €".format(df_concat["Miete"].max()))
+                chart = alt.Chart(df_statistics.reset_index()).mark_boxplot().encode(
+                    x='index:N',
+                    y='Miete:Q'
+                )
+                st.altair_chart(chart)
             with col2:
                 #st.metric("Min size", value="{:,.0f} SQM".format(df_concat["Größe"].min()))
                 st.metric("Standard deviation size", value="{:,.0f} SQM".format(df_concat["Größe"].std()))
