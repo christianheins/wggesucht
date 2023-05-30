@@ -460,7 +460,7 @@ def main():
                     y='Miete:Q'
                 ).properties(
                     height=500,
-                    width=30
+                    width=50
                 )
                 st.altair_chart(chart)
             with col2:
