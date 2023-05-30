@@ -466,6 +466,13 @@ def main():
 
             with col2:
                 #st.metric("Min size", value="{:,.0f} SQM".format(df_concat["Größe"].min()))
+                chart = alt.Chart(df_statistics.reset_index()).mark_boxplot().encode(
+                    y='Größe:Q'
+                ).properties(
+                    height=400,
+                    width=100
+                )
+                st.altair_chart(chart)
                 st.metric("Standard deviation size", value="{:,.0f} SQM".format(df_concat["Größe"].std()))
                 st.metric("25% of the leases are up to", value="{:,.0f} SQM".format(df_statistics.loc["25%"]["Größe"]))
                 st.metric("50% of the leases are up to", value="{:,.0f} SQM".format(df_statistics.loc["50%"]["Größe"]))
@@ -473,6 +480,13 @@ def main():
                 st.metric("Max size", value="{:,.0f} SQM".format(df_concat["Größe"].max()))
             with col3:
                 #st.metric("Min EUR per SQM", value="{:,.0f} € per SQM".format(df_concat["EUR / SQM"].min()))
+                chart = alt.Chart(df_statistics.reset_index()).mark_boxplot().encode(
+                    y='EUR / SQM:Q'
+                ).properties(
+                    height=400,
+                    width=100
+                )
+                st.altair_chart(chart)
                 st.metric("Standard deviation EUR per SQM", value="{:,.0f} € per SQM".format(df_concat["EUR / SQM"].std()))
                 st.metric("25% of the leases are up to", value="{:,.0f} € per SQM".format(df_statistics.loc["25%"]["EUR / SQM"]))
                 st.metric("50% of the leases are up to", value="{:,.0f} € per SQM".format(df_statistics.loc["50%"]["EUR / SQM"]))
@@ -480,6 +494,13 @@ def main():
                 st.metric("Max EUR per SQM", value="{:,.0f} € per SQM".format(df_concat["EUR / SQM"].max()))
             with col4:
                 #st.metric("Min lease term", value="{:,.0f} months".format(df_concat["Lease term"].min()))
+                chart = alt.Chart(df_statistics.reset_index()).mark_boxplot().encode(
+                    y='Lease term:Q'
+                ).properties(
+                    height=400,
+                    width=100
+                )
+                st.altair_chart(chart)
                 st.metric("Standard deviation lease term", value="{:,.0f} months".format(df_concat["Lease term"].std()))
                 st.metric("25% of the leases are up to", value="{:,.0f} months".format(df_statistics.loc["25%"]["Lease term"]))
                 st.metric("50% of the leases are up to", value="{:,.0f} months".format(df_statistics.loc["50%"]["Lease term"]))
