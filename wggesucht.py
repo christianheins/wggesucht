@@ -649,7 +649,7 @@ def main():
 
         with col2:
             chart = alt.Chart(df_concat).mark_point(color="orange").encode(
-                x=alt.X('Größe:Q', title='Size', axis=alt.Axis(tickCount=5)),
+                x=alt.X('Größe:Q', title='Size', axis=alt.Axis(tickCount=5), scale=alt.Scale(reverse=True)),
                 y=alt.Y('EUR / SQM:Q', title='Rent per SQM', axis=alt.Axis(tickCount=5)),
                 tooltip=['Größe', 'EUR / SQM']
             )
