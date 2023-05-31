@@ -656,7 +656,7 @@ def main():
             # show the chart
             st.altair_chart(chart.interactive(), use_container_width=True)
 
-            chart = alt.Chart(df_concat).mark_point(color="orange").encode(
+            chart = alt.Chart(df_concat[df_concat["Lease term"]>0]).mark_point(color="orange").encode(
                 x=alt.X('Lease term:Q', title='Lease term', axis=alt.Axis(tickCount=5)),
                 y=alt.Y('EUR / SQM:Q', title='EUR per SQM', axis=alt.Axis(tickCount=5)),
                 tooltip=['Neighbourhood', 'EUR / SQM', 'Link', 'Lease term']
