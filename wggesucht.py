@@ -546,6 +546,13 @@ def main():
             )
             st.altair_chart(wholechart.interactive(), use_container_width=True)
 
+            chart = alt.Chart(df_concat_pivot_releasedate).encode(
+                x='count()',
+                y=alt.Y('Eintrag:T', sort=None, axis=alt.Axis(title='Entry date')), #use 'sort=None' to preserve the order of categories
+                text=alt.Text('count', format='.1f')
+            )
+            st.altair_chart(chart.interactive(), use_container_width=True)
+
 
         st.markdown("""---""")
 
