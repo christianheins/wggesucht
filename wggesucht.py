@@ -629,7 +629,7 @@ def main():
         selected = option_menu(
             menu_title="Menu",
             options=["📏 Long term", "🩳 Short term"], #https://icons.getbootstrap.com/
-            orientation="vertical",
+            orientation="horizontal",
         )
 
 
