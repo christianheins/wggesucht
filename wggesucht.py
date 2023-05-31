@@ -494,7 +494,7 @@ def main():
                 st.metric("Max EUR per SQM", value="{:,.0f} € per SQM".format(df_concat["EUR / SQM"].max()))
             with col4:
                 #st.metric("Min lease term", value="{:,.0f} months".format(df_concat["Lease term"].min()))
-                chart = alt.Chart(df_concat).mark_boxplot().encode(
+                chart = alt.Chart(df_concat ).mark_boxplot().encode(
                     y='Lease term:Q'
                 ).properties(
                     height=400,
@@ -640,9 +640,9 @@ def main():
             st.altair_chart(chart.interactive(), use_container_width=True)
 
             chart = alt.Chart(df_concat).mark_point(color="orange").encode(
-                x=alt.X('Neighbourhood:N', title='Neighbourhood', axis=alt.Axis(tickCount=5)),
-                y=alt.Y('Miete:Q', title='Rent', axis=alt.Axis(tickCount=5)),
-                tooltip=['Neighbourhood', 'Miete']
+                x=alt.X('Lease term:Q', title='Neighbourhood', axis=alt.Axis(tickCount=5)),
+                y=alt.Y('EUR / SQM:Q', title='Rent', axis=alt.Axis(tickCount=5)),
+                tooltip=['Lease term', 'EUR / SQM']
             )
             # show the chart
             st.altair_chart(chart.interactive(), use_container_width=True)
