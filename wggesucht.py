@@ -628,7 +628,7 @@ def main():
 
         selected = option_menu(
             menu_title="⏱️ Lease term",
-            options=["📏 Long term", "🩳 Short term"], #https://icons.getbootstrap.com/
+            options=["All", "📏 Long term", "🩳 Short term"], #https://icons.getbootstrap.com/
             orientation="horizontal",
         )
 
