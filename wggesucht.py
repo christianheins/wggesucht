@@ -495,7 +495,6 @@ def main():
             with col4:
                 #st.metric("Min lease term", value="{:,.0f} months".format(df_concat["Lease term"].min()))
                 chart = alt.Chart(df_concat ).mark_boxplot().encode(
-                    y='Lease term:Q'
                     y=alt.Y('Lease term:Q', axis=alt.Axis(title='Lease term in months')
                 ).properties(
                     height=400,
