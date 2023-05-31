@@ -422,7 +422,7 @@ def main():
         st.markdown("<h6 style='text-align: center; color: orange;'>Properties table</h6>", unsafe_allow_html=True)
         with st.expander("Table"):
             st.write(df_concat.columns)
-            st.write(df_concat[['Name', 'Eintrag', 'Miete', 'Größe', 'EUR / SQM', 'Stadtteil', 'Neighbourhood', 'frei ab', 'frei bis','frei bis (Year - Month)', 'Lease term', 'Latitude', 'Longitude']])
+            st.write(df_concat)
         col1, col2, col3 = st.columns([0.2, 0.2, 0.6])
         with col1:
             st.metric("Available apartments", value="{:,.0f}".format(len(df_concat)))
