@@ -627,7 +627,7 @@ def main():
             st.altair_chart(wholechart.interactive(), use_container_width=True)
 
         selected = option_menu(
-            menu_title="Menu",
+            menu_title="⏱️ Lease term",
             options=["📏 Long term", "🩳 Short term"], #https://icons.getbootstrap.com/
             orientation="horizontal",
         )
