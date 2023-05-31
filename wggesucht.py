@@ -625,6 +625,14 @@ def main():
                 height=500
             )
             st.altair_chart(wholechart.interactive(), use_container_width=True)
+
+        selected = option_menu(
+            menu_title="Menu",
+            options=["📏 Long term", "🩳 Short term"], #https://icons.getbootstrap.com/
+            orientation="vertical",
+        )
+
+
         st.markdown("<h4 style='text-align: center; color: orange;'>💥 Scatter plots displaying the Rent / Size relationship</h4>", unsafe_allow_html=True)
 
         col1, col2 = st.columns([0.5,0.5])
