@@ -411,6 +411,7 @@ def main():
     with col1:
         st.markdown("<a href='https://www.linkedin.com/in/christian-h-0545aaa1/'>🔗 Find me on LinkedIn</a>", unsafe_allow_html=True)
         st.markdown("<a href='https://github.com/christianheins'>🔗 Find me on Github</a>", unsafe_allow_html=True)
+        st.header("SAL MAGUDA")
     with col2:
         with st.expander("INSTRUCTIONS"):
             st.markdown("<h6 style='text-align: left; color: red;'>Instructions</h6>", unsafe_allow_html=True)
