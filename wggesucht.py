@@ -45,7 +45,7 @@ def main():
         st.sidebar.header("Sections")
         selected = option_menu(
             menu_title="Menu",
-            options=["🏘️ Apartments", "🫂 Neighbourhoods", "📑 Sample contracts"], #https://icons.getbootstrap.com/
+            options=["🏘️ Apartmentssss", "🫂 Neighbourhoods", "📑 Sample contracts"], #https://icons.getbootstrap.com/
             orientation="vertical",
         )
 
