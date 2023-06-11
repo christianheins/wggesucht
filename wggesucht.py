@@ -430,10 +430,8 @@ def main():
         with col3:
             st.markdown("<img src='https://content.cdn.immowelt.com/iw_group/_processed_/9/b/csm_logo-rgb-immonet_c1dfb328a4.png' width=300></img>", unsafe_allow_html=True)
 
-        st.markdown("<p style='text-align: left; color: black;'></p>", unsafe_allow_html=True)
 
-
-    st.markdown("<h6 style='text-align: center; color: orange;'>Properties table</h6>", unsafe_allow_html=True)
+        st.markdown("<h6 style='text-align: center; color: orange;'>Properties table</h6>", unsafe_allow_html=True)
         with st.expander("Table"):
             st.write(df_concat.columns)
             st.write(df_concat)
