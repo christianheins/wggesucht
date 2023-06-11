@@ -420,9 +420,9 @@ def main():
 
     if selected == "🏘️ Apartments":
         st.markdown("<h1 style='text-align: center; color: orange;'>Property Analysis 🏘</h1>", unsafe_allow_html=True)
+        st.markdown("<h3 style='text-align: left; color: black;'>Scraped websites</h3>", unsafe_allow_html=True)
 
         col1, col2, col3 = st.columns([0.3,0.3, 0.3])
-        st.markdown("<h3 style='text-align: left; color: black;'>Scraped websites</h3>", unsafe_allow_html=True)
         with col1:
             st.markdown("<img src='https://www.lautgegennazis.de/wp-content/uploads/2016/10/WG_Banner.jpg' width=300></img>", unsafe_allow_html=True)
         with col2:
