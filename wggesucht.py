@@ -420,6 +420,11 @@ def main():
 
     if selected == "🏘️ Apartments":
         st.markdown("<h1 style='text-align: center; color: orange;'>🏘️ Property Analysis 🏘</h1>", unsafe_allow_html=True)
+        col1, col2 = st.columns([0.5,0.5])
+        with col1:
+            st.markdown("<h3 style='text-align: left; color: black;'>Scraped websites</h3>")
+        with col2:
+            st.markdown("<img src='https://soundcloud.com/groddinc/grodd-inc-global-podcast-series-32-wibrahim-murat?in=groddinc/sets/global-podcast-series'></img>")
         st.markdown("<h6 style='text-align: center; color: orange;'>Properties table</h6>", unsafe_allow_html=True)
         with st.expander("Table"):
             st.write(df_concat.columns)
