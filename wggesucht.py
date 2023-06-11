@@ -424,7 +424,7 @@ def main():
         with col1:
             st.markdown("<h3 style='text-align: left; color: black;'>Scraped websites</h3>", unsafe_allow_html=True)
         with col2:
-            st.markdown("<img src='https://www.lautgegennazis.de/wp-content/uploads/2016/10/WG_Banner.jpg'></img>", unsafe_allow_html=True)
+            st.markdown("<img src='https://www.lautgegennazis.de/wp-content/uploads/2016/10/WG_Banner.jpg' width=300></img>", unsafe_allow_html=True)
         st.markdown("<h6 style='text-align: center; color: orange;'>Properties table</h6>", unsafe_allow_html=True)
         with st.expander("Table"):
             st.write(df_concat.columns)
