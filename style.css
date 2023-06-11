@@ -27,6 +27,7 @@ div.css-1fcdlhc.e1s6o5jp0 {
     background-position: 62%;
     background-size: contain;
     padding-top: 100px;
+    opacity: 0;
 }
 [data-testid="stSidebarNav"] {
     background-image: url(https://raw.githubusercontent.com/christianheins/wggesucht/main/images/2.jpg);
@@ -34,7 +35,7 @@ div.css-1fcdlhc.e1s6o5jp0 {
     background-size: contain;
     background-position: 50% 0%;
     padding-top: 130px;
-    opacity: 0;
+
 }
 [data-testid="stSidebarNav"]::before {
     content: "Pages";
