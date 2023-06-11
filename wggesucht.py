@@ -429,9 +429,8 @@ def main():
             st.markdown("<img src='https://content.cdn.immowelt.com/iw_group/_processed_/c/5/csm_immowelt-Logo-thumb_262f254ba2.png' width=300></img>", unsafe_allow_html=True)
         with col3:
             st.markdown("<img src='https://content.cdn.immowelt.com/iw_group/_processed_/9/b/csm_logo-rgb-immonet_c1dfb328a4.png' width=300></img>", unsafe_allow_html=True)
-        text = "This is a website that uses different web scraping methods leveraging the libraries like Requests and Beautiful Soup. Web scraping allows us to extract data from websites by sending HTTP requests, parsing the HTML content, and extracting the desired information. With the help of the Requests library, we can send GET and POST requests to retrieve the HTML data of a webpage. The Beautiful Soup library provides convenient methods to parse and navigate the HTML tree structure, making it easy to locate and extract specific elements or data. By combining these powerful tools, we can automate the process of gathering data from websites, enabling us to analyze and utilize the extracted information in various ways. These techniques not only provide us with real-time data retrieval but also allow us to build and expand huge databases over time. By continuously scraping websites and storing the collected data, we can create valuable resources for analysis, research, and decision-making. Furthermore, through the application of different scraping techniques such as pagination, form submission, or dynamic content loading, we can access and gather data from even the most complex websites. This versatility in data acquisition empowers us to uncover insights, track trends, and gain a competitive edge in various domains and industries."
 
-        st.markdown(f"<p style='text-align: left; color: black;'>{text}</p>", unsafe_allow_html=True)
+        st.markdown("<p style='text-align: left; color: black;'></p>", unsafe_allow_html=True)
 
 
     st.markdown("<h6 style='text-align: center; color: orange;'>Properties table</h6>", unsafe_allow_html=True)
