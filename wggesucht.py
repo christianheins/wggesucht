@@ -424,24 +424,8 @@ def main():
 
         col1, col2 = st.columns([0.7, 0.3])
         with col1:
-            text = """
-            **Web Scraping for Data Collection**
-            
-            This website utilizes web scraping techniques with libraries like Requests and Beautiful Soup. Web scraping allows us to extract data from websites by sending HTTP requests, parsing HTML content, and retrieving specific information. With Requests, we can send GET and POST requests to retrieve webpage HTML data. Beautiful Soup provides methods to parse and navigate the HTML tree structure, making it easy to extract desired elements. By combining these tools, we automate data gathering from websites for analysis and utilization.
-            
-            **Building Comprehensive Databases**
-            
-            By leveraging web scraping techniques, we can build extensive databases over time. Continuously scraping websites and storing collected data creates valuable resources for research, analysis, and decision-making. These techniques enable real-time data retrieval and facilitate the expansion of databases. We can scrape complex websites using pagination, form submission, or dynamic content loading, ensuring access to diverse data sources.
-            
-            **Data Analysis with Streamlit**
-            
-            Our website showcases the capabilities of Streamlit, a powerful Python library for interactive web applications. Streamlit allows us to visualize and present scraped data, create interactive dashboards, and deliver seamless user experiences. With Streamlit, we transform extracted data into meaningful visualizations, charts, and tables. This simplifies data communication and sharing with others.
-            
-            **Uncovering Insights and Gaining Competitive Edge**
-            
-            By performing data analysis tasks using scraped data, we uncover insights, track trends, and gain a competitive edge. Web scraping empowers us to analyze data, extract valuable information, and make informed decisions. We can track market changes, monitor competitors, and identify opportunities across various domains and industries.
-            
-            """
+            text = "This is a website that uses different web scraping methods leveraging the libraries like Requests and Beautiful Soup. Web scraping allows us to extract data from websites by sending HTTP requests, parsing the HTML content, and extracting the desired information. With the help of the Requests library, we can send GET and POST requests to retrieve the HTML data of a webpage. The Beautiful Soup library provides convenient methods to parse and navigate the HTML tree structure, making it easy to locate and extract specific elements or data. By combining these powerful tools, we can automate the process of gathering data from websites, enabling us to analyze and utilize the extracted information in various ways. These techniques not only provide us with real-time data retrieval but also allow us to build and expand huge databases over time. By continuously scraping websites and storing the collected data, we can create valuable resources for analysis, research, and decision-making. Furthermore, through the application of different scraping techniques such as pagination, form submission, or dynamic content loading, we can access and gather data from even the most complex websites. This versatility in data acquisition empowers us to perform several data analysis tasks, uncover insights, track trends, and gain a competitive edge in various domains and industries. Additionally, we showcase the capabilities of Streamlit, a powerful Python library for building interactive web applications. Streamlit allows us to easily visualize and present the scraped data, create interactive dashboards, and provide a seamless user experience. With Streamlit, we can transform the extracted data into meaningful visualizations, charts, and tables, making it easier to communicate and share our findings with others."
+
             st.markdown(f"<p style='text-align: left; color: black;'>{text}</p>", unsafe_allow_html=True)
         with col2:
             st.markdown("<img src='https://content.cdn.immowelt.com/iw_group/_processed_/c/5/csm_immowelt-Logo-thumb_262f254ba2.png' width=300></img>", unsafe_allow_html=True)
