@@ -424,16 +424,7 @@ def main():
 
         col1, col2 = st.columns([0.7, 0.3])
         with col1:
-            text = "
-This is a website that showcases the capabilities of Streamlit, a powerful Python library for building interactive web applications. With Streamlit, we can transform scraped data into meaningful visualizations, charts, and tables, making it easier to communicate and share our findings with others.
-
-To retrieve data from websites, we leverage other Python libraries such as Requests and Beautiful Soup. The Requests library allows us to send GET and POST requests, retrieving the HTML content of a webpage. We then utilize the Beautiful Soup library to parse and navigate the HTML tree structure, making it easy to locate and extract specific elements or data.
-
-By combining Streamlit with these web scraping techniques, we can automate the process of gathering data from websites and create valuable resources for analysis, research, and decision-making. We can continuously scrape websites, storing the collected data to build and expand huge databases over time.
-
-Furthermore, web scraping techniques such as pagination, form submission, or dynamic content loading enable us to access and gather data from even the most complex websites. This versatility in data acquisition empowers us to perform several data analysis tasks, uncover insights, track trends, and gain a competitive edge in various domains and industries.
-
-Streamlit provides a seamless user experience, allowing us to create interactive dashboards and present the scraped data in a visually appealing manner. With Streamlit, we can easily showcase the extracted information through visualizations, charts, and tables, making it simple to communicate and share our findings effectively."
+            text = " This is a website that showcases the capabilities of Streamlit, a powerful Python library for building interactive web applications. With Streamlit, we can transform scraped data into meaningful visualizations, charts, and tables, making it easier to communicate and share our findings with others. To retrieve data from websites, we leverage other Python libraries such as Requests and Beautiful Soup. The Requests library allows us to send GET and POST requests, retrieving the HTML content of a webpage. We then utilize the Beautiful Soup library to parse and navigate the HTML tree structure, making it easy to locate and extract specific elements or data. By combining Streamlit with these web scraping techniques, we can automate the process of gathering data from websites and create valuable resources for analysis, research, and decision-making. We can continuously scrape websites, storing the collected data to build and expand huge databases over time. Furthermore, web scraping techniques such as pagination, form submission, or dynamic content loading enable us to access and gather data from even the most complex websites. This versatility in data acquisition empowers us to perform several data analysis tasks, uncover insights, track trends, and gain a competitive edge in various domains and industries. Streamlit provides a seamless user experience, allowing us to create interactive dashboards and present the scraped data in a visually appealing manner. With Streamlit, we can easily showcase the extracted information through visualizations, charts, and tables, making it simple to communicate and share our findings effectively."
 
             st.markdown(f"<p style='text-align: left; color: black;'>{text}</p>", unsafe_allow_html=True)
         with col2:
