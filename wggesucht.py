@@ -741,9 +741,9 @@ def main():
         df_2023_06 = pd.read_csv("df_concat_20230531.csv")
 
         st.write("Timelines")
-        st.write(df_2023_04.columns)
-        st.write(df_2023_05.columns)
-        st.write(df_2023_06.columns)
+        st.write(df_2023_04.columns.to_list())
+        st.write(df_2023_05.columns.to_list())
+        st.write(df_2023_06.columns.to_list())
 
 
         df_timeline = pd.concat([df_2023_04, df_2023_05, df_2023_06])
