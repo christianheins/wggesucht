@@ -20,7 +20,7 @@ st.markdown("<h1 style='text-align: center; color: orange;'>Property Analysis</h
 
 #Pages
 page_real_estate_general_dashboard = "wggesucht.py"
-page_maps = "pages/maps.py"
+page_maps = "pages/2_maps.py"
 #page_payments = "/Users/christianheins/Documents/Coding/Projects/WGGesucht/pages/wggesucht3.py"
 
 show_pages(
