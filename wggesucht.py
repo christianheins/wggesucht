@@ -741,6 +741,7 @@ def main():
         df_2023_05.rename(columns={"Pure rent":"Pure Rent"}, inplace=True)
         df_2023_06 = pd.read_csv("df_concat_20230630.csv")
         df_2023_06.rename(columns={"index":"Data ID", "DataFrame": "Dataframe Date", "Pure rent": "Pure Rent"}, inplace=True)
+        df_2023_06["Dataframe Date"] = "20230630"
 
         st.write("Timelines")
         st.write(df_2023_04.columns.to_list())
@@ -753,6 +754,7 @@ def main():
         st.write(len(df_timeline))
         df_timeline_pivotedby_dataframedate = df_timeline.pivot_table(index="Dataframe Date", aggfunc={"Pure Rent":["mean","sum"]}).reset_index()
         df_timeline_pivotedby_dataframedate.columns = [''.join(col).strip() for col in df_timeline_pivotedby_dataframedate.columns.values]
+
         st.write(df_timeline_pivotedby_dataframedate)
         col1, col2, col3 = st.columns([0.3, 0.3, 0.3])
         with col1:
