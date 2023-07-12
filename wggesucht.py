@@ -534,7 +534,6 @@ def main():
 
         with col3:
             df_concat_pivot_releasedate = df_concat[['Eintrag', 'Miete', 'Größe', 'EUR / SQM', 'Stadtteil', 'Neighbourhood']].pivot_table(index="Neighbourhood", values="Miete", aggfunc={"Miete":["count","mean"]}).reset_index()
-            st.write(df_concat_pivot_releasedate)
 
             chart = alt.Chart(df_concat_pivot_releasedate).encode(
                 x=alt.X('mean:Q', axis=alt.Axis(title='Mean SQM')),
@@ -552,19 +551,6 @@ def main():
             )
             st.markdown("<h6 style='text-align: center; color: orange;'>Average Rent per Neighbourhood</h6>", unsafe_allow_html=True)
             st.altair_chart(wholechart.interactive(), use_container_width=True)
-
-            st.markdown("<h6 style='text-align: center; color: orange;'>Release dates</h6>", unsafe_allow_html=True)
-            chart = alt.Chart(source).mark_arc(innerRadius=90).encode(
-                theta='Value:Q',
-                color=alt.Color('Category', scale=alt.Scale(scheme='category10')),
-                tooltip=['Value:Q'],
-            )
-            chart = chart.configure_legend(
-                orient='left'
-            ).properties(
-                height=300
-            )
-            st.altair_chart(chart.interactive(), use_container_width=True)
 
             df_concat_pivot_releasedate = df_concat[['Eintrag', 'Miete', 'Größe', 'EUR / SQM', 'Stadtteil', 'Neighbourhood']].pivot_table(index="Eintrag", values="Miete", aggfunc={"Miete":["count","mean"]}).reset_index()
             df_concat_pivot_releasedate['Eintrag'] = pd.to_datetime(df_concat_pivot_releasedate['Eintrag'], format='%d.%m.%Y', dayfirst=True)
