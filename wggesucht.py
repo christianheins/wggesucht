@@ -734,7 +734,7 @@ def main():
 
         df_2023_04 = pd.read_csv("df_concat_20230430.csv")
         df_2023_04["Dataframe Date"] = "20230430"
-        df_2023_04.rename(columns={"Unnamed: 8":"Dataframe","Unnamed: 0.1":"Data ID", "Unnamed: 0":"Link", "Latitude":"lat", "Longitude":"lon"}, inplace=True)
+        df_2023_04.rename(columns={"Unnamed: 8":"Dataframe","Unnamed: 0.1":"Data ID", "Unnamed: 0":"Link", "Latitude":"lat", "Longitude":"lon", "Miete":"Pure Rent"}, inplace=True)
 
         df_2023_05 = pd.read_csv("df_concat_20230531.csv")
         df_2023_05["Dataframe Date"] = "20230531"
@@ -750,7 +750,7 @@ def main():
         df_timeline = pd.concat([df_2023_04, df_2023_05, df_2023_06])
         st.write(df_timeline)
         st.write(len(df_timeline))
-        df_timeline_pivotedby_dataframedate = df_timeline.pivot_table(index="Dataframe Date", aggfunc={"Miete":["mean","sum"]}).reset_index()
+        df_timeline_pivotedby_dataframedate = df_timeline.pivot_table(index="Dataframe Date", aggfunc={"Pure Rent":["mean","sum"]}).reset_index()
         df_timeline_pivotedby_dataframedate.columns = [''.join(col).strip() for col in df_timeline_pivotedby_dataframedate.columns.values]
         col1, col2, col3 = st.columns([0.3, 0.3, 0.3])
         with col1:
@@ -759,7 +759,7 @@ def main():
                 color="red"
             ).encode(
                 x='Dataframe Date:O',
-                y=alt.Y('Mietemean:Q'),
+                y=alt.Y('Pure Rent mean:Q'),
             ).interactive()
 
             chart2 = alt.Chart(df_timeline_pivotedby_dataframedate).mark_bar(
@@ -767,7 +767,7 @@ def main():
                 opacity=0.5,
             ).encode(
                 x='Dataframe Date:O',
-                y=alt.Y('Mietemean:Q'),
+                y=alt.Y('Pure Rent mean:Q'),
             ).interactive()
 
 
@@ -781,7 +781,7 @@ def main():
                 color="red"
             ).encode(
                 x='Dataframe Date:O',
-                y=alt.Y('Mietemean:Q'),
+                y=alt.Y('Pure Rent mean:Q'),
             ).interactive()
 
             chart2 = alt.Chart(df_timeline_pivotedby_dataframedate).mark_bar(
@@ -789,7 +789,7 @@ def main():
                 opacity=0.5,
             ).encode(
                 x='Dataframe Date:O',
-                y=alt.Y('Mietemean:Q'),
+                y=alt.Y('Pure Rent mean:Q'),
             ).interactive()
 
 
@@ -803,7 +803,7 @@ def main():
                 color="red"
             ).encode(
                 x='Dataframe Date:O',
-                y=alt.Y('Mietemean:Q'),
+                y=alt.Y('Pure Rent mean:Q'),
             ).interactive()
 
             chart2 = alt.Chart(df_timeline_pivotedby_dataframedate).mark_bar(
@@ -811,7 +811,7 @@ def main():
                 opacity=0.5,
             ).encode(
                 x='Dataframe Date:O',
-                y=alt.Y('Mietemean:Q'),
+                y=alt.Y('Pure Rent mean:Q'),
             ).interactive()
 
 
