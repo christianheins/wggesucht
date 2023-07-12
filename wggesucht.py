@@ -752,6 +752,7 @@ def main():
         st.write(len(df_timeline))
         df_timeline_pivotedby_dataframedate = df_timeline.pivot_table(index="Dataframe Date", aggfunc={"Pure Rent":["mean","sum"]}).reset_index()
         df_timeline_pivotedby_dataframedate.columns = [''.join(col).strip() for col in df_timeline_pivotedby_dataframedate.columns.values]
+        st.write(df_timeline_pivotedby_dataframedate)
         col1, col2, col3 = st.columns([0.3, 0.3, 0.3])
         with col1:
 
