@@ -548,8 +548,10 @@ def main():
             wholechart = alt.layer(chart.mark_bar(color="orange"), chart.mark_text(align='left', dx=8, color="black"))
 
             wholechart = wholechart.properties(
-                height=500
+                height=300
             )
+            st.markdown("<h6 style='text-align: center; color: orange;'>Average Rent per Neighbourhood</h6>", unsafe_allow_html=True)
+            st.altair_chart(wholechart.interactive(), use_container_width=True)
 
             st.markdown("<h6 style='text-align: center; color: orange;'>Release dates</h6>", unsafe_allow_html=True)
             chart = alt.Chart(source).mark_arc(innerRadius=90).encode(
