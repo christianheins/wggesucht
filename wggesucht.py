@@ -763,7 +763,7 @@ def main():
         df_timeline_pivotedby_dataframedate.columns = [''.join(col).strip() for col in df_timeline_pivotedby_dataframedate.columns.values]
 
         st.write(df_timeline_pivotedby_dataframedate)
-        col1, col2, col3 = st.columns([0.3, 0.3, 0.3])
+        col1, col2, col3, col4 = st.columns([0.25, 0.25, 0.25, 0.25])
         with col1:
 
             chart = alt.Chart(df_timeline_pivotedby_dataframedate).mark_line(
@@ -823,6 +823,26 @@ def main():
             ).encode(
                 x='Dataframe Date:O',
                 y=alt.Y('Pure Sizemean:Q'),
+            ).interactive()
+
+
+            chart = (chart + chart2)
+            chart = chart
+            st.altair_chart(chart, use_container_width=True)
+        with col4:
+            chart = alt.Chart(df_timeline_pivotedby_dataframedate).mark_line(
+                color="red"
+            ).encode(
+                x='Dataframe Date:O',
+                y=alt.Y('Pure Sizesum:Q'),
+            ).interactive()
+
+            chart2 = alt.Chart(df_timeline_pivotedby_dataframedate).mark_bar(
+                color="#95B5C3",
+                opacity=0.5,
+            ).encode(
+                x='Dataframe Date:O',
+                y=alt.Y('Pure Sizesum:Q'),
             ).interactive()
 
 
