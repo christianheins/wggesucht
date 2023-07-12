@@ -405,13 +405,13 @@ def main():
     dataframe_filter1 = df_concat["Größe"] > 9
     dataframe_filter2 = df_concat["Miete"] > 9
     df_concat = df_concat[dataframe_filter1]
+    st.header("🚧 SAL MAGUDA - WORK IN PROGRESS")
 
 
     col1, col2 = st.columns([0.2, 0.8])
     with col1:
         st.markdown("<a href='https://www.linkedin.com/in/christian-h-0545aaa1/'>🔗 Find me on LinkedIn</a>", unsafe_allow_html=True)
         st.markdown("<a href='https://github.com/christianheins'>🔗 Find me on Github</a>", unsafe_allow_html=True)
-        st.header("🚧 SAL MAGUDA - WORK IN PROGRESS")
     with col2:
         with st.expander("INSTRUCTIONS"):
             st.markdown("<h6 style='text-align: left; color: red;'>Instructions</h6>", unsafe_allow_html=True)
