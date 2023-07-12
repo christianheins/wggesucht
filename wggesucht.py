@@ -740,7 +740,7 @@ def main():
         df_2023_05["Dataframe Date"] = "20230531"
         df_2023_05.rename(columns={"Pure rent":"Pure Rent"}, inplace=True)
         df_2023_06 = pd.read_csv("df_concat_20230630.csv")
-        df_2023_06.rename(columns={"index":"Data ID"}, inplace=True)
+        df_2023_06.rename(columns={"index":"Data ID", "DataFrame": "Dataframe Date", "Pure rent": "Pure Rent"}, inplace=True)
 
         st.write("Timelines")
         st.write(df_2023_04.columns.to_list())
