@@ -738,11 +738,14 @@ def main():
 
         df_2023_05 = pd.read_csv("df_concat_20230531.csv")
         df_2023_05["Dataframe Date"] = "20230531"
+        df_2023_05["Pure Rent"] = df_2023_05["Price"]
         df_2023_05.rename(columns={"Pure rent":"Pure Rent"}, inplace=True)
         df_2023_06 = pd.read_csv("df_concat_20230630.csv")
         df_2023_06.rename(columns={"index":"Data ID", "DataFrame": "Dataframe Date", "Pure rent": "Pure Rent"}, inplace=True)
         df_2023_06["Dataframe Date"] = "20230630"
+        df_2023_06["Pure Rent"] = df_2023_06["Price"]
         df_2023_07 = pd.read_csv("df_concat_20230712.csv")
+        df_2023_07["Pure Rent"] = df_2023_06["Price"]
 
 
 
@@ -753,7 +756,7 @@ def main():
         st.write(df_2023_07.columns.to_list())
 
 
-        df_timeline = pd.concat([df_2023_04, df_2023_05, df_2023_06])
+        df_timeline = pd.concat([df_2023_04, df_2023_05, df_2023_06, df_2023_07])
         st.write(df_timeline)
         st.write(len(df_timeline))
         df_timeline_pivotedby_dataframedate = df_timeline.pivot_table(index="Dataframe Date", aggfunc={"Pure Rent":["mean","sum"]}).reset_index()
