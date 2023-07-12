@@ -757,6 +757,7 @@ def main():
 
 
         df_timeline = pd.concat([df_2023_05, df_2023_06, df_2023_07])
+        df_timeline.to_excel("Timeline.xlsx")
         st.write(df_timeline)
         st.write(f"Number of records:{len(df_timeline)}")
         st.subheader("Timeline pivoting and aggregating")
