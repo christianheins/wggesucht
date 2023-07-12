@@ -438,12 +438,16 @@ def main():
         with st.expander("Table"):
             st.write(df_concat.columns)
             st.write(df_concat)
-        col1, col2, col3 = st.columns([0.2, 0.2, 0.6])
+        col1, col2, col3, col4 = st.columns([0.2, 0.2, 0.6, 0.2])
         with col1:
             st.metric("Available apartments", value="{:,.0f}".format(len(df_concat)))
         with col2:
             st.metric("Unique neighbourhoods", value="{:,.0f}".format(len(df_concat[['Eintrag', 'Miete', 'Größe', 'EUR / SQM', 'Stadtteil', 'Neighbourhood']].pivot_table(index="Neighbourhood", values="Eintrag", aggfunc="count").reset_index())))
         with col3:
+            df_concat['Eintrag'] = pd.to_datetime(df_concat['Eintrag'], format='%d.%m.%Y', dayfirst=True)
+            oldestdate = df_concat["Eintrag"].min()
+            st.metric("Oldest entry date", value=str(oldestdate))
+        with col4:
             df_concat['Eintrag'] = pd.to_datetime(df_concat['Eintrag'], format='%d.%m.%Y', dayfirst=True)
             oldestdate = df_concat["Eintrag"].min()
             st.metric("Oldest entry date", value=str(oldestdate))
@@ -746,8 +750,9 @@ def main():
         df_2023_06["Pure Rent"] = df_2023_06["Price"]
 
         df_2023_07 = pd.read_csv("df_concat_20230712.csv")
+        df_2023_04.rename(columns={"Unnamed: 8":"Dataframe","Unnamed: 0.1":"Data ID", "Unnamed: 0":"Link", "Latitude":"lat", "Longitude":"lon", "Miete":"Pure Rent"}, inplace=True)
         df_2023_07["Pure Rent"] = df_2023_06["Price"]
-
+        df_2023_07["Dataframe Date"] = "20230712"
 
 
         st.write("Timelines")
