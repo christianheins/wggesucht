@@ -504,6 +504,7 @@ def main():
             chart = chart.configure_legend(
                 orient='left'
             )
+
             chart = chart.properties(
                 height=300
             )
@@ -512,6 +513,7 @@ def main():
 
 
             df_concat_neighbourhoods_filtered = df_concat_neighbourhoods.iloc[:20]
+
             chart = alt.Chart(df_concat_neighbourhoods_filtered).encode(
                 x=alt.X('Eintrag:Q', axis=alt.Axis(title='Count')),
                 y=alt.Y('Neighbourhood:N', sort=None), #use 'sort=None' to preserve the order of categories
@@ -533,6 +535,21 @@ def main():
         with col3:
             df_concat_pivot_releasedate = df_concat[['Eintrag', 'Miete', 'Größe', 'EUR / SQM', 'Stadtteil', 'Neighbourhood']].pivot_table(index="Neighbourhood", values="Miete", aggfunc={"Miete":["count","mean"]}).reset_index()
             st.write(df_concat_pivot_releasedate)
+
+            chart = alt.Chart(df_concat_pivot_releasedate).encode(
+                x=alt.X('mean:Q', axis=alt.Axis(title='Mean SQM')),
+                y=alt.Y('Neighbourhood:N', sort=None), #use 'sort=None' to preserve the order of categories
+                text=alt.Text('mean:Q', format='.1f'),
+            )
+            #Combine bar chart with text chart, weird isnt?
+
+            #wholechart = chart.mark_bar(color="orange") + chart.mark_text(align='left', dx=8, color="black")
+
+            wholechart = alt.layer(chart.mark_bar(color="orange"), chart.mark_text(align='left', dx=8, color="black"))
+
+            wholechart = wholechart.properties(
+                height=500
+            )
 
             st.markdown("<h6 style='text-align: center; color: orange;'>Release dates</h6>", unsafe_allow_html=True)
             chart = alt.Chart(source).mark_arc(innerRadius=90).encode(
