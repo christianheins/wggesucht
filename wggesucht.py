@@ -739,7 +739,6 @@ def main():
 
         df_2023_05 = df_concat
         df_2023_06 = pd.read_csv("df_concat_20230531.csv")
-        df_2023_06.rename(columns={"Unnamed: 8":"Dataframe", "index":"Data ID", "Unnamed: 0":"Link", "Latitude":"lat", "Longitude":"lon"}, inplace=True)
 
         st.write("Timelines")
         st.write(df_2023_04.columns.to_list())
