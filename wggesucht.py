@@ -758,7 +758,7 @@ def main():
 
         df_timeline = pd.concat([df_2023_05, df_2023_06, df_2023_07])
         st.write(df_timeline)
-        st.write("Number of records:"&len(df_timeline))
+        st.write(f"Number of records:{len(df_timeline)}")
         st.subheader("Timeline pivoting and aggregating")
 
         df_timeline_pivotedby_dataframedate = df_timeline.pivot_table(index="Dataframe Date", aggfunc={"Pure Rent":["mean","sum"], "Size":["mean","sum"]}).reset_index()
