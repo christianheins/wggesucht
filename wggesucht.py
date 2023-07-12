@@ -740,6 +740,11 @@ def main():
         df_2023_05 = df_concat
         df_2023_06 = pd.read_csv("df_concat_20230531.csv")
 
+        st.write(df_2023_04.columns)
+        st.write(df_2023_05.columns)
+        st.write(df_2023_06.columns)
+
+
         df_timeline = pd.concat([df_2023_04, df_2023_05, df_2023_06])
         st.write(df_timeline)
         st.write(len(df_timeline))
