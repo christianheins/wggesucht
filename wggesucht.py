@@ -531,7 +531,6 @@ def main():
             st.altair_chart(wholechart.interactive(), use_container_width=True)
 
         with col3:
-
             st.markdown("<h6 style='text-align: center; color: orange;'>Release dates</h6>", unsafe_allow_html=True)
             chart = alt.Chart(source).mark_arc(innerRadius=90).encode(
                 theta='Value:Q',
