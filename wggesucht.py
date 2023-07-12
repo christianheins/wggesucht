@@ -757,8 +757,25 @@ def main():
 
 
         df_timeline = pd.concat([df_2023_05, df_2023_06, df_2023_07])
-        df_timeline.to_excel("images\Timeline.xlsx")
-        df_timeline.to_csv("images\Timeline.xlsx")
+        df_timeline.to_csv(f"{nameofdataframe}")
+
+        #Upload to github
+        nameofdataframe_timeline = "Timeline.csv"
+        access_token = st.secrets.token
+        repo_name = "wggesucht"
+        g = Github(access_token)
+        repo = g.get_user().get_repo(repo_name)
+        csv_file = pd.read_csv(nameofdataframe_timeline)
+        csv_file_string = csv_file.to_csv(index=False)
+        csv_file_content = InputFileContent(csv_file_string)
+        csv_file_content_str = str(csv_file_content)
+        contents = repo.get_contents(nameofdataframe_timeline)
+        repo.delete_file(nameofdataframe_timeline, "remove dataframe", contents.sha, branch="main")
+        repo.create_file(nameofdataframe_timeline, "upload new dataframe", csv_file_string)
+        st.write(f"Dataframe with name {nameofdataframe_timeline} uploaded.")
+        # Notify the user that the file has been updated
+        st.success(f"The file {nameofdataframe_timeline} has been updated!")
+
         st.write(df_timeline)
         st.write(f"Number of records:{len(df_timeline)}")
         st.subheader("Timeline pivoting and aggregating")
