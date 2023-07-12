@@ -736,15 +736,9 @@ def main():
 
         st.header("📈 Rent timeline")
 
-        df_2023_04 = pd.read_csv("df_concat_20230430.csv")
-        df_2023_04["Dataframe Date"] = "20230430"
-        df_2023_04.rename(columns={"Unnamed: 8":"Dataframe","Unnamed: 0.1":"Data ID", "Unnamed: 0":"Link", "Latitude":"lat", "Longitude":"lon", "Miete":"Pure Rent"}, inplace=True)
-        df_2023_04.reset_index(drop=True, inplace=True)
-
         df_2023_05 = pd.read_csv("df_concat_20230531.csv")
         df_2023_05["Dataframe Date"] = "20230531"
-        df_2023_05["Pure Rent"] = df_2023_05["Price"]
-        df_2023_05.rename(columns={"Pure rent":"Pure Rent"}, inplace=True)
+        df_2023_05.rename(columns={"Unnamed: 8":"Dataframe","Unnamed: 0.1":"Data ID", "Unnamed: 0":"Link", "Latitude":"lat", "Longitude":"lon", "Miete":"Pure Rent"}, inplace=True)
         df_2023_05.reset_index(drop=True, inplace=True)
 
         df_2023_06 = pd.read_csv("df_concat_20230630.csv")
@@ -762,14 +756,13 @@ def main():
 
 
         st.write("Timelines")
-        st.write(df_2023_04.columns.to_list())
         st.write(df_2023_05.columns.to_list())
         st.write(df_2023_06.columns.to_list())
         st.write(df_2023_07.columns.to_list())
         st.write(df_2023_07)
 
 
-        df_timeline = pd.concat([df_2023_04, df_2023_06, df_2023_07])
+        df_timeline = pd.concat([df_2023_05, df_2023_06, df_2023_07])
         st.write(df_timeline)
         st.write(len(df_timeline))
         df_timeline_pivotedby_dataframedate = df_timeline.pivot_table(index="Dataframe Date", aggfunc={"Pure Rent":["mean","sum"]}).reset_index()
