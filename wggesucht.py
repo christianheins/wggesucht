@@ -400,7 +400,6 @@ def main():
     #st.write(df_concat)
     #st.write(df_concat.columns)
 
-
     #Filtering a bit more the dataframe
     dataframe_filter1 = df_concat["Größe"] > 9
     dataframe_filter2 = df_concat["Miete"] > 9
@@ -432,8 +431,6 @@ def main():
             st.markdown("<img src='https://www.lautgegennazis.de/wp-content/uploads/2016/10/WG_Banner.jpg' width=300></img>", unsafe_allow_html=True)
             st.markdown("<img src='https://content.cdn.immowelt.com/iw_group/_processed_/9/b/csm_logo-rgb-immonet_c1dfb328a4.png' width=300></img>", unsafe_allow_html=True)
 
-
-
         st.markdown("<h6 style='text-align: center; color: orange;'>Properties table</h6>", unsafe_allow_html=True)
         with st.expander("Table"):
             st.write(df_concat.columns)
@@ -449,8 +446,8 @@ def main():
             st.metric("Oldest entry date", value=str(oldestdate))
         with col4:
             df_concat['Eintrag'] = pd.to_datetime(df_concat['Eintrag'], format='%d.%m.%Y', dayfirst=True)
-            oldestdate = df_concat["Eintrag"].min()
-            st.metric("Oldest entry date", value=str(oldestdate))
+            oldestdate = df_concat["Eintrag"].max()
+            st.metric("Max entry date", value=str(oldestdate))
 
         st.markdown("""---""")
 
