@@ -742,11 +742,15 @@ def main():
         df_2023_06 = pd.read_csv("df_concat_20230630.csv")
         df_2023_06.rename(columns={"index":"Data ID", "DataFrame": "Dataframe Date", "Pure rent": "Pure Rent"}, inplace=True)
         df_2023_06["Dataframe Date"] = "20230630"
+        df_2023_07 = pd.read_csv("df_concat_20230712.csv")
+
+
 
         st.write("Timelines")
         st.write(df_2023_04.columns.to_list())
         st.write(df_2023_05.columns.to_list())
         st.write(df_2023_06.columns.to_list())
+        st.write(df_2023_07.columns.to_list())
 
 
         df_timeline = pd.concat([df_2023_04, df_2023_05, df_2023_06])
