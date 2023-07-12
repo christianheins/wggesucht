@@ -814,7 +814,7 @@ def main():
                 color="red"
             ).encode(
                 x='Dataframe Date:O',
-                y=alt.Y('Pure Sizemean:Q'),
+                y=alt.Y('Sizemean:Q'),
             ).interactive()
 
             chart2 = alt.Chart(df_timeline_pivotedby_dataframedate).mark_bar(
@@ -822,7 +822,7 @@ def main():
                 opacity=0.5,
             ).encode(
                 x='Dataframe Date:O',
-                y=alt.Y('Pure Sizemean:Q'),
+                y=alt.Y('Sizemean:Q'),
             ).interactive()
 
 
@@ -834,7 +834,7 @@ def main():
                 color="red"
             ).encode(
                 x='Dataframe Date:O',
-                y=alt.Y('Pure Sizesum:Q'),
+                y=alt.Y('Sizesum:Q'),
             ).interactive()
 
             chart2 = alt.Chart(df_timeline_pivotedby_dataframedate).mark_bar(
@@ -842,7 +842,7 @@ def main():
                 opacity=0.5,
             ).encode(
                 x='Dataframe Date:O',
-                y=alt.Y('Pure Sizesum:Q'),
+                y=alt.Y('Sizesum:Q'),
             ).interactive()
 
 
