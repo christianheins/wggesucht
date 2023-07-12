@@ -732,12 +732,15 @@ def main():
 
         st.header("📈 Rent timeline")
 
-        df_old = pd.read_csv("df_concat_20230412.csv")
-        df_old["Dataframe Date"] = "20230412"
+        df_2023_04 = pd.read_csv("df_concat_20230412.csv")
+        df_2023_04["Dataframe Date"] = "20230430"
 
         df_concat["Dataframe Date"] = "20230420"
 
-        df_timeline = pd.concat([df_concat, df_old])
+        df_2023_05 = df_concat
+        df_2023_06 = pd.read_csv("df_concat_20230531.csv")
+
+        df_timeline = pd.concat([df_2023_04, df_2023_05, df_2023_06])
         st.write(df_timeline)
         st.write(len(df_timeline))
         df_timeline_pivotedby_dataframedate = df_timeline.pivot_table(index="Dataframe Date", aggfunc={"Miete":["mean","sum"]}).reset_index()
