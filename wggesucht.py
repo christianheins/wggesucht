@@ -755,13 +755,6 @@ def main():
         df_2023_07["Dataframe Date"] = "20230712"
 
 
-        st.write("Timelines")
-        st.write(df_2023_05.columns.to_list())
-        st.write(df_2023_06.columns.to_list())
-        st.write(df_2023_07.columns.to_list())
-        st.write(df_2023_07)
-
-
         df_timeline = pd.concat([df_2023_05, df_2023_06, df_2023_07])
         st.write(df_timeline)
         st.write(len(df_timeline))
