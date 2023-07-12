@@ -743,15 +743,15 @@ def main():
         df_2023_05 = pd.read_csv("df_concat_20230531.csv")
         df_2023_05["Dataframe Date"] = "20230531"
         df_2023_05["Pure Rent"] = df_2023_05["Price"]
-        df_2023_05.rename(columns={"Pure rent":"Pure Rent"}, inplace=True)
+        df_2023_05.rename(columns={"Pure rent":"Pure Rent"}, inplace=True).reset_index(drop=True)
         df_2023_06 = pd.read_csv("df_concat_20230630.csv")
-        df_2023_06.rename(columns={"index":"Data ID", "DataFrame": "Dataframe Date", "Pure rent": "Pure Rent"}, inplace=True)
+        df_2023_06.rename(columns={"index":"Data ID", "DataFrame": "Dataframe Date", "Pure rent": "Pure Rent"}, inplace=True).reset_index(drop=True)
         df_2023_06["Dataframe Date"] = "20230630"
         df_2023_06["Pure Rent"] = df_2023_06["Price"]
 
         df_2023_07 = pd.read_csv("df_concat_20230712.csv")
         df_2023_07.rename(columns={"index":"Data ID", "Latitude":"lat", "Longitude":"lon"}, inplace=True)
-        df_2023_07.drop(columns=["Unnamed: 0.1", "Unnamed: 0"], inplace=True)
+        df_2023_07.drop(columns=["Unnamed: 0.1", "Unnamed: 0"], inplace=True).reset_index(drop=True)
         df_2023_07["Pure Rent"] = df_2023_06["Price"]
         df_2023_07["Dataframe Date"] = "20230712"
 
@@ -762,7 +762,6 @@ def main():
         st.write(df_2023_06.columns.to_list())
         st.write(df_2023_07.columns.to_list())
         st.write(df_2023_07)
-
 
 
         df_timeline = pd.concat([df_2023_04, df_2023_05, df_2023_06, df_2023_07])
