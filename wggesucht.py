@@ -531,7 +531,7 @@ def main():
             st.altair_chart(wholechart.interactive(), use_container_width=True)
 
         with col3:
-            df_concat_pivot_releasedate = df_concat[['Eintrag', 'Miete', 'Größe', 'EUR / SQM', 'Stadtteil', 'Neighbourhood']].pivot_table(index="Stadtteil", values="Miete", aggfunc={"Miete":["count","mean"]}).reset_index()
+            df_concat_pivot_releasedate = df_concat[['Eintrag', 'Miete', 'Größe', 'EUR / SQM', 'Stadtteil', 'Neighbourhood']].pivot_table(index="Neighbourhood", values="Miete", aggfunc={"Miete":["count","mean"]}).reset_index()
             st.write(df_concat_pivot_releasedate)
 
             st.markdown("<h6 style='text-align: center; color: orange;'>Release dates</h6>", unsafe_allow_html=True)
