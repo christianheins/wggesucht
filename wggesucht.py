@@ -750,7 +750,7 @@ def main():
         df_2023_06["Pure Rent"] = df_2023_06["Price"]
 
         df_2023_07 = pd.read_csv("df_concat_20230712.csv")
-        df_2023_07.rename(columns={"index":"Data ID", "Unnamed: 0":"Link", "Latitude":"lat", "Longitude":"lon"}, inplace=True)
+        df_2023_07.rename(columns={"index":"Data ID", "Latitude":"lat", "Longitude":"lon"}, inplace=True)
         df_2023_07["Pure Rent"] = df_2023_06["Price"]
         df_2023_07["Dataframe Date"] = "20230712"
 
