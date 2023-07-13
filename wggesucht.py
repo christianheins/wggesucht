@@ -435,7 +435,8 @@ def main():
         with st.expander("Table"):
             st.write(df_concat.columns)
             st.write(df_concat)
-        col1, col2, col3, col4 = st.columns([0.2, 0.2, 0.6, 0.2])
+
+        col1, col2, col3, col4 = st.columns([0.25, 0.25, 0.25, 0.25])
         with col1:
             st.metric("Available apartments", value="{:,.0f}".format(len(df_concat)))
         with col2:
