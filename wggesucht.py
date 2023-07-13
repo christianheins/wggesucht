@@ -804,7 +804,7 @@ def main():
 
 
             chart = (chart + chart2)
-            chart = chart
+            chart = chart.encode(alt.Y(title="Average Pure Rent"))
             st.altair_chart(chart, use_container_width=True)
 
         with col3:
@@ -826,7 +826,7 @@ def main():
 
 
             chart = (chart + chart2)
-            chart = chart
+            chart = chart.encode(alt.Y(title="Total Scraped Rent"))
             st.altair_chart(chart, use_container_width=True)
         with col4:
             chart = alt.Chart(df_timeline_pivotedby_dataframedate).mark_line(
