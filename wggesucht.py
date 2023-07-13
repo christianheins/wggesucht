@@ -782,7 +782,7 @@ def main():
 
 
             chart = (chart + chart2)
-            chart = chart.properties(alt.Y(title="Average Pure Rent"))
+            chart = chart.encode(alt.Y(title="Average Pure Rent"))
             st.altair_chart(chart, use_container_width=True)
 
         with col2:
