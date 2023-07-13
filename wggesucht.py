@@ -753,7 +753,6 @@ def main():
         df_2023_07["Pure Rent"] = df_2023_07["Price"]
         df_2023_07["Dataframe Date"] = "20230712"
 
-
         df_timeline = pd.concat([df_2023_05, df_2023_06, df_2023_07])
         st.write(df_timeline)
         st.write(f"Number of records:{len(df_timeline)}")
@@ -761,8 +760,8 @@ def main():
 
         df_timeline_pivotedby_dataframedate = df_timeline.pivot_table(index="Dataframe Date", aggfunc={"Pure Rent":["mean","sum"], "Size":["mean","sum"]}).reset_index()
         df_timeline_pivotedby_dataframedate.columns = [''.join(col).strip() for col in df_timeline_pivotedby_dataframedate.columns.values]
-
         st.write(df_timeline_pivotedby_dataframedate)
+
         col1, col2, col3, col4 = st.columns([0.25, 0.25, 0.25, 0.25])
         with col1:
 
@@ -783,7 +782,7 @@ def main():
 
 
             chart = (chart + chart2)
-            chart = chart
+            chart = chart.properties(alt.Y(title="Average Pure Rent"))
             st.altair_chart(chart, use_container_width=True)
 
         with col2:
