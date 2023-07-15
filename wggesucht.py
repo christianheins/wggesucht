@@ -49,7 +49,7 @@ def main():
             orientation="vertical",
         )
 
-        #Create a button
+        # Create a button
         button_pressed = False
         st.markdown("""---""")
         st.markdown("<p style='text-align: center; color: red;'>Click to refresh the WG-Gesucht dataframe</p>", unsafe_allow_html=True)
@@ -383,11 +383,12 @@ def main():
             else:
                 st.write("Ready to refresh again!")
 
-        #Specify a path
+        # Specify a path
         path = nameofdataframe
         # file modification timestamp of a file
         m_time = os.path.getctime(path)
-        # convert timestamp into DateTime object
+
+        # Convert timestamp into DateTime object
         dt_m = datetime.datetime.fromtimestamp(m_time).strftime("%d/%m/%Y - %H:%M:%S")
         st.write(f'File last created on: {dt_m}')
         st.markdown("""---""")
@@ -400,7 +401,8 @@ def main():
     #st.write(df_concat)
     #st.write(df_concat.columns)
 
-    #Filtering a bit more the dataframe
+
+    # Filtering a bit more the dataframe
     dataframe_filter1 = df_concat["Größe"] > 9
     dataframe_filter2 = df_concat["Miete"] > 9
     df_concat = df_concat[dataframe_filter1]
@@ -460,31 +462,37 @@ def main():
 
         col1, col2, col3= st.columns([0.3, 0.3, 0.3])
         with col1:
-            df_concat_pivot_longterm = df_concat["Lease term"].isna().sum()
-            df_concat_pivot_shortterm = len(df_concat[df_concat["Lease term"] > 0])
-            source = pd.DataFrame({"Category": ["Indefinite term", "Limited term"], "Value": [df_concat_pivot_longterm, df_concat_pivot_shortterm]})
-            st.markdown("<h6 style='text-align: center; color: orange;'>Lease term Donut</h6>", unsafe_allow_html=True)
 
-            chart = alt.Chart(source).mark_arc(innerRadius=90).encode(
-                theta='Value:Q',
-                color=alt.Color('Category', scale=alt.Scale(scheme='category10')),
-                tooltip=['Value:Q'],
+            # Add a
+            df_concat_neighbourhoods_filtered = df_concat_neighbourhoods.iloc[:20]
+
+            chart = alt.Chart(df_concat_neighbourhoods_filtered).encode(
+                x=alt.X('Eintrag:Q', axis=alt.Axis(title='Count')),
+                y=alt.Y('Neighbourhood:N', sort=None), #use 'sort=None' to preserve the order of categories
+                text=alt.Text('Eintrag:Q', format='.1f'),
             )
-            chart = chart.configure_legend(
-                orient='left'
+            #Combine bar chart with text chart, weird isnt?
+
+            #wholechart = chart.mark_bar(color="orange") + chart.mark_text(align='left', dx=8, color="black")
+
+            wholechart = alt.layer(chart.mark_bar(color="orange"), chart.mark_text(align='left', dx=8, color="black"))
+
+            wholechart = wholechart.properties(
+                height=500
             )
-            chart = chart.properties(
-                height=300
-            )
-            st.altair_chart(chart.interactive(), use_container_width=True)
+
+            st.markdown("<h6 style='text-align: center; color: orange;'>Top 20 Neighbourhoods Bar Chart</h6>", unsafe_allow_html=True)
+            st.altair_chart(wholechart.interactive(), use_container_width=True)
 
             st.markdown("<h6 style='text-align: center; color: orange;'>Lease term Bar Chart</h6>", unsafe_allow_html=True)
+
             chart = alt.Chart(df_concat_endofleaseterm).encode(
                 x=alt.X('Lease term:Q'),
                 y=alt.Y('Eintrag:Q', sort=None, axis=alt.Axis(title='Count')), #use 'sort=None' to preserve the order of categories
                 text=alt.Text('Eintrag', format='.1f')
             )
-            #Combine bar chart with text chart, weird isnt?
+
+            # Combine bar chart with text chart, weird isnt?
             wholechart = alt.layer(chart.mark_bar(color="orange"), chart.mark_text(align='center', dy=-5, color="black"))
             wholechart = wholechart.properties(
                 height=500
@@ -513,26 +521,25 @@ def main():
 
             st.altair_chart(chart.interactive(), use_container_width=True)
 
+            df_concat_pivot_longterm = df_concat["Lease term"].isna().sum()
+            df_concat_pivot_shortterm = len(df_concat[df_concat["Lease term"] > 0])
+            source = pd.DataFrame({"Category": ["Indefinite term", "Limited term"], "Value": [df_concat_pivot_longterm, df_concat_pivot_shortterm]})
+            st.markdown("<h6 style='text-align: center; color: orange;'>Lease term Donut</h6>", unsafe_allow_html=True)
 
-            df_concat_neighbourhoods_filtered = df_concat_neighbourhoods.iloc[:20]
-
-            chart = alt.Chart(df_concat_neighbourhoods_filtered).encode(
-                x=alt.X('Eintrag:Q', axis=alt.Axis(title='Count')),
-                y=alt.Y('Neighbourhood:N', sort=None), #use 'sort=None' to preserve the order of categories
-                text=alt.Text('Eintrag:Q', format='.1f'),
-            )
-            #Combine bar chart with text chart, weird isnt?
-
-            #wholechart = chart.mark_bar(color="orange") + chart.mark_text(align='left', dx=8, color="black")
-
-            wholechart = alt.layer(chart.mark_bar(color="orange"), chart.mark_text(align='left', dx=8, color="black"))
-
-            wholechart = wholechart.properties(
-                height=500
+            chart = alt.Chart(source).mark_arc(innerRadius=90).encode(
+                theta='Value:Q',
+                color=alt.Color('Category', scale=alt.Scale(scheme='category10')),
+                tooltip=['Value:Q'],
             )
 
-            st.markdown("<h6 style='text-align: center; color: orange;'>Top 20 Neighbourhoods Bar Chart</h6>", unsafe_allow_html=True)
-            st.altair_chart(wholechart.interactive(), use_container_width=True)
+            chart = chart.configure_legend(
+                orient='left'
+            )
+
+            chart = chart.properties(
+                height=300
+            )
+            st.altair_chart(chart.interactive(), use_container_width=True)
 
         with col3:
             df_concat_pivot_releasedate = df_concat[['Eintrag', 'Miete', 'Größe', 'EUR / SQM', 'Stadtteil', 'Neighbourhood']].pivot_table(index="Neighbourhood", values="Miete", aggfunc={"Miete":["count","mean"]}).reset_index()
