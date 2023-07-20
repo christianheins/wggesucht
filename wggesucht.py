@@ -432,6 +432,7 @@ def main():
             if button2:
                 sendslack()
                 st.success("Message sent!")
+                button2 = False
 
 
     if selected == "🏘️ Apartments":
