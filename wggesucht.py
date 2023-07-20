@@ -422,7 +422,7 @@ def main():
             st.text_input("Send me a message on slack")
             def sendslack():
                 #Create a slack client and define todays date or moment date
-                client = slack.WebClient(token="xoxb-5139171635815-5150778011477-FthWKrmhpk9PBeW0NHipAbU2")
+                client = slack.WebClient(token=st.secrets.slack_bot_token)
 
                 #Tell the client to select a channel and include the specified text.
                 client.chat_postMessage(channel='#special-projects', text=f"Message from an user:\n\n{}")
