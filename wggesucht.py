@@ -427,8 +427,8 @@ def main():
                 #Tell the client to select a channel and include the specified text.
                 client.chat_postMessage(channel='#special-projects', text=f"Message from an user:\n\n{text}")
                 print("Sending slack message")
-                button = st.button("Send message")
-                if button:
+                button2 = st.button("Send message")
+                if button2:
                     sendslack()
 
 
