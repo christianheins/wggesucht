@@ -419,6 +419,16 @@ def main():
             st.markdown("<h6 style='text-align: left; color: red;'>Instructions</h6>", unsafe_allow_html=True)
             st.markdown(f"<li style='text-align: left; color: grey; font-size: 12px;'>This web applications is capturing a snapshot of the last months entries as of the date the csv file was lastly refreshed from here: 'https://www.wg-gesucht.de/1-zimmer-wohnungen-und-wohnungen-in-Berlin.8.1+2.0.0.html?pagination=1&pu='</li>", unsafe_allow_html=True)
             st.markdown(f"<li style='text-align: left; color: grey; font-size: 12px;'>Please use as a guide for only the WG Gesucht portal, this data is not completly representative. It's just an example of the powerful features Steramlit has to offer. Logos and images are WG Gesuchts property and not mine.</li>", unsafe_allow_html=True)
+            st.text_input("Send me a message on slack")
+            def sendslack():
+                #Create a slack client and define todays date or moment date
+                client = slack.WebClient(token="xoxb-5139171635815-5150778011477-FthWKrmhpk9PBeW0NHipAbU2")
+
+                #Tell the client to select a channel and include the specified text.
+                client.chat_postMessage(channel='#special-projects', text=f"Message from an user:\n\n{}")
+                print("Sending slack message")
+            #sendslack()
+
 
     if selected == "🏘️ Apartments":
         st.markdown("<h1 style='text-align: center; color: orange;'>Property Analysis 🏘</h1>", unsafe_allow_html=True)
