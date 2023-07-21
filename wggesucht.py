@@ -451,7 +451,7 @@ def main():
 
         st.markdown("<h6 style='text-align: center; color: orange;'>Properties table</h6>", unsafe_allow_html=True)
         with st.expander("Table"):
-            st.write(df_concat)
+            st.dataframe(df_concat)
 
         col1, col2, col3, col4 = st.columns([0.2, 0.2, 0.35, 0.35])
         with col1:
