@@ -419,7 +419,7 @@ def main():
         st.markdown("<a href='https://www.linkedin.com/in/christian-h-0545aaa1/'>🔗 Find me on LinkedIn</a>", unsafe_allow_html=True)
         st.markdown("<a href='https://github.com/christianheins'>🔗 Find me on Github</a>", unsafe_allow_html=True)
     with col2:
-        text = st.text_input("Send me a message on slack")
+        text = st.text_input("Send me a message on slack 💬")
         def sendslack():
             #Create a slack client and define todays date or moment date
             client = slack.WebClient(token=st.secrets.slack_bot_token)
