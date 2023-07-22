@@ -453,8 +453,8 @@ def main():
             st.dataframe(df_concat,
                          column_config={
                             "Data ID": st.column_config.NumberColumn(format="%d"),
-                            "Link": st.column_config.LinkColumn("Link")
-                            }, hide_index=True
+                            "Link": st.column_config.LinkColumn("Ad Link"),
+                            }
                         )
 
         col1, col2, col3, col4 = st.columns([0.2, 0.2, 0.35, 0.35])
