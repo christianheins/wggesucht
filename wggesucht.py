@@ -450,11 +450,11 @@ def main():
 
         st.markdown("<h6 style='text-align: center; color: orange;'>Properties table</h6>", unsafe_allow_html=True)
         with st.expander("Table"):
-            st.dataframe(df_concat,
+            st.data_editor(df_concat,
                          column_config={
                             "Data ID": st.column_config.NumberColumn(format="%d"),
-                             "Link": st.column_config.LinkColumn("Link")
-                            }
+                            "Link": st.column_config.LinkColumn("Link")
+                            }, hide_index=True
                         )
 
         col1, col2, col3, col4 = st.columns([0.2, 0.2, 0.35, 0.35])
