@@ -456,10 +456,8 @@ def main():
                             "Link": st.column_config.LinkColumn("Ad Link"),
                             }
                         )
-            # Loop through the DataFrame to display the links using st.markdown()
-            for index, row in df_concat.iterrows():
-                link = row["Link"]
-                st.markdown(f"[Link {index}](link)")
+            st.dataframe(df_concat.style.format({"Data ID": "%d"}).format({"Link": '<a href="{0}">{0}</a>'}), unsafe_allow_html=True)
+
 
         col1, col2, col3, col4 = st.columns([0.2, 0.2, 0.35, 0.35])
         with col1:
