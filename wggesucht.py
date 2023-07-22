@@ -450,7 +450,7 @@ def main():
 
         st.markdown("<h6 style='text-align: center; color: orange;'>Properties table</h6>", unsafe_allow_html=True)
         with st.expander("Table"):
-            st.data_editor(df_concat,
+            st.dataframe(df_concat,
                          column_config={
                             "Data ID": st.column_config.NumberColumn(format="%d"),
                             "Link": st.column_config.LinkColumn("Link")
