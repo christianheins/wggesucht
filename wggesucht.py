@@ -456,8 +456,6 @@ def main():
                             "Link": st.column_config.LinkColumn("Link"),
                             }
                         )
-            st.dataframe(df_concat.style.format({"Link": '<a href="{0}">{0}</a>'}), unsafe_allow_html=True)
-
 
         col1, col2, col3, col4 = st.columns([0.2, 0.2, 0.35, 0.35])
         with col1:
