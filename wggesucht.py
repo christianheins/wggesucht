@@ -458,6 +458,7 @@ def main():
                          column_config={
                             "Data ID": st.column_config.NumberColumn(format="%d"),
                             "Miete": st.column_config.NumberColumn(format="%d €"),
+                            "Größe": st.column_config.NumberColumn(format="%d SQM"),
                             "EUR / SQM": st.column_config.NumberColumn(format="%.2f €"),
                             "Deposit": st.column_config.NumberColumn(format="%d €"),
                             "Link": st.column_config.LinkColumn("Link"),
