@@ -465,6 +465,7 @@ def main():
                             "DataFrame": st.column_config.NumberColumn(format="%d"),
                             "Lease term": st.column_config.NumberColumn(format="%d Months"),
                             "City": st.column_config.ListColumn("City"),
+                            "Neighbourhood": st.column_config.ListColumn("City"),
                             }
                          )
 
