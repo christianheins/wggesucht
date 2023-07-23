@@ -464,6 +464,7 @@ def main():
                             "Link": st.column_config.LinkColumn("Link"),
                             "DataFrame": st.column_config.NumberColumn(format="%d"),
                             "Lease term": st.column_config.NumberColumn(format="%d Months"),
+                            "City": st.column_config.ListColumn("City"),
                             }
                          )
 
