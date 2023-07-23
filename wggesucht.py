@@ -452,6 +452,7 @@ def main():
         with st.expander("Table"):
 
             df_concat["Link"] = "https://"+df_concat["Link"]
+            st.write(df_concat.columns.to_list())
 
             st.dataframe(df_concat[["Data ID", "Eintrag", "City", "Neighbourhood", "Address", "Miete" , "Größe", "EUR / SQM", "frei ab", "frei bis", "frei bis (Year - Month)", "DataFrame", "Latitude", "Longitude", "Link"]],
                          column_config={
