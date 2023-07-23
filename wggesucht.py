@@ -450,16 +450,17 @@ def main():
 
         st.markdown("<h6 style='text-align: center; color: orange;'>Properties table</h6>", unsafe_allow_html=True)
         with st.expander("Table"):
-            def make_clickable(val):
-                return f'<a target="_blank" href="{val}">{val}</a>'
-            df_concat.style.format({'Link': make_clickable})
+
             df_concat["Link"] = "https://"+df_concat["Link"]
-            st.dataframe(df_concat,
+
+            st.dataframe(df_concat["Data ID", "Eintrag", "City", "Neighbourhood", "Address", "Miete" , "Größe", "EUR / SQM", "frei ab", "frei bis", "frei bis(Tear - Month)", "DataFrame", "Latitude", "Longitude", "Link"],
                          column_config={
                             "Data ID": st.column_config.NumberColumn(format="%d"),
+                             "DataFrame": st.column_config.DateColumn("DataFrame"),
                              "Link": st.column_config.LinkColumn("Link")
                             }
                          )
+
         col1, col2, col3, col4 = st.columns([0.2, 0.2, 0.35, 0.35])
         with col1:
             st.metric("Available apartments", value="{:,.0f}".format(len(df_concat)))
