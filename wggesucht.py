@@ -457,8 +457,8 @@ def main():
             st.dataframe(df_concat[["Data ID", "Eintrag", "City", "Neighbourhood", "Address", "Miete" , "Größe", "EUR / SQM", "Deposit", "frei ab", "frei bis", "frei bis (Year - Month)", "DataFrame", "Latitude", "Longitude", "Link"]],
                          column_config={
                             "Data ID": st.column_config.NumberColumn(format="%d"),
-                            "Miete": st.column_config.NumberColumn(format="%d,00 €"),
-                            "EUR / SQM": st.column_config.NumberColumn(format="%d €"),
+                            "Miete": st.column_config.NumberColumn(format="%d €"),
+                            "EUR / SQM": st.column_config.NumberColumn(format="%d,00 €"),
                             "Link": st.column_config.LinkColumn("Link")
                             }
                          )
