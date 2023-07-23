@@ -463,6 +463,7 @@ def main():
                             "Deposit": st.column_config.NumberColumn(format="%d €"),
                             "Link": st.column_config.LinkColumn("Link"),
                             "DataFrame": st.column_config.NumberColumn(format="%d"),
+                            "Lease term": st.column_config.NumberColumn(format="%d Months"),
                             }
                          )
 
