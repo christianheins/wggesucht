@@ -453,6 +453,7 @@ def main():
             def make_clickable(val):
                 return f'<a target="_blank" href="{val}">{val}</a>'
             df_concat.style.format({'Link': make_clickable})
+            df_concat["Link"] = "https://"+df_concat["Link"]
             st.dataframe(df_concat,
                          column_config={
                             "Data ID": st.column_config.NumberColumn(format="%d"),
