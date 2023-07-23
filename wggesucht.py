@@ -454,7 +454,7 @@ def main():
             df_concat["Link"] = "https://"+df_concat["Link"]
             st.write(df_concat.columns.to_list())
 
-            st.dataframe(df_concat[["Data ID", "Eintrag", "City", "Neighbourhood", "Address", "Miete" , "Größe", "EUR / SQM", "Deposit", "frei ab", "frei bis", "frei bis (Year - Month)", "DataFrame", "Latitude", "Longitude", "Link"]],
+            st.dataframe(df_concat[["Data ID", "Eintrag", "City", "Neighbourhood", "Address", "Miete" , "Größe", "EUR / SQM", "Deposit", "frei ab", "frei bis", "frei bis (Year - Month)", "Lease term","DataFrame", "Latitude", "Longitude", "Link"]],
                          column_config={
                             "Data ID": st.column_config.NumberColumn(format="%d"),
                             "Miete": st.column_config.NumberColumn(format="%d €"),
