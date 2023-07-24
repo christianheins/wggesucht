@@ -788,6 +788,8 @@ def main():
         df_2023_06.rename(columns={"index":"Data ID", "DataFrame": "Dataframe Date", "Pure rent": "Pure Rent"}, inplace=True)
         df_2023_06["Dataframe Date"] = "20230630"
         df_2023_06["Pure Rent"] = df_2023_06["Price"]
+        df_2023_06["Pure Rent"] = df_2023_06["Price"]
+        df_2023_06["Größe"] = df_2023_06["Size"]
         df_2023_06.reset_index(drop=True, inplace=True)
 
         df_2023_07 = pd.read_csv("df_concat_20230712.csv")
