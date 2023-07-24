@@ -1,6 +1,6 @@
 ,Unnamed: 0,Data ID,Link,Posting Date,Location,City,Neighbourhood,Full Address,Address,Miete,Pure rent,Service Charge,Other Charge,Größe,Date From,Date To,DataFrame,Deposit,Rooms,Full Address Lenght,EUR / SQM
 0,0,2amkx5y,https://www.immowelt.de/expose/2amkx5y,,,Berlin,Halensee,"WestfÃ¤lische Str 49, Berlin (Halensee)",Westfälische str 49,850.0,850,5000,5000,53.5,,,20230424,5000,2.0,2,15.88785046728972
-1,1,2a84n5y,https://www.immowelt.de/expose/2a84n5y,,,Berlin,Pankow,"Paracelsusstr. 17, Berlin (Pankow)",Paracelsusstr. 17,51402.0,"514,02",5000,5000,59.68,,,20230424,5000,2.0,2,861.2935656836461
+1,1,2a84n5y,https://www.immowelt.de/expose/2a84n5y,,,Berlin,Pankow,"Paracelsusstr. 17, Berlin (Pankow)",Paracelsusstr. 17,514.02,"514,02",5000,5000,59.68,,,20230424,5000,2.0,2,8.612935656836461
 2,2,2aykd5g,https://www.immowelt.de/expose/2aykd5g,,,Berlin,Gropiusstadt,"Johannisthaler Chaussee 433, Berlin (Gropiusstadt)",Johannisthaler chaussee 433,770.0,770,5000,5000,25.0,,,20230424,5000,1.0,2,30.8
 3,3,2admx5d,https://www.immowelt.de/expose/2admx5d,,,Berlin,Spandau,"Pembabogen 17, Berlin (Spandau)",Pembabogen 17,1400.0,1.400,5000,5000,78.3,,,20230424,5000,2.0,2,17.879948914431672
 4,4,2azb95y,https://www.immowelt.de/expose/2azb95y,,,Berlin,Köpenick,"An der Villa Bolle 3A, Berlin (KÃ¶penick)",An der villa bolle 3a,1532.6,"1.532,60",5000,5000,91.8,,,20230424,5000,4.0,2,16.694989106753813
@@ -13,7 +13,7 @@
 11,11,29u6l5h,https://www.immowelt.de/expose/29u6l5h,,,Berlin,Grunewald,Berlin (Grunewald),,4550.0,4.550,5000,5000,200.0,,,20230424,5000,3.5,1,22.75
 12,12,2ajtz5r,https://www.immowelt.de/expose/2ajtz5r,,,Berlin,Spandau,"Pembabogen 13, Berlin (Spandau)",Pembabogen 13,1554.0,1.554,5000,5000,88.8,,,20230424,5000,3.0,2,17.5
 13,13,288zu56,https://www.immowelt.de/expose/288zu56,,,Berlin,Johannisthal,"Sterndamm 114, Berlin (Johannisthal)",Sterndamm 114,1450.0,1.450,5000,5000,66.0,,,20230424,5000,3.0,2,21.96969696969697
-14,14,2atyp5w,https://www.immowelt.de/expose/2atyp5w,,,Berlin,Rudow,Berlin (Rudow),,58718.0,"587,18",5000,5000,53.18,,,20230424,5000,2.0,1,1104.136893569011
+14,14,2atyp5w,https://www.immowelt.de/expose/2atyp5w,,,Berlin,Rudow,Berlin (Rudow),,587.18,"587,18",5000,5000,53.18,,,20230424,5000,2.0,1,11.041368935690109
 15,15,24rt552,https://www.immowelt.de/expose/24rt552,,,Berlin,Prenzlauer,Berlin (Prenzlauer Berg),,2000.0,2.000,5000,5000,75.0,,,20230424,5000,3.0,1,26.666666666666668
 16,16,2a42t5v,https://www.immowelt.de/expose/2a42t5v,,,Berlin,Wilmersdorf,"Berliner StraÃe 137, Berlin (Wilmersdorf)",Berliner strße 137,1850.0,1.850,5000,5000,79.0,,,20230424,5000,3.0,2,23.417721518987342
 17,17,2ekud4r,https://www.immowelt.de/expose/2ekud4r,,,Berlin,Lichterfelde,"Harry-S-Trumanallee 10, Berlin (Lichterfelde)",Harry-s-trumanallee 10,1390.0,1.390,5000,5000,51.5,,,20230424,5000,2.0,2,26.990291262135923
@@ -40,9 +40,9 @@
 38,38,2al4g5n,https://www.immowelt.de/expose/2al4g5n,,,Berlin,Adlershof,"HackenbergstraÃe 22, Berlin (Adlershof)",Hackenbergstrße 22,1380.0,1.380,5000,5000,55.14,,,20230424,5000,2.0,2,25.027203482045703
 39,39,2akzf5n,https://www.immowelt.de/expose/2akzf5n,,,Berlin,Adlershof,"HackenbergstraÃe 22, Berlin (Adlershof)",Hackenbergstrße 22,1000.0,1.000,5000,5000,39.7,,,20230424,5000,2.0,2,25.188916876574307
 40,40,2a8bt5n,https://www.immowelt.de/expose/2a8bt5n,,,Berlin,GrÃ¼nau,"An der Dahme 2, Berlin (GrÃ¼nau)",An der dahme 2,1289.12,"1.289,12",5000,5000,80.57,,,20230424,5000,3.0,2,16.0
-41,41,2a6bt5n,https://www.immowelt.de/expose/2a6bt5n,,,Berlin,GrÃ¼nau,"An der Dahme 6, Berlin (GrÃ¼nau)",An der dahme 6,82985.0,"829,85",5000,5000,47.42,,,20230424,5000,1.0,2,1750.0
-42,42,2a3bt5n,https://www.immowelt.de/expose/2a3bt5n,,,Berlin,GrÃ¼nau,"Gaffelsteig 4, Berlin (GrÃ¼nau)",Gaffelsteig 4,83294.0,"832,94",5000,5000,49.58,,,20230424,5000,2.0,2,1679.9919322307383
-43,43,2azat5n,https://www.immowelt.de/expose/2azat5n,,,Berlin,GrÃ¼nau,"Gaffelsteig 4, Berlin (GrÃ¼nau)",Gaffelsteig 4,77123.0,"771,23",5000,5000,43.82,,,20230424,5000,1.0,2,1759.9954358740301
+41,41,2a6bt5n,https://www.immowelt.de/expose/2a6bt5n,,,Berlin,GrÃ¼nau,"An der Dahme 6, Berlin (GrÃ¼nau)",An der dahme 6,829.85,"829,85",5000,5000,47.42,,,20230424,5000,1.0,2,17.5
+42,42,2a3bt5n,https://www.immowelt.de/expose/2a3bt5n,,,Berlin,GrÃ¼nau,"Gaffelsteig 4, Berlin (GrÃ¼nau)",Gaffelsteig 4,832.94,"832,94",5000,5000,49.58,,,20230424,5000,2.0,2,16.799919322307385
+43,43,2azat5n,https://www.immowelt.de/expose/2azat5n,,,Berlin,GrÃ¼nau,"Gaffelsteig 4, Berlin (GrÃ¼nau)",Gaffelsteig 4,771.23,"771,23",5000,5000,43.82,,,20230424,5000,1.0,2,17.599954358740302
 44,44,2a3t356,https://www.immowelt.de/expose/2a3t356,,,Berlin,GrÃ¼nau,"An der Dahme 6, Berlin (GrÃ¼nau)",An der dahme 6,1608.48,"1.608,48",5000,5000,89.36,,,20230424,5000,3.0,2,18.0
 45,45,2axs356,https://www.immowelt.de/expose/2axs356,,,Berlin,GrÃ¼nau,"An der Dahme 6, Berlin (GrÃ¼nau)",An der dahme 6,1493.45,"1.493,45",5000,5000,87.85,,,20230424,5000,4.0,2,17.0
 46,46,2ats356,https://www.immowelt.de/expose/2ats356,,,Berlin,GrÃ¼nau,"Gaffelsteig 2, Berlin (GrÃ¼nau)",Gaffelsteig 2,1669.73,"1.669,73",5000,5000,103.71,,,20230424,5000,4.0,2,16.09999035772828
@@ -69,26 +69,26 @@
 67,67,297495m,https://www.immowelt.de/expose/297495m,,,Berlin,Karolinenhof,Berlin (Karolinenhof),,0.0,auf Anfrage,5000,5000,190.0,,,20230424,5000,,1,0.0
 68,68,29f7u59,https://www.immowelt.de/expose/29f7u59,,,Berlin,Spandau,Berlin (Spandau),,0.0,auf Anfrage,5000,5000,70.0,,,20230424,5000,1.0,1,0.0
 69,69,2as5y5z,https://www.immowelt.de/expose/2as5y5z,,,Berlin,Kreuzberg,"Stallschreiber StraÃe 27, Berlin (Kreuzberg)",Stallschreiber strße 27,2945.0,2.945,5000,5000,177.0,,,20230424,5000,4.0,2,16.638418079096045
-70,70,2a63y5z,https://www.immowelt.de/expose/2a63y5z,,,Berlin,Moabit,"Birkenstr. 56, Berlin (Moabit)",Birkenstr. 56,45871.0,"458,71",5000,5000,42.08,,,20230424,5000,1.0,2,1090.0903041825095
+70,70,2a63y5z,https://www.immowelt.de/expose/2a63y5z,,,Berlin,Moabit,"Birkenstr. 56, Berlin (Moabit)",Birkenstr. 56,458.71,"458,71",5000,5000,42.08,,,20230424,5000,1.0,2,10.900903041825096
 71,71,2aqwx5z,https://www.immowelt.de/expose/2aqwx5z,,,Berlin,Alt-Hohenschönhausen,"SeddinerstaÃe 1, Berlin (Alt-HohenschÃ¶nhausen)",Seddinerstße 1,892.0,892,5000,5000,73.15,,,20230424,5000,2.0,2,12.194121667805877
-72,72,2a2nx5z,https://www.immowelt.de/expose/2a2nx5z,,,Berlin,Buckow,"Mollnerweg 34, Berlin (Buckow)",Mollnerweg 34,83857.0,"838,57",5000,5000,86.54,,,20230424,5000,4.0,2,968.9969956089669
+72,72,2a2nx5z,https://www.immowelt.de/expose/2a2nx5z,,,Berlin,Buckow,"Mollnerweg 34, Berlin (Buckow)",Mollnerweg 34,838.57,"838,57",5000,5000,86.54,,,20230424,5000,4.0,2,9.68996995608967
 73,73,2ajjx5z,https://www.immowelt.de/expose/2ajjx5z,,,Berlin,Buckow,"Mollnerweg 34, Berlin (Buckow)",Mollnerweg 34,312.0,312,5000,5000,48.0,,,20230424,5000,1.0,2,6.5
-74,74,2argx5z,https://www.immowelt.de/expose/2argx5z,,,Berlin,Buckow,"HeidelÃ¤uferweg 53, Berlin (Buckow)",Heideläuferweg 53,40589.0,"405,89",5000,5000,60.58,,,20230424,5000,2.0,2,670.0066028392209
-75,75,2a97x5z,https://www.immowelt.de/expose/2a97x5z,,,Berlin,Spandau,"Blasewitzer Ring 36, Berlin (Spandau)",Blasewitzer ring 36,50621.0,"506,21",5000,5000,66.25,,,20230424,5000,2.0,2,764.0905660377358
-76,76,2aqcw5z,https://www.immowelt.de/expose/2aqcw5z,,,Berlin,Moabit,"Bremer Str. 12, Berlin (Moabit)",Bremer str. 12,43697.0,"436,97",5000,5000,30.73,,,20230424,5000,1.0,2,1421.9655060201758
-77,77,2ancw5z,https://www.immowelt.de/expose/2ancw5z,,,Berlin,Moabit,"Bremer Str. 11, Berlin (Moabit)",Bremer str. 11,43697.0,"436,97",5000,5000,25.11,,,20230424,5000,1.0,2,1740.2230187176424
-78,78,2agcw5z,https://www.immowelt.de/expose/2agcw5z,,,Berlin,Hellersdorf,"Zossener StraÃe 152, Berlin (Hellersdorf)",Zossener strße 152,47220.0,"472,20",5000,5000,42.35,,,20230424,5000,1.0,2,1114.9940968122785
-79,79,2adcw5z,https://www.immowelt.de/expose/2adcw5z,,,Berlin,Hellersdorf,"Zossener StraÃe 152, Berlin (Hellersdorf)",Zossener strße 152,35301.0,"353,01",5000,5000,36.43,,,20230424,5000,1.0,2,969.0090584682954
+74,74,2argx5z,https://www.immowelt.de/expose/2argx5z,,,Berlin,Buckow,"HeidelÃ¤uferweg 53, Berlin (Buckow)",Heideläuferweg 53,405.89,"405,89",5000,5000,60.58,,,20230424,5000,2.0,2,6.700066028392208
+75,75,2a97x5z,https://www.immowelt.de/expose/2a97x5z,,,Berlin,Spandau,"Blasewitzer Ring 36, Berlin (Spandau)",Blasewitzer ring 36,506.21,"506,21",5000,5000,66.25,,,20230424,5000,2.0,2,7.640905660377358
+76,76,2aqcw5z,https://www.immowelt.de/expose/2aqcw5z,,,Berlin,Moabit,"Bremer Str. 12, Berlin (Moabit)",Bremer str. 12,436.97,"436,97",5000,5000,30.73,,,20230424,5000,1.0,2,14.219655060201758
+77,77,2ancw5z,https://www.immowelt.de/expose/2ancw5z,,,Berlin,Moabit,"Bremer Str. 11, Berlin (Moabit)",Bremer str. 11,436.97,"436,97",5000,5000,25.11,,,20230424,5000,1.0,2,17.402230187176425
+78,78,2agcw5z,https://www.immowelt.de/expose/2agcw5z,,,Berlin,Hellersdorf,"Zossener StraÃe 152, Berlin (Hellersdorf)",Zossener strße 152,472.2,"472,20",5000,5000,42.35,,,20230424,5000,1.0,2,11.149940968122786
+79,79,2adcw5z,https://www.immowelt.de/expose/2adcw5z,,,Berlin,Hellersdorf,"Zossener StraÃe 152, Berlin (Hellersdorf)",Zossener strße 152,353.01,"353,01",5000,5000,36.43,,,20230424,5000,1.0,2,9.690090584682954
 80,80,2aq3v5z,https://www.immowelt.de/expose/2aq3v5z,,,Berlin,Buchholz,"Rosenthaler Weg 18, Berlin (Buchholz)",Rosenthaler weg 18,679.0,679,5000,5000,45.64,,,20230424,5000,2.0,2,14.877300613496931
 81,81,2am4u5z,https://www.immowelt.de/expose/2am4u5z,,,Berlin,Mariendorf,Berlin (Mariendorf),,561.0,561,5000,5000,51.0,,,20230424,5000,2.0,1,11.0
 82,82,2aeuq5z,https://www.immowelt.de/expose/2aeuq5z,,,Berlin,Mitte,"Templiner Str. 17, Berlin (Mitte)",Templiner str. 17,3125.0,3.125,5000,5000,155.0,,,20230424,5000,5.0,2,20.161290322580644
-83,83,2akus5z,https://www.immowelt.de/expose/2akus5z,,,Berlin,Lichtenrade,"GroÃ-Ziethener-Str. 90, Berlin (Lichtenrade)",Groã-ziethener-str. 90,37604.0,"376,04",5000,5000,43.01,,,20230424,5000,1.0,2,874.308300395257
-84,84,2alvr5z,https://www.immowelt.de/expose/2alvr5z,,,Berlin,Lichtenrade,"Nahariyastr. 25, Berlin (Lichtenrade)",Nahariyastr. 25,80890.0,"808,90",5000,5000,96.97,,,20230424,5000,3.5,2,834.1755182015056
-85,85,2afrr5z,https://www.immowelt.de/expose/2afrr5z,,,Berlin,Lichtenrade,"GroÃ-Ziethener-Str. 90, Berlin (Lichtenrade)",Groã-ziethener-str. 90,48587.0,"485,87",5000,5000,55.56,,,20230424,5000,2.0,2,874.4960403167746
-86,86,2aygr5z,https://www.immowelt.de/expose/2aygr5z,,,Berlin,Hellersdorf,"Alte Hellersdorfer StraÃe 108N, Berlin (Hellersdorf)",Alte hellersdorfer strße 108n,34990.0,"349,90",5000,5000,53.83,,,20230424,5000,2.0,2,650.009288500836
-87,87,2aeer5z,https://www.immowelt.de/expose/2aeer5z,,,Berlin,Köpenick,"Stellingdamm 2, Berlin (KÃ¶penick)",Stellingdamm 2,61215.0,"612,15",5000,5000,40.81,,,20230424,5000,1.0,2,1500.0
-88,88,2a8dr5z,https://www.immowelt.de/expose/2a8dr5z,,,Berlin,Köpenick,"Stellingdamm 2, Berlin (KÃ¶penick)",Stellingdamm 2,72375.0,"723,75",5000,5000,48.25,,,20230424,5000,1.0,2,1500.0
-89,89,2ahsq5z,https://www.immowelt.de/expose/2ahsq5z,,,Berlin,Lichtenrade,"Skarbinastr. 84, Berlin (Lichtenrade)",Skarbinastr. 84,54467.0,"544,67",5000,5000,63.89,,,20230424,5000,2.0,2,852.5121302238222
+83,83,2akus5z,https://www.immowelt.de/expose/2akus5z,,,Berlin,Lichtenrade,"GroÃ-Ziethener-Str. 90, Berlin (Lichtenrade)",Groã-ziethener-str. 90,376.04,"376,04",5000,5000,43.01,,,20230424,5000,1.0,2,8.74308300395257
+84,84,2alvr5z,https://www.immowelt.de/expose/2alvr5z,,,Berlin,Lichtenrade,"Nahariyastr. 25, Berlin (Lichtenrade)",Nahariyastr. 25,808.9,"808,90",5000,5000,96.97,,,20230424,5000,3.5,2,8.341755182015056
+85,85,2afrr5z,https://www.immowelt.de/expose/2afrr5z,,,Berlin,Lichtenrade,"GroÃ-Ziethener-Str. 90, Berlin (Lichtenrade)",Groã-ziethener-str. 90,485.87,"485,87",5000,5000,55.56,,,20230424,5000,2.0,2,8.744960403167747
+86,86,2aygr5z,https://www.immowelt.de/expose/2aygr5z,,,Berlin,Hellersdorf,"Alte Hellersdorfer StraÃe 108N, Berlin (Hellersdorf)",Alte hellersdorfer strße 108n,349.9,"349,90",5000,5000,53.83,,,20230424,5000,2.0,2,6.5000928850083595
+87,87,2aeer5z,https://www.immowelt.de/expose/2aeer5z,,,Berlin,Köpenick,"Stellingdamm 2, Berlin (KÃ¶penick)",Stellingdamm 2,612.15,"612,15",5000,5000,40.81,,,20230424,5000,1.0,2,14.999999999999998
+88,88,2a8dr5z,https://www.immowelt.de/expose/2a8dr5z,,,Berlin,Köpenick,"Stellingdamm 2, Berlin (KÃ¶penick)",Stellingdamm 2,723.75,"723,75",5000,5000,48.25,,,20230424,5000,1.0,2,15.0
+89,89,2ahsq5z,https://www.immowelt.de/expose/2ahsq5z,,,Berlin,Lichtenrade,"Skarbinastr. 84, Berlin (Lichtenrade)",Skarbinastr. 84,544.67,"544,67",5000,5000,63.89,,,20230424,5000,2.0,2,8.52512130223822
 90,90,2a5qp5z,https://www.immowelt.de/expose/2a5qp5z,,,Berlin,Westend,"Bayernallee 3, Berlin (Westend)",Bayernallee 3,1049.0,1.049,5000,5000,37.0,,,20230424,5000,1.0,2,28.35135135135135
 91,91,2a7zy5t,https://www.immowelt.de/expose/2a7zy5t,,,Berlin,Wilmersdorf,Berlin (Wilmersdorf),,2300.0,2.300,5000,5000,90.0,,,20230424,5000,3.0,1,25.555555555555557
 92,92,28sgx5e,https://www.immowelt.de/expose/28sgx5e,,,Berlin,Friedrichshain,"Ehrenbergstr. 5, Berlin (Friedrichshain)",Ehrenbergstr. 5,2800.0,2.800,5000,5000,93.0,,,20230424,5000,3.0,2,30.107526881720432
@@ -108,7 +108,7 @@
 106,106,2awe35z,https://www.immowelt.de/expose/2awe35z,,,Berlin,LÃ¼bars,"Zehntwerderweg 148, Berlin (LÃ¼bars)",Zehntwerderweg 148,1081.0,1.081,5000,5000,56.88,,,20230424,5000,2.0,2,19.00492264416315
 107,107,2ate35z,https://www.immowelt.de/expose/2ate35z,,,Berlin,LÃ¼bars,"Zehntwerderweg 148, Berlin (LÃ¼bars)",Zehntwerderweg 148,783.0,783,5000,5000,41.17,,,20230424,5000,1.0,2,19.018702939033275
 108,108,2a6d35z,https://www.immowelt.de/expose/2a6d35z,,,Berlin,LÃ¼bars,Berlin (LÃ¼bars),,1226.0,1.226,5000,5000,64.52,,,20230424,5000,3.0,1,19.001859888406695
-109,109,2as835z,https://www.immowelt.de/expose/2as835z,,,Berlin,Spandau,"Wilhelmstr, 147, Berlin (Spandau)",Wilhelmstr 147,76270.0,"762,70",5000,5000,52.6,,,20230424,5000,2.0,3,1450.0
+109,109,2as835z,https://www.immowelt.de/expose/2as835z,,,Berlin,Spandau,"Wilhelmstr, 147, Berlin (Spandau)",Wilhelmstr 147,762.7,"762,70",5000,5000,52.6,,,20230424,5000,2.0,3,14.5
 110,110,2acgz5y,https://www.immowelt.de/expose/2acgz5y,,,Berlin,Prenzlauer,Berlin (Prenzlauer Berg),,836.0,836,5000,5000,78.0,,,20230424,5000,2.5,1,10.717948717948717
 111,111,2ajzy5y,https://www.immowelt.de/expose/2ajzy5y,,,Berlin,Charlottenburg,Berlin (Charlottenburg),,2150.0,2.150,5000,5000,79.51,,,20230424,5000,2.0,1,27.04062382090303
 112,112,2a9tx5y,https://www.immowelt.de/expose/2a9tx5y,,,Berlin,Alt-Hohenschönhausen,"GroÃe-Leege-StraÃe 50 A, Berlin (Alt-HohenschÃ¶nhausen)",Groãe-leege-strße 50 a,899.0,899,5000,5000,55.78,,,20230424,5000,2.0,2,16.116887773395483
@@ -161,12 +161,12 @@
 159,159,2adty5x,https://www.immowelt.de/expose/2adty5x,,,Berlin,Charlottenburg,"DahlmannstraÃe 9, Berlin (Charlottenburg)",Dahlmannstrße 9,4900.0,4.900,5000,5000,165.0,,,20230424,5000,4.0,2,29.696969696969695
 160,160,2x6q844,https://www.immowelt.de/expose/2x6q844,,,Berlin,Lichterfelde,"OstpreuÃendamm 106, Berlin (Lichterfelde)",Ostpreuãendamm 106,2045.12,"2.045,12",5000,5000,116.2,,,20230424,5000,4.0,2,17.599999999999998
 161,161,2xxka44,https://www.immowelt.de/expose/2xxka44,,,Berlin,Lichterfelde,"OstpreuÃendamm 106, Berlin (Lichterfelde)",Ostpreuãendamm 106,1656.16,"1.656,16",5000,5000,94.1,,,20230424,5000,3.0,2,17.6
-162,162,2apwv5x,https://www.immowelt.de/expose/2apwv5x,,,Berlin,Karow,"MÃ¼nchehagenstraÃe 38, Berlin (Karow)",Münchehagenstrße 38,52191.0,"521,91",5000,5000,56.86,,,20230424,5000,2.0,2,917.886035877594
+162,162,2apwv5x,https://www.immowelt.de/expose/2apwv5x,,,Berlin,Karow,"MÃ¼nchehagenstraÃe 38, Berlin (Karow)",Münchehagenstrße 38,521.91,"521,91",5000,5000,56.86,,,20230424,5000,2.0,2,9.17886035877594
 163,163,2af6v5x,https://www.immowelt.de/expose/2af6v5x,,,Berlin,Rudow,Berlin (Rudow),,1295.0,1.295,5000,5000,55.16,,,20230424,5000,2.0,1,23.477157360406093
 164,164,29jf85v,https://www.immowelt.de/expose/29jf85v,,,Berlin,Schöneberg,Berlin (SchÃ¶neberg),,580.0,580,5000,5000,35.0,,,20230424,5000,1.0,1,16.571428571428573
 165,165,2ah5l59,https://www.immowelt.de/expose/2ah5l59,,,Berlin,Buckow,"Fritz-Erler-Allee 57, Berlin (Buckow)",Fritz-erler-allee 57,2150.0,2.150,5000,5000,115.56,,,20230424,5000,4.0,2,18.605053651782622
-166,166,2awcs5x,https://www.immowelt.de/expose/2awcs5x,,,Berlin,Kreuzberg,"Fidicinstr. 33, Berlin (Kreuzberg)",Fidicinstr. 33,92688.0,"926,88",5000,5000,33.5,,,20230424,5000,1.0,2,2766.805970149254
-167,167,2aalp5x,https://www.immowelt.de/expose/2aalp5x,,,Berlin,Rudow,Berlin (Rudow),,31952.0,"319,52",5000,5000,41.94,,,20230424,5000,1.0,1,761.8502622794468
+166,166,2awcs5x,https://www.immowelt.de/expose/2awcs5x,,,Berlin,Kreuzberg,"Fidicinstr. 33, Berlin (Kreuzberg)",Fidicinstr. 33,926.88,"926,88",5000,5000,33.5,,,20230424,5000,1.0,2,27.66805970149254
+167,167,2aalp5x,https://www.immowelt.de/expose/2aalp5x,,,Berlin,Rudow,Berlin (Rudow),,319.52,"319,52",5000,5000,41.94,,,20230424,5000,1.0,1,7.618502622794468
 168,168,2atkn5x,https://www.immowelt.de/expose/2atkn5x,,,Berlin,Tiergarten,"gabriel tergit promenade 21, Berlin (Tiergarten)",Gabriel tergit promenade 21,1600.0,1.600,5000,5000,50.0,,,20230424,5000,2.0,2,32.0
 169,169,2ap8n5x,https://www.immowelt.de/expose/2ap8n5x,,,Berlin,Dahlem,"Clayallee 225E, Berlin (Dahlem)",Clayallee 225e,3510.0,3.510,5000,5000,117.0,,,20230424,5000,3.0,2,30.0
 170,170,2a4hl5x,https://www.immowelt.de/expose/2a4hl5x,,,Berlin,Zehlendorf,"BergengrÃ¼nstr. 32, Berlin (Zehlendorf)",Bergengrünstr. 32,2145.0,2.145,5000,5000,134.08,,,20230424,5000,5.0,2,15.997911694510739
@@ -218,16 +218,16 @@
 216,216,2a44q5v,https://www.immowelt.de/expose/2a44q5v,,,Berlin,Schöneberg,Berlin (SchÃ¶neberg),,900.0,900,5000,5000,84.0,,,20230424,5000,3.0,1,10.714285714285714
 217,217,2a2pp5v,https://www.immowelt.de/expose/2a2pp5v,,,Berlin,Friedrichshagen,Berlin (Friedrichshagen),,1000.0,1.000,5000,5000,50.0,,,20230424,5000,2.0,1,20.0
 218,218,2agel5v,https://www.immowelt.de/expose/2agel5v,,,Berlin,Charlottenburg,Berlin (Charlottenburg),,1500.0,1.500,5000,5000,120.0,,,20230424,5000,2.0,1,12.5
-219,219,2abjr5z,https://www.immowelt.de/expose/2abjr5z,,,Berlin,Köpenick,"GrÃ¼nauer StraÃe 75, Berlin (KÃ¶penick)",Grünauer strße 75,55710.0,"557,10",5000,5000,30.95,,,20230424,5000,1.0,2,1800.0
+219,219,2abjr5z,https://www.immowelt.de/expose/2abjr5z,,,Berlin,Köpenick,"GrÃ¼nauer StraÃe 75, Berlin (KÃ¶penick)",Grünauer strße 75,557.1,"557,10",5000,5000,30.95,,,20230424,5000,1.0,2,18.0
 220,220,2a2nk5v,https://www.immowelt.de/expose/2a2nk5v,,,Berlin,Prenzlauer,"WinsstraÃe 62, Berlin (Prenzlauer Berg)",Winsstrße 62,3500.0,3.500,5000,5000,160.0,,,20230424,5000,5.0,2,21.875
 221,221,2ag3h5z,https://www.immowelt.de/expose/2ag3h5z,,,Berlin,WeiÃensee,"Berliner Allee 221, Berlin (WeiÃensee)",Berliner allee 221,550.0,550,5000,5000,22.0,,,20230424,5000,1.0,2,25.0
 222,222,2ae3h5z,https://www.immowelt.de/expose/2ae3h5z,,,Berlin,WeiÃensee,"Berliner Allee 221, Berlin (WeiÃensee)",Berliner allee 221,899.0,899,5000,5000,50.5,,,20230424,5000,2.0,2,17.801980198019802
 223,223,2a8gk5v,https://www.immowelt.de/expose/2a8gk5v,,,Berlin,WeiÃensee,"Berliner Allee 221, Berlin (WeiÃensee)",Berliner allee 221,740.0,740,5000,5000,37.0,,,20230424,5000,1.0,2,20.0
 224,224,2a7gk5v,https://www.immowelt.de/expose/2a7gk5v,,,Berlin,WeiÃensee,"Berliner Allee 221, Berlin (WeiÃensee)",Berliner allee 221,700.0,700,5000,5000,35.0,,,20230424,5000,1.0,2,20.0
-225,225,2a6gk5v,https://www.immowelt.de/expose/2a6gk5v,,,Berlin,WeiÃensee,"Berliner Allee 221, Berlin (WeiÃensee)",Berliner allee 221,85578.0,"855,78",5000,5000,50.34,,,20230424,5000,1.0,2,1699.9999999999998
+225,225,2a6gk5v,https://www.immowelt.de/expose/2a6gk5v,,,Berlin,WeiÃensee,"Berliner Allee 221, Berlin (WeiÃensee)",Berliner allee 221,855.78,"855,78",5000,5000,50.34,,,20230424,5000,1.0,2,17.0
 226,226,2aqfk5v,https://www.immowelt.de/expose/2aqfk5v,,,Berlin,Lichterfelde,Berlin (Lichterfelde),,1520.0,1.520,5000,5000,76.0,,,20230424,5000,3.0,1,20.0
 227,227,29hgw5w,https://www.immowelt.de/expose/29hgw5w,,,Berlin,Lichterfelde,"Glarner StraÃe 2, Berlin (Lichterfelde)",Glarner strße 2,949.0,949,5000,5000,76.0,,,20230424,5000,2.0,2,12.486842105263158
-228,228,2awdj5v,https://www.immowelt.de/expose/2awdj5v,,,Berlin,Friedrichsfelde,"LÃ¶wenberger StraÃe 4, Berlin (Friedrichsfelde)",Lã¶wenberger strße 4,20350.0,"203,50",5000,5000,25.0,,,20230424,5000,1.0,2,814.0
+228,228,2awdj5v,https://www.immowelt.de/expose/2awdj5v,,,Berlin,Friedrichsfelde,"LÃ¶wenberger StraÃe 4, Berlin (Friedrichsfelde)",Lã¶wenberger strße 4,203.5,"203,50",5000,5000,25.0,,,20230424,5000,1.0,2,8.14
 229,229,2ak6h5v,https://www.immowelt.de/expose/2ak6h5v,,,Berlin,Moabit,Berlin (Moabit),,1250.0,1.250,5000,5000,110.0,,,20230424,5000,4.0,1,11.363636363636363
 230,230,2atzg5v,https://www.immowelt.de/expose/2atzg5v,,,Berlin,Schöneberg,Berlin (SchÃ¶neberg),,1500.0,1.500,5000,5000,110.0,,,20230424,5000,3.0,1,13.636363636363637
 231,231,2arwg5v,https://www.immowelt.de/expose/2arwg5v,,,Berlin,Neukölln,Berlin (NeukÃ¶lln),,537.0,537,5000,5000,64.0,,,20230424,5000,2.0,1,8.390625
@@ -261,7 +261,7 @@
 259,259,2aytu5z,https://www.immowelt.de/expose/2aytu5z,,,Berlin,Friedrichsfelde,Berlin (Friedrichsfelde),,1383.0,1.383,5000,5000,62.46,,,20230424,5000,2.0,1,22.142170989433236
 260,260,2a4tx5x,https://www.immowelt.de/expose/2a4tx5x,,,Berlin,Tegel,"Bernauer StraÃe 132, Berlin (Tegel)",Bernauer strße 132,1500.0,1.500,5000,5000,104.56,,,20230424,5000,5.0,2,14.345830145371078
 261,261,2ayb65t,https://www.immowelt.de/expose/2ayb65t,,,Berlin,Prenzlauer,Berlin (Prenzlauer Berg),,2200.0,2.200,5000,5000,82.16,,,20230424,5000,3.0,1,26.777020447906526
-262,262,2a59u5s,https://www.immowelt.de/expose/2a59u5s,,,Berlin,Altglienicke,"Dorothea-Viehmann-StraÃe 23, Berlin (Altglienicke)",Dorothea-viehmann-strße 23,88791.0,"887,91",5000,5000,88.88,,,20230424,5000,3.0,2,998.9986498649865
+262,262,2a59u5s,https://www.immowelt.de/expose/2a59u5s,,,Berlin,Altglienicke,"Dorothea-Viehmann-StraÃe 23, Berlin (Altglienicke)",Dorothea-viehmann-strße 23,887.91,"887,91",5000,5000,88.88,,,20230424,5000,3.0,2,9.989986498649865
 263,263,2axsx5x,https://www.immowelt.de/expose/2axsx5x,,,Berlin,Tegel,"Bottroper Weg 19, Berlin (Tegel)",Bottroper weg 19,899.0,899,5000,5000,62.62,,,20230424,5000,2.0,2,14.356435643564357
 264,264,2ahss5s,https://www.immowelt.de/expose/2ahss5s,,,Berlin,Friedrichshain,"Simon-Dach-StraÃe 13, Berlin (Friedrichshain)",Simon-dach-strße 13,1900.0,1.900,5000,5000,79.0,,,20230424,5000,3.0,2,24.050632911392405
 265,265,2afms5s,https://www.immowelt.de/expose/2afms5s,,,Berlin,Friedrichshain,"MatternstraÃe 16, Berlin (Friedrichshain)",Matternstrße 16,2070.0,2.070,5000,5000,47.0,,,20230424,5000,2.0,2,44.04255319148936
@@ -329,8 +329,8 @@
 327,327,2a3vu5z,https://www.immowelt.de/expose/2a3vu5z,,,Berlin,Oberschöneweide,Berlin (OberschÃ¶neweide),,677.0,677,5000,5000,19.0,,,20230424,5000,1.0,1,35.63157894736842
 328,328,2amtu5z,https://www.immowelt.de/expose/2amtu5z,,,Berlin,Oberschöneweide,Berlin (OberschÃ¶neweide),,723.0,723,5000,5000,18.8,,,20230424,5000,1.0,1,38.45744680851064
 329,329,2attu5z,https://www.immowelt.de/expose/2attu5z,,,Berlin,Oberschöneweide,Berlin (OberschÃ¶neweide),,555.0,555,5000,5000,10.5,,,20230424,5000,1.0,1,52.857142857142854
-330,330,2ayfc5q,https://www.immowelt.de/expose/2ayfc5q,,,Berlin,Karow,"Forkenzeile 4, Berlin (Karow)",Forkenzeile 4,66452.0,"664,52",5000,5000,74.55,,,20230424,5000,3.0,2,891.3749161636485
-331,331,2akdc5q,https://www.immowelt.de/expose/2akdc5q,,,Berlin,Karow,"MÃ¼nchehagenstraÃe 60, Berlin (Karow)",Münchehagenstrße 60,42248.0,"422,48",5000,5000,46.86,,,20230424,5000,1.5,2,901.5791720017072
+330,330,2ayfc5q,https://www.immowelt.de/expose/2ayfc5q,,,Berlin,Karow,"Forkenzeile 4, Berlin (Karow)",Forkenzeile 4,664.52,"664,52",5000,5000,74.55,,,20230424,5000,3.0,2,8.913749161636487
+331,331,2akdc5q,https://www.immowelt.de/expose/2akdc5q,,,Berlin,Karow,"MÃ¼nchehagenstraÃe 60, Berlin (Karow)",Münchehagenstrße 60,422.48,"422,48",5000,5000,46.86,,,20230424,5000,1.5,2,9.015791720017072
 332,332,2a87w5v,https://www.immowelt.de/expose/2a87w5v,,,Berlin,Hellersdorf,"Kastanienallee 56, Berlin (Hellersdorf)",Kastanienallee 56,499.0,499,5000,5000,35.69,,,20230424,5000,1.0,2,13.981507425049035
 333,333,2al725x,https://www.immowelt.de/expose/2al725x,,,Berlin,Hellersdorf,"Kastanienallee 26, Berlin (Hellersdorf)",Kastanienallee 26,499.0,499,5000,5000,34.38,,,20230424,5000,1.0,2,14.514252472367655
 334,334,2aw3a5q,https://www.immowelt.de/expose/2aw3a5q,,,Berlin,Wilmersdorf,"Detmolder Str. 59, Berlin (Wilmersdorf)",Detmolder str. 59,2591.0,2.591,5000,5000,112.66,,,20230424,5000,5.0,2,22.99840227232381
@@ -345,9 +345,9 @@
 343,343,2abtu5z,https://www.immowelt.de/expose/2abtu5z,,,Berlin,Oberschöneweide,Berlin (OberschÃ¶neweide),,660.0,660,5000,5000,18.5,,,20230424,5000,1.0,1,35.67567567567568
 344,344,2a6lj5p,https://www.immowelt.de/expose/2a6lj5p,,,Berlin,Schöneberg,"MÃ¼nchener StraÃe 2, Berlin (SchÃ¶neberg)",Münchener strße 2,4850.0,4.850,5000,5000,268.0,,,20230424,5000,5.0,2,18.097014925373134
 345,345,2aurc5y,https://www.immowelt.de/expose/2aurc5y,,,Berlin,Mitte,"Leipziger StraÃe 128, Berlin (Mitte)",Leipziger strße 128,2055.0,2.055,5000,5000,117.0,,,20230424,5000,2.0,2,17.564102564102566
-346,346,2azee5p,https://www.immowelt.de/expose/2azee5p,,,Berlin,Friedrichsfelde,"Rummelsburger StraÃe 36, Berlin (Friedrichsfelde)",Rummelsburger strße 36,62678.0,"626,78",5000,5000,44.77,,,20230424,5000,1.5,2,1400.0
+346,346,2azee5p,https://www.immowelt.de/expose/2azee5p,,,Berlin,Friedrichsfelde,"Rummelsburger StraÃe 36, Berlin (Friedrichsfelde)",Rummelsburger strße 36,626.78,"626,78",5000,5000,44.77,,,20230424,5000,1.5,2,13.999999999999998
 347,347,2a38d5p,https://www.immowelt.de/expose/2a38d5p,,,Berlin,Spandau,"Reckeweg 122, Berlin (Spandau)",Reckeweg 122,400.0,400,5000,5000,35.0,,,20230424,5000,1.0,2,11.428571428571429
-348,348,2a9sc5p,https://www.immowelt.de/expose/2a9sc5p,,,Berlin,Rahnsdorf,"An den BÃ¤nken 30, Berlin (Rahnsdorf)",An den bänken 30,86125.0,"861,25",5000,5000,58.78,,,20230424,5000,2.0,2,1465.209254848588
+348,348,2a9sc5p,https://www.immowelt.de/expose/2a9sc5p,,,Berlin,Rahnsdorf,"An den BÃ¤nken 30, Berlin (Rahnsdorf)",An den bänken 30,861.25,"861,25",5000,5000,58.78,,,20230424,5000,2.0,2,14.652092548485879
 349,349,2apw85p,https://www.immowelt.de/expose/2apw85p,,,Berlin,Wilmersdorf,Berlin (Wilmersdorf),,2900.0,2.900,5000,5000,125.0,,,20230424,5000,4.0,1,23.2
 350,350,2a35q5y,https://www.immowelt.de/expose/2a35q5y,,,Berlin,Mitte,Berlin Mitte (Mitte),,3950.0,3.950,5000,5000,182.0,,,20230424,5000,4.0,1,21.703296703296704
 351,351,2a7965p,https://www.immowelt.de/expose/2a7965p,,,Berlin,Alt-Hohenschönhausen,"Simon-Bolivar-StraÃe 21, Berlin (Alt-HohenschÃ¶nhausen)",Simon-bolivar-strße 21,1349.0,1.349,5000,5000,100.6,,,20230424,5000,5.0,2,13.409542743538768
@@ -359,7 +359,7 @@
 357,357,2aetu5z,https://www.immowelt.de/expose/2aetu5z,,,Berlin,Friedrichshain,Berlin (Friedrichshain),,1690.0,1.690,5000,5000,72.64,,,20230424,5000,2.0,1,23.265418502202643
 358,358,2aea35p,https://www.immowelt.de/expose/2aea35p,,,Berlin,Spandau,"Am Maselakepark 13, Berlin (Spandau)",Am maselakepark 13,1343.0,1.343,5000,5000,72.0,,,20230424,5000,2.0,2,18.65277777777778
 359,359,2am735p,https://www.immowelt.de/expose/2am735p,,,Berlin,Spandau,"Am Maselakepark 17, Berlin (Spandau)",Am maselakepark 17,2407.0,2.407,5000,5000,134.0,,,20230424,5000,5.0,2,17.96268656716418
-360,360,2as625p,https://www.immowelt.de/expose/2as625p,,,Berlin,Friedrichsfelde,"KraetkestraÃe 27, Berlin (Friedrichsfelde)",Kraetkestrße 27,70150.0,"701,50",5000,5000,50.1,,,20230424,5000,1.5,2,1400.1996007984033
+360,360,2as625p,https://www.immowelt.de/expose/2as625p,,,Berlin,Friedrichsfelde,"KraetkestraÃe 27, Berlin (Friedrichsfelde)",Kraetkestrße 27,701.5,"701,50",5000,5000,50.1,,,20230424,5000,1.5,2,14.001996007984031
 361,361,2auhu5n,https://www.immowelt.de/expose/2auhu5n,,,Berlin,Mitte,"ZimmerstraÃe 92, Berlin (Mitte)",Zimmerstrße 92,2600.0,2.600,5000,5000,104.84,,,20230424,5000,3.0,2,24.799694772987408
 362,362,2aghu5n,https://www.immowelt.de/expose/2aghu5n,,,Berlin,Mitte,"ZimmerstraÃe 94, Berlin (Mitte)",Zimmerstrße 94,2250.0,2.250,5000,5000,87.62,,,20230424,5000,4.0,2,25.679068705774935
 363,363,2atnt5n,https://www.immowelt.de/expose/2atnt5n,,,Berlin,Grunewald,"MenzelstraÃe 7, Berlin (Grunewald)",Menzelstrße 7,3300.0,3.300,5000,5000,110.0,,,20230424,5000,3.0,2,30.0
@@ -376,7 +376,7 @@
 374,374,2ad3y5l,https://www.immowelt.de/expose/2ad3y5l,,,Berlin,Heinersdorf,"Prenzlauer Promenade 49E, Berlin (Heinersdorf)",Prenzlauer promenade 49e,2000.0,2.000,5000,5000,87.08,,,20230424,5000,3.0,2,22.96738631143776
 375,375,2alcu5l,https://www.immowelt.de/expose/2alcu5l,,,Berlin,Charlottenburg,"WitzlebenstraÃe 25, Berlin (Charlottenburg)",Witzlebenstrße 25,2640.0,2.640,5000,5000,126.0,,,20230424,5000,2.0,2,20.952380952380953
 376,376,2aruu5z,https://www.immowelt.de/expose/2aruu5z,,,Berlin,Oberschöneweide,Berlin (OberschÃ¶neweide),,681.0,681,5000,5000,18.4,,,20230424,5000,1.0,1,37.01086956521739
-377,377,2asf45n,https://www.immowelt.de/expose/2asf45n,,,Berlin,Tegel,"Berliner Str. 105, Berlin (Tegel)",Berliner str. 105,98450.0,"984,50",5000,5000,61.52,,,20230424,5000,3.0,2,1600.2925877763328
+377,377,2asf45n,https://www.immowelt.de/expose/2asf45n,,,Berlin,Tegel,"Berliner Str. 105, Berlin (Tegel)",Berliner str. 105,984.5,"984,50",5000,5000,61.52,,,20230424,5000,3.0,2,16.002925877763328
 378,378,2audj5l,https://www.immowelt.de/expose/2audj5l,,,Berlin,Wilmersdorf,Berlin (Wilmersdorf),,2000.0,2.000,5000,5000,87.41,,,20230424,5000,2.0,1,22.880677268047137
 379,379,2adtu5z,https://www.immowelt.de/expose/2adtu5z,,,Berlin,Oberschöneweide,Berlin (OberschÃ¶neweide),,672.0,672,5000,5000,27.3,,,20230424,5000,1.0,1,24.615384615384613
 380,380,2arlp5x,https://www.immowelt.de/expose/2arlp5x,,,Berlin,Neukölln,Berlin (NeukÃ¶lln),,2100.0,2.100,5000,5000,72.0,,,20230424,5000,3.0,1,29.166666666666668
@@ -499,7 +499,7 @@
 497,497,2akbs5e,https://www.immowelt.de/expose/2akbs5e,,,Berlin,Schmargendorf,"DÃ¼nkelbergsteig 11, Berlin (Schmargendorf)",Dünkelbergsteig 11,3374.0,3.374,5000,5000,126.96,,,20230424,5000,3.0,2,26.575299306868306
 498,498,2aktu5z,https://www.immowelt.de/expose/2aktu5z,,,Berlin,Oberschöneweide,Berlin (OberschÃ¶neweide),,606.0,606,5000,5000,11.9,,,20230424,5000,1.0,1,50.924369747899156
 499,499,2amdx5d,https://www.immowelt.de/expose/2amdx5d,,,Berlin-Charlottenburg,Charlottenburg,"Heubnerweg 7, Berlin-Charlottenburg (Charlottenburg)",Heubnerweg 7,2800.0,2.800,5000,5000,128.66,,,20230424,5000,4.0,2,21.762785636561482
-500,500,2akwj5d,https://www.immowelt.de/expose/2akwj5d,,,Berlin,Tegel,"Berliner Str. 105, Berlin (Tegel)",Berliner str. 105,73350.0,"733,50",5000,5000,45.83,,,20230424,5000,2.0,2,1600.48003491163
+500,500,2akwj5d,https://www.immowelt.de/expose/2akwj5d,,,Berlin,Tegel,"Berliner Str. 105, Berlin (Tegel)",Berliner str. 105,733.5,"733,50",5000,5000,45.83,,,20230424,5000,2.0,2,16.0048003491163
 501,501,2amvs5c,https://www.immowelt.de/expose/2amvs5c,,,Berlin,Prenzlauer,"Stargarder Str. 73, Berlin (Prenzlauer Berg)",Stargarder str. 73,1520.0,1.520,5000,5000,55.0,,,20230424,5000,1.0,2,27.636363636363637
 502,502,2ahqs5c,https://www.immowelt.de/expose/2ahqs5c,,,Berlin,Neukölln,"Mainzer Str. 36, Berlin (NeukÃ¶lln)",Mainzer str. 36,1900.0,1.900,5000,5000,96.0,,,20230424,5000,3.0,2,19.791666666666668
 503,503,2ay3j5c,https://www.immowelt.de/expose/2ay3j5c,,,Berlin,Mitte,"SchÃ¼tzenstraÃe 41, Berlin (Mitte)",Schützenstrße 41,2600.0,2.600,5000,5000,115.0,,,20230424,5000,3.0,2,22.608695652173914
@@ -564,7 +564,7 @@
 562,562,2ar5256,https://www.immowelt.de/expose/2ar5256,,,Berlin,Mitte,"OberwallstraÃe 21, Berlin (Mitte)",Oberwallstrße 21,12000.0,12.000,5000,5000,403.0,,,20230424,5000,5.0,2,29.77667493796526
 563,563,2ascv5z,https://www.immowelt.de/expose/2ascv5z,,,Berlin,Moabit,"Klara-Franke-StraÃe 10, Berlin (Moabit)",Klara-franke-strße 10,1850.0,1.850,5000,5000,81.0,,,20230424,5000,3.0,2,22.839506172839506
 564,564,2ah6c5e,https://www.immowelt.de/expose/2ah6c5e,,,Berlin,Köpenick,Berlin (KÃ¶penick),,1850.0,1.850,5000,5000,89.0,,,20230424,5000,2.0,1,20.786516853932586
-565,565,2abcw5z,https://www.immowelt.de/expose/2abcw5z,,,Berlin,Hellersdorf,"Zossener StraÃe 152, Berlin (Hellersdorf)",Zossener strße 152,47220.0,"472,20",5000,5000,42.35,,,20230424,5000,1.0,2,1114.9940968122785
+565,565,2abcw5z,https://www.immowelt.de/expose/2abcw5z,,,Berlin,Hellersdorf,"Zossener StraÃe 152, Berlin (Hellersdorf)",Zossener strße 152,472.2,"472,20",5000,5000,42.35,,,20230424,5000,1.0,2,11.149940968122786
 566,566,2arzn54,https://www.immowelt.de/expose/2arzn54,,,Berlin,Charlottenburg,"KnesebeckstraÃe 12, Berlin (Charlottenburg)",Knesebeckstrße 12,4498.0,4.498,5000,5000,198.9,,,20230424,5000,4.0,2,22.614379084967318
 567,567,2a4kf54,https://www.immowelt.de/expose/2a4kf54,,,Berlin,Friedrichshain,"Boxhagener Str. 114, Berlin (Friedrichshain)",Boxhagener str. 114,3100.0,3.100,5000,5000,108.0,,,20230424,5000,3.0,2,28.703703703703702
 568,568,2a6ff54,https://www.immowelt.de/expose/2a6ff54,,,Berlin,Prenzlauer,"RodenbergstraÃe 1, Berlin (Prenzlauer Berg)",Rodenbergstrße 1,2880.0,2.880,5000,5000,116.0,,,20230424,5000,3.0,2,24.82758620689655
@@ -589,7 +589,7 @@
 587,587,29bec5z,https://www.immowelt.de/expose/29bec5z,,,Berlin,Schöneberg,"Quartiersweg 4, Berlin (SchÃ¶neberg)",Quartiersweg 4,1901.82,"1.901,82",5000,5000,88.87,,,20230424,5000,1.5,2,21.400022504782264
 588,588,29c795z,https://www.immowelt.de/expose/29c795z,,,Berlin,Wilmersdorf,"Uhlandstr. 61, Berlin (Wilmersdorf)",Uhlandstr. 61,2400.0,2.400,5000,5000,135.0,,,20230424,5000,3.0,2,17.77777777777778
 589,589,2acb453,https://www.immowelt.de/expose/2acb453,,,Berlin,Charlottenburg,Berlin (Charlottenburg),,2500.0,2.500,5000,5000,70.0,,,20230424,5000,3.0,1,35.714285714285715
-590,590,2a7cy5l,https://www.immowelt.de/expose/2a7cy5l,,,Berlin,Hellersdorf,"Kastanienallee 51, Berlin (Hellersdorf)",Kastanienallee 51,32876.0,"328,76",5000,5000,24.72,,,20230424,5000,1.0,2,1329.9352750809062
+590,590,2a7cy5l,https://www.immowelt.de/expose/2a7cy5l,,,Berlin,Hellersdorf,"Kastanienallee 51, Berlin (Hellersdorf)",Kastanienallee 51,328.76,"328,76",5000,5000,24.72,,,20230424,5000,1.0,2,13.299352750809062
 591,591,29j6s5y,https://www.immowelt.de/expose/29j6s5y,,,Berlin,Zehlendorf,"Vopeliuspfad 10, Berlin (Zehlendorf)",Vopeliuspfad 10,1550.0,1.550,5000,5000,120.0,,,20230424,5000,,2,12.916666666666666
 592,592,2akuu5z,https://www.immowelt.de/expose/2akuu5z,,,Berlin,Friedrichsfelde,Berlin (Friedrichsfelde),,1547.0,1.547,5000,5000,71.87,,,20230424,5000,3.0,1,21.524975650480034
 593,593,2aeuu5z,https://www.immowelt.de/expose/2aeuu5z,,,Berlin,Oberschöneweide,Berlin (OberschÃ¶neweide),,599.0,599,5000,5000,12.0,,,20230424,5000,1.0,1,49.916666666666664
@@ -645,7 +645,7 @@
 643,643,29wqd5m,https://www.immowelt.de/expose/29wqd5m,,,Berlin,Wilmersdorf,"Detmolder Str. 19, Berlin (Wilmersdorf)",Detmolder str. 19,2250.0,2.250,5000,5000,79.16,,,20230424,5000,2.0,2,28.42344618494189
 644,644,29hjd5m,https://www.immowelt.de/expose/29hjd5m,,,Berlin,Friedrichshain,"SeumestraÃe 12, Berlin (Friedrichshain)",Seumestrße 12,1650.0,1.650,5000,5000,68.0,,,20230424,5000,2.0,2,24.264705882352942
 645,645,299sc5m,https://www.immowelt.de/expose/299sc5m,,,Berlin,Wilmersdorf,"Blissestr. 68, Berlin (Wilmersdorf)",Blissestr. 68,2500.0,2.500,5000,5000,102.08,,,20230424,5000,2.0,2,24.49059561128527
-646,646,2arf45n,https://www.immowelt.de/expose/2arf45n,,,Berlin,Friedrichsfelde,"KraetkestraÃe 28, Berlin (Friedrichsfelde)",Kraetkestrße 28,84714.0,"847,14",5000,5000,60.51,,,20230424,5000,3.0,2,1400.0
+646,646,2arf45n,https://www.immowelt.de/expose/2arf45n,,,Berlin,Friedrichsfelde,"KraetkestraÃe 28, Berlin (Friedrichsfelde)",Kraetkestrße 28,847.14,"847,14",5000,5000,60.51,,,20230424,5000,3.0,2,14.0
 647,647,29l935m,https://www.immowelt.de/expose/29l935m,,,Berlin,Wilmersdorf,Berlin (Wilmersdorf),,3276.0,3.276,5000,5000,182.0,,,20230424,5000,7.0,1,18.0
 648,648,2ajga5m,https://www.immowelt.de/expose/2ajga5m,,,Berlin,Mitte,Berlin (Mitte),,3354.88,"3.354,88",5000,5000,185.5,,,20230424,5000,4.0,1,18.085606469002695
 649,649,2ap9y56,https://www.immowelt.de/expose/2ap9y56,,,Berlin,Friedenau,Berlin (Friedenau),,1650.0,1.650,5000,5000,58.0,,,20230424,5000,2.0,1,28.448275862068964
@@ -677,7 +677,7 @@
 675,675,28n835x,https://www.immowelt.de/expose/28n835x,,,Berlin,Schöneberg,"Dennewitzstr. 42, Berlin (SchÃ¶neberg)",Dennewitzstr. 42,2325.0,2.325,5000,5000,86.45,,,20230424,5000,2.0,2,26.89415847310584
 676,676,28r9u5w,https://www.immowelt.de/expose/28r9u5w,,,Berlin,Schmargendorf,"Hohenzollerndamm 71A, Berlin (Schmargendorf)",Hohenzollerndamm 71a,1400.0,1.400,5000,5000,42.0,,,20230424,5000,1.0,2,33.333333333333336
 677,677,283y55w,https://www.immowelt.de/expose/283y55w,,,Berlin,Schöneberg,"Dennewitzstr. 43, Berlin (SchÃ¶neberg)",Dennewitzstr. 43,2625.0,2.625,5000,5000,98.9,,,20230424,5000,3.0,2,26.541961577350857
-678,678,28ace5x,https://www.immowelt.de/expose/28ace5x,,,Berlin,Wedding,"MÃ¼llerstr. 86D, Berlin (Wedding)",Müllerstr. 86d,30689.0,"306,89",5000,5000,41.76,,,20230424,5000,1.0,2,734.889846743295
+678,678,28ace5x,https://www.immowelt.de/expose/28ace5x,,,Berlin,Wedding,"MÃ¼llerstr. 86D, Berlin (Wedding)",Müllerstr. 86d,306.89,"306,89",5000,5000,41.76,,,20230424,5000,1.0,2,7.34889846743295
 679,679,28kaq5u,https://www.immowelt.de/expose/28kaq5u,,,Berlin,Wedding,"Lindower StraÃe 3 1. 1 18, Berlin (Wedding)",Lindower strße 3 1. 1 18,7500.0,7.500,5000,5000,190.0,,,20230424,5000,3.0,2,39.473684210526315
 680,680,28z5q5u,https://www.immowelt.de/expose/28z5q5u,,,Berlin,Wedding,"Lindower StraÃe 5 2. 2 18, Berlin (Wedding)",Lindower strße 5 2. 2 18,3500.0,3.500,5000,5000,73.0,,,20230424,5000,2.0,2,47.945205479452056
 681,681,29zvc5q,https://www.immowelt.de/expose/29zvc5q,,,Berlin,Mitte,Berlin (Mitte),,1260.0,1.260,5000,5000,42.0,,,20230424,5000,1.0,1,30.0
@@ -776,9 +776,9 @@
 774,774,27fl75g,https://www.immowelt.de/expose/27fl75g,,,Berlin,Charlottenburg,Berlin (Charlottenburg),,6000.0,6.000,5000,5000,165.0,,,20230424,5000,4.0,1,36.36363636363637
 775,775,27dkp5e,https://www.immowelt.de/expose/27dkp5e,,,Berlin,Staaken,Berlin (Staaken),,2220.15,"2.220,15",5000,5000,148.01,,,20230424,5000,5.0,1,15.000000000000002
 776,776,27p8p5e,https://www.immowelt.de/expose/27p8p5e,,,Berlin,Staaken,Berlin (Staaken),,1104.88,"1.104,88",5000,5000,78.92,,,20230424,5000,2.0,1,14.000000000000002
-777,777,27ymj5e,https://www.immowelt.de/expose/27ymj5e,,,Berlin,Schöneberg,"Quartiersweg 4, Berlin (SchÃ¶neberg)",Quartiersweg 4,91298.0,"912,98",5000,5000,41.0,,,20230424,5000,1.5,2,2226.7804878048782
-778,778,27mkj5e,https://www.immowelt.de/expose/27mkj5e,,,Berlin,Schöneberg,"Quartiersweg 6, Berlin (SchÃ¶neberg)",Quartiersweg 6,87429.0,"874,29",5000,5000,30.0,,,20230424,5000,1.0,2,2914.3
-779,779,27xfj5e,https://www.immowelt.de/expose/27xfj5e,,,Berlin,Schöneberg,"Quartiersweg 6, Berlin (SchÃ¶neberg)",Quartiersweg 6,63829.0,"638,29",5000,5000,22.01,,,20230424,5000,1.0,2,2900.0
+777,777,27ymj5e,https://www.immowelt.de/expose/27ymj5e,,,Berlin,Schöneberg,"Quartiersweg 4, Berlin (SchÃ¶neberg)",Quartiersweg 4,912.98,"912,98",5000,5000,41.0,,,20230424,5000,1.5,2,22.267804878048782
+778,778,27mkj5e,https://www.immowelt.de/expose/27mkj5e,,,Berlin,Schöneberg,"Quartiersweg 6, Berlin (SchÃ¶neberg)",Quartiersweg 6,874.29,"874,29",5000,5000,30.0,,,20230424,5000,1.0,2,29.142999999999997
+779,779,27xfj5e,https://www.immowelt.de/expose/27xfj5e,,,Berlin,Schöneberg,"Quartiersweg 6, Berlin (SchÃ¶neberg)",Quartiersweg 6,638.29,"638,29",5000,5000,22.01,,,20230424,5000,1.0,2,28.999999999999996
 780,780,26xjf55,https://www.immowelt.de/expose/26xjf55,,,Berlin,Charlottenburg,"GervinusstraÃe 19A, Berlin (Charlottenburg)",Gervinusstrße 19a,3730.0,3.730,5000,5000,134.0,,,20230424,5000,4.0,2,27.83582089552239
 781,781,27zzm5d,https://www.immowelt.de/expose/27zzm5d,,,Berlin,Mitte,"Rosenthaler Str. 44, Berlin (Mitte)",Rosenthaler str. 44,3640.0,3.640,5000,5000,102.0,,,20230424,5000,3.0,2,35.68627450980392
 782,782,25qgb5l,https://www.immowelt.de/expose/25qgb5l,,,Berlin,Charlottenburg,"Lietzenburger Str. 56, Berlin (Charlottenburg)",Lietzenburger str. 56,1850.0,1.850,5000,5000,40.0,,,20230424,5000,1.0,2,46.25
@@ -801,7 +801,7 @@
 799,799,2zvn54c,https://www.immowelt.de/expose/2zvn54c,,,Berlin,Mitte,"KÃ¶penicker StraÃe 43, Berlin (Mitte)",Kã¶penicker strße 43,750.0,750,5000,5000,20.0,,,20230424,5000,1.0,2,37.5
 800,800,2yl8d4a,https://www.immowelt.de/expose/2yl8d4a,,,Berlin,Lichterfelde,"Unter den Eichen 96, Berlin (Lichterfelde)",Unter den eichen 96,859.0,859,5000,5000,24.0,,,20230424,5000,1.0,2,35.791666666666664
 801,801,2yu8n49,https://www.immowelt.de/expose/2yu8n49,,,Berlin,Lichterfelde,"Unter den Eichen 96, Berlin (Lichterfelde)",Unter den eichen 96,969.0,969,5000,5000,35.0,,,20230424,5000,1.0,2,27.685714285714287
-802,802,2t7tb4w,https://www.immowelt.de/expose/2t7tb4w,,,Berlin,Charlottenburg,"BleibtreustraÃe 38, Berlin (Charlottenburg)",Bleibtreustrße 38,83007.0,"830,07",5000,5000,49.38,,,20230424,5000,1.0,2,1680.9842041312272
+802,802,2t7tb4w,https://www.immowelt.de/expose/2t7tb4w,,,Berlin,Charlottenburg,"BleibtreustraÃe 38, Berlin (Charlottenburg)",Bleibtreustrße 38,830.07,"830,07",5000,5000,49.38,,,20230424,5000,1.0,2,16.809842041312272
 803,803,2gp5u4m,https://www.immowelt.de/expose/2gp5u4m,,,Berlin,Frohnau,"Hattenheimerstr. 7, Berlin (Frohnau)",Hattenheimerstr. 7,949.0,949,5000,5000,82.52,,,20230424,5000,3.0,2,11.500242365487155
-804,804,2g5wx4c,https://www.immowelt.de/expose/2g5wx4c,,,Berlin,Spandau,"Wilhelmstr. 147, Berlin (Spandau)",Wilhelmstr. 147,86716.0,"867,16",5000,5000,61.94,,,20230424,5000,2.0,2,1400.0
+804,804,2g5wx4c,https://www.immowelt.de/expose/2g5wx4c,,,Berlin,Spandau,"Wilhelmstr. 147, Berlin (Spandau)",Wilhelmstr. 147,867.16,"867,16",5000,5000,61.94,,,20230424,5000,2.0,2,14.0
 805,805,2g4ew43,https://www.immowelt.de/expose/2g4ew43,,,Berlin,Prenzlauer,"KollwitzstraÃe 42, Berlin (Prenzlauer Berg)",Kollwitzstrße 42,1980.0,1.980,5000,5000,93.0,,,20230424,5000,3.0,2,21.29032258064516
