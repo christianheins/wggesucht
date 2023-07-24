@@ -400,6 +400,7 @@ def main():
     df_concat.rename(columns = {"index":"Data ID", "Posting Date":"Eintrag", "Price":"Miete", "Size":"Größe","Date From":"frei ab", "Date To":"frei bis", "Location":"Stadtteil", "Date To (Year - Month)":"frei bis (Year - Month)"}, inplace=True)
     df_immowelt = pd.read_csv("df_immowelt.csv")
     df_concat = pd.concat([df_concat, df_immowelt])
+    df_concat.to_csv("df_concat_concat.csv")
     st.write(df_concat)
 
     #st.write(df_concat)
