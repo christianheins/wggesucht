@@ -788,6 +788,7 @@ def main():
 
         df_2023_07 = pd.read_csv("df_concat_20230712.csv")
         df_2023_07.rename(columns={"index":"Data ID", "Latitude":"lat", "Longitude":"lon"}, inplace=True)
+        df_2023_07.fillna(0, inplace=True)
         df_2023_07.drop(columns=["Unnamed: 0.1", "Unnamed: 0"], inplace=True)
         df_2023_07.reset_index(drop=True, inplace=True)
         df_2023_07["Pure Rent"] = df_2023_07["Price"]
