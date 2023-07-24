@@ -761,10 +761,10 @@ def main():
         latitudes = ["Location not found: Wedding","Location not found: Reinickendorf","Location not found: Prenzlauer Berg","Location not found: Neukölln","Location not found: NA","Location not found: Moabit","Location not found: Mitte","Location not found: Marienfelde","Location not found: Lichtenberg","Location not found: Kreuzberg","Location not found: Charlottenburg"]
         df_concat = df_concat[~df_concat["Latitude"].isin(latitudes)]
         df_concat.rename(columns = {"Latitude":"lat","Longitude":"lon"}, inplace=True)
-        df_concat['lat'] = pd.to_numeric(df_concat['lat'])
-        df_concat['lon'] = pd.to_numeric(df_concat['lon'])
         df_concat['lat'].fillna("0", inplace=True)
         df_concat['lon'].fillna("0", inplace=True)
+        df_concat['lat'] = pd.to_numeric(df_concat['lat'])
+        df_concat['lon'] = pd.to_numeric(df_concat['lon'])
         st.write(df_concat)
         st.map(df_concat)
 
