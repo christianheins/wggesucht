@@ -797,7 +797,6 @@ def main():
         df_2023_07.fillna(0, inplace=True)
         df_2023_07.drop(columns=["Unnamed: 0.1", "Unnamed: 0"], inplace=True)
         df_2023_07.reset_index(drop=True, inplace=True)
-        df_2023_07["Pure Rent"] = df_2023_07["Price"]
         df_2023_07["Dataframe Date"] = "20230712"
 
         df_timeline = pd.concat([df_2023_05, df_2023_06, df_2023_07])
