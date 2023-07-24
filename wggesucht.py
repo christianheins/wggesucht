@@ -785,16 +785,14 @@ def main():
         df_2023_06["Dataframe Date"] = "20230630"
         df_2023_06["Pure Rent"] = df_2023_06["Price"]
         df_2023_06.reset_index(drop=True, inplace=True)
-        st.write(df_2023_06)
 
         df_2023_07 = pd.read_csv("df_concat_20230712.csv")
-        df_2023_07.rename(columns={"index":"Data ID", "Latitude":"lat", "Longitude":"lon"}, inplace=True)
+        df_2023_07.rename(columns={"Latitude":"lat", "Longitude":"lon"}, inplace=True)
         df_2023_07.fillna(0, inplace=True)
         df_2023_07.drop(columns=["Unnamed: 0.1", "Unnamed: 0"], inplace=True)
         df_2023_07.reset_index(drop=True, inplace=True)
         df_2023_07["Pure Rent"] = df_2023_07["Price"]
         df_2023_07["Dataframe Date"] = "20230712"
-        st.write(df_2023_07)
 
         df_timeline = pd.concat([df_2023_05, df_2023_06, df_2023_07])
         st.write(df_timeline)
