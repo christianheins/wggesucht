@@ -763,6 +763,7 @@ def main():
         df_concat.rename(columns = {"Latitude":"lat","Longitude":"lon"}, inplace=True)
         df_concat['lat'] = pd.to_numeric(df_concat['lat'])
         df_concat['lon'] = pd.to_numeric(df_concat['lon'])
+        df_concat['lat'].fillna("0", inplace=True)
         st.map(df_concat)
 
         with st.container():
