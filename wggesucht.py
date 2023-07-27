@@ -23,6 +23,8 @@ def main():
     import ssl
     import slack
     import pytz
+    import string
+    import random
 
     #Streamlit
 
@@ -989,7 +991,32 @@ def main():
                     st.image('https://media.giphy.com/media/XathaB5ILqSME/giphy.gif?cid=ecf05e479myrqtfsmnw3tsf81zg8em7pdz1ykm97adrjzwxu&rid=giphy.gif&ct=g', use_column_width=True)
                 with col2:
                     st.image('https://media.giphy.com/media/XathaB5ILqSME/giphy.gif?cid=ecf05e479myrqtfsmnw3tsf81zg8em7pdz1ykm97adrjzwxu&rid=giphy.gif&ct=g', use_column_width=True)
+        def randon_string() -> str:
+            return "".join(random.choices(string.ascii_uppercase + string.digits, k=10))
 
+
+        def chat_actions():
+            st.session_state["chat_history"].append(
+                {"role": "user", "content": st.session_state["chat_input"]},
+            )
+
+            st.session_state["chat_history"].append(
+                {
+                    "role": "assistant",
+                    "content": randon_string(),
+                },  # This can be replaced with your chat response logic
+            )
+
+
+        if "chat_history" not in st.session_state:
+            st.session_state["chat_history"] = []
+
+
+        st.chat_input("Enter your message", on_submit=chat_actions, key="chat_input")
+
+        for i in st.session_state["chat_history"]:
+            with st.chat_message(name=i["role"]):
+                st.write(i["content"])
 
     if selected == "🫂 Neighbourhoods":
         st.markdown("<h1 style='text-align: center; color: orange;'>Neighbourhood Analysis</h1>", unsafe_allow_html=True)
