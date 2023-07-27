@@ -458,7 +458,7 @@ def main():
 
             col1, col2, col3 = st.columns([0.3, 0.3, 0.3])
             with col1:
-                multiselect_neighbourhoods = st.multiselect("Choose a neighbourhood", options=df_concat["Neighbourhoods"].unique().tolist(), help="Please do not leave empty")
+                multiselect_neighbourhoods = st.multiselect("Choose a neighbourhood", options=df_concat["Neighbourhood"].unique().tolist(), help="Please do not leave empty")
                 st.write("You selected:", multiselect_neighbourhoods)
                 table_df = df_concat[df_concat["Neighbourhood"].isin(multiselect_neighbourhoods)]
             with col2:
