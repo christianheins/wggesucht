@@ -456,7 +456,7 @@ def main():
         st.markdown("<h4 style='text-align: center; color: orange;'>Properties table</h4>", unsafe_allow_html=True)
         with st.expander("Table"):
 
-            col1, col2, col3 = st.columns([0.3, 0.3, 0,3])
+            col1, col2, col3 = st.columns([0.3, 0.3, 0.3])
             with col1:
                 multiselect_neighbourhoods = st.multiselect("Choose a neighbourhood", df_concat["Neighbourhoods"].unique())
                 st.write("You selected:", multiselect_neighbourhoods)
