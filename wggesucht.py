@@ -477,7 +477,7 @@ def main():
         with col3:
             st.write("Another filter")
 
-        if europersqm_maxslider:
+        if europersqm_maxslider[1] != "NaN":
             table_df = table_df[europersqm_minslider]
             table_df2 = table_df[europersqm_maxslider]
 
