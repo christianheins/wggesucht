@@ -653,70 +653,68 @@ def main():
         with col4:
             st.metric("Average lease term", value="{:,.0f} months".format(df_concat["Lease term"].mean()))
 
-        with st.expander("Open for more"):
-
-            col1, col2, col3, col4 = st.columns([1, 1, 1, 1])
-            with col1:
-                #st.metric("Min rent", value="{:,.0f} €".format(df_concat["Miete"].min()))
-                chart = alt.Chart(df_concat).mark_boxplot().encode(
-                    y='Pure Rent:Q'
-                ).properties(
-                    height=400,
-                    width=100
-                )
-                st.altair_chart(chart)
-                st.metric("Standard deviation rent", value="{:,.0f} €".format(df_concat["Pure Rent"].std()))
-                st.metric("25% of the leases are up to", value="{:,.0f} €".format(df_statistics.loc["25%"]["Pure Rent"]))
-                st.metric("50% of the leases are up to", value="{:,.0f} €".format(df_statistics.loc["50%"]["Pure Rent"]))
-                st.metric("75% of the leases are up to", value="{:,.0f} €".format(df_statistics.loc["75%"]["Pure Rent"]))
-                st.metric("Max rent", value="{:,.0f} €".format(df_concat["Pure Rent"].max()))
+        col1, col2, col3, col4 = st.columns([1, 1, 1, 1])
+        with col1:
+            #st.metric("Min rent", value="{:,.0f} €".format(df_concat["Miete"].min()))
+            chart = alt.Chart(df_concat).mark_boxplot().encode(
+                y='Pure Rent:Q'
+            ).properties(
+                height=400,
+                width=100
+            )
+            st.altair_chart(chart)
+            st.metric("Standard deviation rent", value="{:,.0f} €".format(df_concat["Pure Rent"].std()))
+            st.metric("25% of the leases are up to", value="{:,.0f} €".format(df_statistics.loc["25%"]["Pure Rent"]))
+            st.metric("50% of the leases are up to", value="{:,.0f} €".format(df_statistics.loc["50%"]["Pure Rent"]))
+            st.metric("75% of the leases are up to", value="{:,.0f} €".format(df_statistics.loc["75%"]["Pure Rent"]))
+            st.metric("Max rent", value="{:,.0f} €".format(df_concat["Pure Rent"].max()))
 
 
-            with col2:
-                #st.metric("Min size", value="{:,.0f} SQM".format(df_concat["Größe"].min()))
-                chart = alt.Chart(df_concat).mark_boxplot().encode(
-                    y=alt.Y('Size:Q', title="Size in SQM")
-                ).properties(
-                    height=400,
-                    width=100
-                )
-                st.altair_chart(chart)
-                st.metric("Standard deviation size", value="{:,.0f} SQM".format(df_concat["Size"].std()))
-                st.metric("25% of the leases are up to", value="{:,.0f} SQM".format(df_statistics.loc["25%"]["Size"]))
-                st.metric("50% of the leases are up to", value="{:,.0f} SQM".format(df_statistics.loc["50%"]["Size"]))
-                st.metric("75% of the leases are up to", value="{:,.0f} SQM".format(df_statistics.loc["75%"]["Size"]))
-                st.metric("Max size", value="{:,.0f} SQM".format(df_concat["Size"].max()))
-            with col3:
-                #st.metric("Min EUR per SQM", value="{:,.0f} € per SQM".format(df_concat["EUR / SQM"].min()))
-                chart = alt.Chart(df_concat).mark_boxplot().encode(
-                    y='EUR / SQM:Q'
-                ).properties(
-                    height=400,
-                    width=100
-                )
-                st.altair_chart(chart)
-                st.metric("Standard deviation EUR per SQM", value="{:,.0f} € per SQM".format(df_concat["EUR / SQM"].std()))
-                st.metric("25% of the leases are up to", value="{:,.0f} € per SQM".format(df_statistics.loc["25%"]["EUR / SQM"]))
-                st.metric("50% of the leases are up to", value="{:,.0f} € per SQM".format(df_statistics.loc["50%"]["EUR / SQM"]))
-                st.metric("75% of the leases are up to", value="{:,.0f} € per SQM".format(df_statistics.loc["75%"]["EUR / SQM"]))
-                st.metric("Max EUR per SQM", value="{:,.0f} € per SQM".format(df_concat["EUR / SQM"].max()))
-            with col4:
-                #st.metric("Min lease term", value="{:,.0f} months".format(df_concat["Lease term"].min()))
-                chart = alt.Chart(df_concat ).mark_boxplot().encode(
-                    y=alt.Y('Lease term:Q', title="Lease term in months")
-                ).properties(
-                    height=400,
-                    width=100
-                )
-                st.altair_chart(chart)
-                st.metric("Standard deviation lease term", value="{:,.0f} months".format(df_concat["Lease term"].std()))
-                st.metric("25% of the leases are up to", value="{:,.0f} months".format(df_statistics.loc["25%"]["Lease term"]))
-                st.metric("50% of the leases are up to", value="{:,.0f} months".format(df_statistics.loc["50%"]["Lease term"]))
-                st.metric("75% of the leases are up to", value="{:,.0f} months".format(df_statistics.loc["75%"]["Lease term"]))
-                st.metric("Longest lease term", value="{:,.0f} months".format(df_concat["Lease term"].max()))
+        with col2:
+            #st.metric("Min size", value="{:,.0f} SQM".format(df_concat["Größe"].min()))
+            chart = alt.Chart(df_concat).mark_boxplot().encode(
+                y=alt.Y('Size:Q', title="Size in SQM")
+            ).properties(
+                height=400,
+                width=100
+            )
+            st.altair_chart(chart)
+            st.metric("Standard deviation size", value="{:,.0f} SQM".format(df_concat["Size"].std()))
+            st.metric("25% of the leases are up to", value="{:,.0f} SQM".format(df_statistics.loc["25%"]["Size"]))
+            st.metric("50% of the leases are up to", value="{:,.0f} SQM".format(df_statistics.loc["50%"]["Size"]))
+            st.metric("75% of the leases are up to", value="{:,.0f} SQM".format(df_statistics.loc["75%"]["Size"]))
+            st.metric("Max size", value="{:,.0f} SQM".format(df_concat["Size"].max()))
+        with col3:
+            #st.metric("Min EUR per SQM", value="{:,.0f} € per SQM".format(df_concat["EUR / SQM"].min()))
+            chart = alt.Chart(df_concat).mark_boxplot().encode(
+                y='EUR / SQM:Q'
+            ).properties(
+                height=400,
+                width=100
+            )
+            st.altair_chart(chart)
+            st.metric("Standard deviation EUR per SQM", value="{:,.0f} € per SQM".format(df_concat["EUR / SQM"].std()))
+            st.metric("25% of the leases are up to", value="{:,.0f} € per SQM".format(df_statistics.loc["25%"]["EUR / SQM"]))
+            st.metric("50% of the leases are up to", value="{:,.0f} € per SQM".format(df_statistics.loc["50%"]["EUR / SQM"]))
+            st.metric("75% of the leases are up to", value="{:,.0f} € per SQM".format(df_statistics.loc["75%"]["EUR / SQM"]))
+            st.metric("Max EUR per SQM", value="{:,.0f} € per SQM".format(df_concat["EUR / SQM"].max()))
+        with col4:
+            #st.metric("Min lease term", value="{:,.0f} months".format(df_concat["Lease term"].min()))
+            chart = alt.Chart(df_concat ).mark_boxplot().encode(
+                y=alt.Y('Lease term:Q', title="Lease term in months")
+            ).properties(
+                height=400,
+                width=100
+            )
+            st.altair_chart(chart)
+            st.metric("Standard deviation lease term", value="{:,.0f} months".format(df_concat["Lease term"].std()))
+            st.metric("25% of the leases are up to", value="{:,.0f} months".format(df_statistics.loc["25%"]["Lease term"]))
+            st.metric("50% of the leases are up to", value="{:,.0f} months".format(df_statistics.loc["50%"]["Lease term"]))
+            st.metric("75% of the leases are up to", value="{:,.0f} months".format(df_statistics.loc["75%"]["Lease term"]))
+            st.metric("Longest lease term", value="{:,.0f} months".format(df_concat["Lease term"].max()))
 
-            st.markdown("<h6 style='text-align: left; color: orange;'>Numerical values described</h6>", unsafe_allow_html=True)
-            st.write(df_concat[["Pure Rent", "Size", 'EUR / SQM', "Lease term"]].describe())
+        st.markdown("<h6 style='text-align: left; color: orange;'>Numerical values described</h6>", unsafe_allow_html=True)
+        st.write(df_concat[["Pure Rent", "Size", 'EUR / SQM', "Lease term"]].describe())
 
         st.markdown("""---""")
 
