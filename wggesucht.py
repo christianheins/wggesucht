@@ -468,6 +468,7 @@ def main():
 
         with col2:
             st.write("Another filter")
+            st.write(table_df["EUR / SQM"].min())
             slider_europersqm = st.slider("Chosse an euro per sqm range", table_df["EUR / SQM"].min(), table_df["EUR / SQM"].max(), (0, table_df["EUR / SQM"].max))
             st.write("Your selection:", slider_europersqm)
             st.write(slider_europersqm[0])
