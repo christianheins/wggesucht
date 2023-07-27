@@ -39,7 +39,7 @@ def main():
 
     pd.set_option('display.max_columns', None)
 
-    nameofdataframe = "df_concat.csv"
+    nameofdataframe = "df_concat_rebuilt.csv"
 
     with st.sidebar:
         st.sidebar.header("Sections")
@@ -396,9 +396,10 @@ def main():
 
 
     df_concat = pd.read_csv(nameofdataframe)
-    df_concat.drop(columns=["Unnamed: 0.1", "Unnamed: 0"], inplace=True)
-    df_concat.rename(columns = {"Posting Date":"Eintrag", "Price":"Miete", "Size":"Größe","Date From":"frei ab", "Date To":"frei bis", "Location":"Stadtteil", "Date To (Year - Month)":"frei bis (Year - Month)"}, inplace=True)
-    df_immowelt = pd.read_csv("df_immowelt.csv")
+    #df_concat.drop(columns=["Unnamed: 0.1", "Unnamed: 0"], inplace=True)
+    #df_concat.rename(columns = {"Posting Date":"Eintrag", "Price":"Miete", "Size":"Größe","Date From":"frei ab", "Date To":"frei bis", "Location":"Stadtteil", "Date To (Year - Month)":"frei bis (Year - Month)"}, inplace=True)
+    df_immowelt = pd.read_csv("df_immowelt_rebuilt.csv")
+    df_immowelt["Link"] = "https://"+df_immowelt["Link"]
     df_concat = pd.concat([df_concat, df_immowelt])
     st.write(df_concat)
 
@@ -407,8 +408,8 @@ def main():
 
 
     # Filtering a bit more the dataframe
-    dataframe_filter1 = df_concat["Größe"] > 9
-    dataframe_filter2 = df_concat["Miete"] > 9
+    dataframe_filter1 = df_concat["Size"] > 9
+    dataframe_filter2 = df_concat["Pure Rent"] > 9
     df_concat = df_concat[dataframe_filter1]
     st.header("🚧 SAL MAGUDA - WORK IN PROGRESS")
 
@@ -454,14 +455,13 @@ def main():
         st.markdown("<h6 style='text-align: center; color: orange;'>Properties table</h6>", unsafe_allow_html=True)
         with st.expander("Table"):
 
-            df_concat["Link"] = "https://"+df_concat["Link"]
             st.write(df_concat.columns.to_list())
 
-            st.dataframe(df_concat[["Data ID", "Eintrag", "City", "Neighbourhood", "Address", "Miete" , "Größe", "EUR / SQM", "Deposit", "frei ab", "frei bis", "frei bis (Year - Month)", "Lease term","DataFrame", "Latitude", "Longitude", "Link", "Stadtteil", "Neighbourhood (Dirty)"]],
+            st.dataframe(df_concat[["Data ID", "Posting Date", "City", "Neighbourhood", "Address", "Pure Rent" , "Size", "EUR / SQM", "Deposit", "Date From", "Date To", "Date To (Year - Month)", "Lease term","Dataframe Date", "Latitude", "Longitude", "Link"]],
                          column_config={
                             "Data ID": st.column_config.NumberColumn(format="%d"),
-                            "Miete": st.column_config.NumberColumn(format="%d €"),
-                            "Größe": st.column_config.NumberColumn(format="%d SQM"),
+                            "Pure Rent": st.column_config.NumberColumn(format="%d €"),
+                            "Size": st.column_config.NumberColumn(format="%d SQM"),
                             "EUR / SQM": st.column_config.NumberColumn(format="%.2f €"),
                             "Deposit": st.column_config.NumberColumn(format="%d €"),
                             "Link": st.column_config.LinkColumn("Link"),
@@ -476,23 +476,23 @@ def main():
         with col1:
             st.metric("Available apartments", value="{:,.0f}".format(len(df_concat)))
         with col2:
-            st.metric("Unique neighbourhoods", value="{:,.0f}".format(len(df_concat[['Eintrag', 'Miete', 'Größe', 'EUR / SQM', 'Stadtteil', 'Neighbourhood']].pivot_table(index="Neighbourhood", values="Eintrag", aggfunc="count").reset_index())))
+            st.metric("Unique neighbourhoods", value="{:,.0f}".format(len(df_concat[['Posting Date', 'Pure Rent', 'Size', 'EUR / SQM', 'Neighbourhood']].pivot_table(index="Neighbourhood", values="Posting Date", aggfunc="count").reset_index())))
         with col3:
-            df_concat['Eintrag'] = pd.to_datetime(df_concat['Eintrag'], format='%d.%m.%Y', dayfirst=True)
-            oldestdate = df_concat["Eintrag"].min()
+            df_concat['Posting Date'] = pd.to_datetime(df_concat['Posting Date'], format='%d.%m.%Y', dayfirst=True)
+            oldestdate = df_concat["Posting Date"].min()
             st.metric("Oldest entry date", value=str(oldestdate))
         with col4:
-            df_concat['Eintrag'] = pd.to_datetime(df_concat['Eintrag'], format='%d.%m.%Y', dayfirst=True)
-            oldestdate = df_concat["Eintrag"].max()
+            df_concat['Posting Date'] = pd.to_datetime(df_concat['Posting Date'], format='%d.%m.%Y', dayfirst=True)
+            oldestdate = df_concat["Posting Date"].max()
             st.metric("Max entry date", value=str(oldestdate))
 
         st.markdown("""---""")
 
-        df_concat_neighbourhoods = df_concat[['Eintrag', 'Miete', 'Größe', 'EUR / SQM', 'Stadtteil', 'Neighbourhood']].pivot_table(index="Neighbourhood", values="Eintrag", aggfunc="count").reset_index()
-        df_concat_neighbourhoods.sort_values(by=["Eintrag"], ascending=[False], inplace=True)
+        df_concat_neighbourhoods = df_concat[['Posting Date', 'Pure Rent', 'Size', 'EUR / SQM', 'Neighbourhood']].pivot_table(index="Neighbourhood", values="Posting Date", aggfunc="count").reset_index()
+        df_concat_neighbourhoods.sort_values(by=["Posting Date"], ascending=[False], inplace=True)
 
-        df_concat_endofleaseterm = df_concat[['Eintrag', 'Miete', 'Größe', 'EUR / SQM', 'Stadtteil', 'Neighbourhood', 'Lease term']].pivot_table(index="Lease term", values="Eintrag", aggfunc="count").reset_index()
-        df_concat_endofleaseterm.sort_values(by=["Eintrag"], ascending=[False], inplace=True)
+        df_concat_endofleaseterm = df_concat[['Posting Date', 'Pure Rent', 'Size', 'EUR / SQM', 'Neighbourhood', 'Lease term']].pivot_table(index="Lease term", values="Posting Date", aggfunc="count").reset_index()
+        df_concat_endofleaseterm.sort_values(by=["Posting Date"], ascending=[False], inplace=True)
 
         col1, col2, col3= st.columns([0.3, 0.3, 0.3])
         with col1:
@@ -501,9 +501,9 @@ def main():
             df_concat_neighbourhoods_filtered = df_concat_neighbourhoods.iloc[:20]
 
             chart = alt.Chart(df_concat_neighbourhoods_filtered).encode(
-                x=alt.X('Eintrag:Q', axis=alt.Axis(title='Count')),
+                x=alt.X('Posting Date:Q', axis=alt.Axis(title='Count')),
                 y=alt.Y('Neighbourhood:N', sort=None), #use 'sort=None' to preserve the order of categories
-                text=alt.Text('Eintrag:Q', format='.1f'),
+                text=alt.Text('Posting Date:Q', format='.1f'),
             )
             #Combine bar chart with text chart, weird isnt?
 
@@ -522,8 +522,8 @@ def main():
 
             chart = alt.Chart(df_concat_endofleaseterm).encode(
                 x=alt.X('Lease term:Q'),
-                y=alt.Y('Eintrag:Q', sort=None, axis=alt.Axis(title='Count')), #use 'sort=None' to preserve the order of categories
-                text=alt.Text('Eintrag', format='.1f')
+                y=alt.Y('Posting Date:Q', sort=None, axis=alt.Axis(title='Count')), #use 'sort=None' to preserve the order of categories
+                text=alt.Text('Posting Date', format='.1f')
             )
 
             # Combine bar chart with text chart, weird isnt?
@@ -540,9 +540,9 @@ def main():
             df_concat_neighbourhoods_filtered = df_concat_neighbourhoods.iloc[:10]
 
             chart = alt.Chart(df_concat_neighbourhoods_filtered).mark_arc(innerRadius=90).encode(
-                theta='Eintrag:Q',
+                theta='Posting Date:Q',
                 color=alt.Color('Neighbourhood', scale=alt.Scale(scheme='category10')),
-                tooltip=['Neighbourhood', 'Eintrag:Q'],
+                tooltip=['Neighbourhood', 'Posting Date:Q'],
             )
 
             chart = chart.configure_legend(
@@ -576,7 +576,7 @@ def main():
             st.altair_chart(chart.interactive(), use_container_width=True)
 
         with col3:
-            df_concat_pivot_releasedate = df_concat[['Eintrag', 'Miete', 'Größe', 'EUR / SQM', 'Stadtteil', 'Neighbourhood']].pivot_table(index="Neighbourhood", values="Miete", aggfunc={"Miete":["count","mean"]}).reset_index()
+            df_concat_pivot_releasedate = df_concat[['Posting Date', 'Pure Rent', 'Size', 'EUR / SQM', 'Neighbourhood']].pivot_table(index="Neighbourhood", values="Pure Rent", aggfunc={"Pure Rent":["count","mean"]}).reset_index()
 
             chart = alt.Chart(df_concat_pivot_releasedate).encode(
                 x=alt.X('mean:Q', axis=alt.Axis(title='Average Euro per advert')),
@@ -595,15 +595,15 @@ def main():
             st.markdown("<h6 style='text-align: center; color: orange;'>Average Rent per Neighbourhood</h6>", unsafe_allow_html=True)
             st.altair_chart(wholechart.interactive(), use_container_width=True)
 
-            df_concat_pivot_releasedate = df_concat[['Eintrag', 'Miete', 'Größe', 'EUR / SQM', 'Stadtteil', 'Neighbourhood']].pivot_table(index="Eintrag", values="Miete", aggfunc={"Miete":["count","mean"]}).reset_index()
-            df_concat_pivot_releasedate['Eintrag'] = pd.to_datetime(df_concat_pivot_releasedate['Eintrag'], format='%d.%m.%Y', dayfirst=True)
-            df_concat_pivot_releasedate.sort_values(by=["Eintrag"], ascending=[False], inplace=True)
-            df_concat_pivot_releasedate['Eintrag'] = df_concat_pivot_releasedate['Eintrag'].dt.strftime('%Y/%m/%d')
+            df_concat_pivot_releasedate = df_concat[['Posting Date', 'Pure Rent', 'Size', 'EUR / SQM', 'Neighbourhood']].pivot_table(index="Posting Date", values="Pure Rent", aggfunc={"Pure Rent":["count","mean"]}).reset_index()
+            df_concat_pivot_releasedate['Posting Date'] = pd.to_datetime(df_concat_pivot_releasedate['Posting Date'], format='%d.%m.%Y', dayfirst=True)
+            df_concat_pivot_releasedate.sort_values(by=["Posting Date"], ascending=[False], inplace=True)
+            df_concat_pivot_releasedate['Posting Date'] = df_concat_pivot_releasedate['Posting Date'].dt.strftime('%Y/%m/%d')
 
             st.markdown("<h6 style='text-align: center; color: orange;'>Number of entries per release date</h6>", unsafe_allow_html=True)
             chart = alt.Chart(df_concat_pivot_releasedate).encode(
                 x=alt.X('count:Q', axis=alt.Axis(title='Count')),
-                y=alt.Y('Eintrag:T', sort=None, axis=alt.Axis(title='Entry date')), #use 'sort=None' to preserve the order of categories
+                y=alt.Y('Posting Date:T', sort=None, axis=alt.Axis(title='Entry date')), #use 'sort=None' to preserve the order of categories
                 text=alt.Text('count', format='.1f')
             )
             #Combine bar chart with text chart, weird isnt?
@@ -619,15 +619,15 @@ def main():
 
         st.markdown("""---""")
 
-        df_statistics = df_concat[["Miete", "Größe", 'EUR / SQM', "Lease term"]].describe()
+        df_statistics = df_concat[["Pure Rent", "Size", 'EUR / SQM', "Lease term"]].describe()
         st.markdown("<h3 style='text-align: left; color: orange;'>📊 A little bit of Descriptive Statistics</h3>", unsafe_allow_html=True)
 
         col1, col2, col3, col4 = st.columns([1, 1, 1, 1])
 
         with col1:
-            st.metric("Average rent", value="{:,.0f} €".format(df_concat["Miete"].mean()))
+            st.metric("Average rent", value="{:,.0f} €".format(df_concat["Pure Rent"].mean()))
         with col2:
-            st.metric("Average size", value="{:,.0f} SQM".format(df_concat["Größe"].mean()))
+            st.metric("Average size", value="{:,.0f} SQM".format(df_concat["Size"].mean()))
         with col3:
             st.metric("Average EUR per SQM", value="{:,.0f} € per SQM".format(df_concat["EUR / SQM"].mean()))
         with col4:
@@ -639,33 +639,33 @@ def main():
             with col1:
                 #st.metric("Min rent", value="{:,.0f} €".format(df_concat["Miete"].min()))
                 chart = alt.Chart(df_concat).mark_boxplot().encode(
-                    y='Miete:Q'
+                    y='Pure Rent:Q'
                 ).properties(
                     height=400,
                     width=100
                 )
                 st.altair_chart(chart)
-                st.metric("Standard deviation rent", value="{:,.0f} €".format(df_concat["Miete"].std()))
-                st.metric("25% of the leases are up to", value="{:,.0f} €".format(df_statistics.loc["25%"]["Miete"]))
-                st.metric("50% of the leases are up to", value="{:,.0f} €".format(df_statistics.loc["50%"]["Miete"]))
-                st.metric("75% of the leases are up to", value="{:,.0f} €".format(df_statistics.loc["75%"]["Miete"]))
-                st.metric("Max rent", value="{:,.0f} €".format(df_concat["Miete"].max()))
+                st.metric("Standard deviation rent", value="{:,.0f} €".format(df_concat["Pure Rent"].std()))
+                st.metric("25% of the leases are up to", value="{:,.0f} €".format(df_statistics.loc["25%"]["Pure Rent"]))
+                st.metric("50% of the leases are up to", value="{:,.0f} €".format(df_statistics.loc["50%"]["Pure Rent"]))
+                st.metric("75% of the leases are up to", value="{:,.0f} €".format(df_statistics.loc["75%"]["Pure Rent"]))
+                st.metric("Max rent", value="{:,.0f} €".format(df_concat["Pure Rent"].max()))
 
 
             with col2:
                 #st.metric("Min size", value="{:,.0f} SQM".format(df_concat["Größe"].min()))
                 chart = alt.Chart(df_concat).mark_boxplot().encode(
-                    y=alt.Y('Größe:Q', title="Size in SQM")
+                    y=alt.Y('Size:Q', title="Size in SQM")
                 ).properties(
                     height=400,
                     width=100
                 )
                 st.altair_chart(chart)
-                st.metric("Standard deviation size", value="{:,.0f} SQM".format(df_concat["Größe"].std()))
-                st.metric("25% of the leases are up to", value="{:,.0f} SQM".format(df_statistics.loc["25%"]["Größe"]))
-                st.metric("50% of the leases are up to", value="{:,.0f} SQM".format(df_statistics.loc["50%"]["Größe"]))
-                st.metric("75% of the leases are up to", value="{:,.0f} SQM".format(df_statistics.loc["75%"]["Größe"]))
-                st.metric("Max size", value="{:,.0f} SQM".format(df_concat["Größe"].max()))
+                st.metric("Standard deviation size", value="{:,.0f} SQM".format(df_concat["Size"].std()))
+                st.metric("25% of the leases are up to", value="{:,.0f} SQM".format(df_statistics.loc["25%"]["Size"]))
+                st.metric("50% of the leases are up to", value="{:,.0f} SQM".format(df_statistics.loc["50%"]["Size"]))
+                st.metric("75% of the leases are up to", value="{:,.0f} SQM".format(df_statistics.loc["75%"]["Size"]))
+                st.metric("Max size", value="{:,.0f} SQM".format(df_concat["Size"].max()))
             with col3:
                 #st.metric("Min EUR per SQM", value="{:,.0f} € per SQM".format(df_concat["EUR / SQM"].min()))
                 chart = alt.Chart(df_concat).mark_boxplot().encode(
@@ -696,7 +696,7 @@ def main():
                 st.metric("Longest lease term", value="{:,.0f} months".format(df_concat["Lease term"].max()))
 
             st.markdown("<h6 style='text-align: left; color: orange;'>Numerical values described</h6>", unsafe_allow_html=True)
-            st.write(df_concat[["Miete", "Größe", 'EUR / SQM', "Lease term"]].describe())
+            st.write(df_concat[["Pure Rent", "Size", 'EUR / SQM', "Lease term"]].describe())
 
         st.markdown("""---""")
 
@@ -713,9 +713,9 @@ def main():
 
         with col1:
             chart = alt.Chart(df_concat).mark_point(color="orange").encode(
-                x=alt.X('Größe:Q', title='Size', axis=alt.Axis(tickCount=5)),
-                y=alt.Y('Miete:Q', title='Rent', axis=alt.Axis(tickCount=5)),
-                tooltip=['Größe', 'Miete']
+                x=alt.X('Size:Q', title='Size', axis=alt.Axis(tickCount=5)),
+                y=alt.Y('Pure Rent:Q', title='Rent', axis=alt.Axis(tickCount=5)),
+                tooltip=['Size', 'Pure Rent']
 
             )
             # show the chart
@@ -731,9 +731,9 @@ def main():
 
         with col2:
             chart = alt.Chart(df_concat).mark_point(color="orange").encode(
-                x=alt.X('Größe:Q', title='Size', axis=alt.Axis(tickCount=5), scale=alt.Scale(reverse=True)),
+                x=alt.X('Pure Rent:Q', title='Size', axis=alt.Axis(tickCount=5), scale=alt.Scale(reverse=True)),
                 y=alt.Y('EUR / SQM:Q', title='Rent per SQM', axis=alt.Axis(tickCount=5)),
-                tooltip=['Miete', 'Größe', 'EUR / SQM', 'Neighbourhood', 'Link', 'Lease term']
+                tooltip=['Pure Rent', 'Size', 'EUR / SQM', 'Neighbourhood', 'Link', 'Lease term']
             )
             # show the chart
             st.altair_chart(chart.interactive(), use_container_width=True)
@@ -780,21 +780,21 @@ def main():
 
         df_2023_05 = pd.read_csv("df_concat_20230531.csv")
         df_2023_05["Dataframe Date"] = "20230531"
-        df_2023_05["Size"] = df_2023_05["Größe"]
-        df_2023_05.rename(columns={"Unnamed: 8":"Dataframe","Unnamed: 0.1":"Data ID", "Unnamed: 0":"Link", "Latitude":"lat", "Longitude":"lon", "Miete":"Pure Rent"}, inplace=True)
+        #df_2023_05["Size"] = df_2023_05["Größe"]
+        #df_2023_05.rename(columns={"Unnamed: 8":"Dataframe","Unnamed: 0.1":"Data ID", "Unnamed: 0":"Link", "Latitude":"lat", "Longitude":"lon", "Miete":"Pure Rent"}, inplace=True)
         df_2023_05.reset_index(drop=True, inplace=True)
 
         df_2023_06 = pd.read_csv("df_concat_20230630.csv")
-        df_2023_06.rename(columns={"index":"Data ID", "DataFrame": "Dataframe Date", "Pure rent": "Pure Rent"}, inplace=True)
+        #df_2023_06.rename(columns={"index":"Data ID", "DataFrame": "Dataframe Date", "Pure rent": "Pure Rent"}, inplace=True)
         df_2023_06["Dataframe Date"] = "20230630"
-        df_2023_06["Pure Rent"] = df_2023_06["Price"]
-        df_2023_06["Größe"] = df_2023_06["Size"]
+        #df_2023_06["Pure Rent"] = df_2023_06["Price"]
+        #df_2023_06["Größe"] = df_2023_06["Size"]
         df_2023_06.reset_index(drop=True, inplace=True)
 
         df_2023_07 = pd.read_csv("df_concat_20230712.csv")
         df_2023_07.rename(columns={"Latitude":"lat", "Longitude":"lon"}, inplace=True)
         df_2023_07.fillna(0, inplace=True)
-        df_2023_07.drop(columns=["Unnamed: 0.1", "Unnamed: 0"], inplace=True)
+        #df_2023_07.drop(columns=["Unnamed: 0.1", "Unnamed: 0"], inplace=True)
         df_2023_07.reset_index(drop=True, inplace=True)
         df_2023_07["Dataframe Date"] = "20230712"
 
