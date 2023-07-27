@@ -460,15 +460,15 @@ def main():
         with col1:
             unique_neighbourhoods = df_concat["Neighbourhood"].unique().tolist()
             unique_neighbourhoods = sorted(unique_neighbourhoods)
-
             multiselect_neighbourhoods = st.multiselect("Choose a neighbourhood", options=unique_neighbourhoods, help="Please do not leave empty", format_func=lambda x: "Select a neighbourhood" if x == "" else x)
-
             # Display the selected neighbourhoods and the filtered DataFrame
             st.write("You selected:", multiselect_neighbourhoods)
 
 
         with col2:
             st.write("Another filter")
+            slider_europersqm = st.slider("Chosse an euro per sqm range", 0, 100, (25, 75))
+            st.write("Your selection:", slider_europersqm)
         with col3:
             st.write("Another filter")
 
