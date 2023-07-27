@@ -979,7 +979,7 @@ def main():
                 with col2:
                     st.image('https://media.giphy.com/media/XathaB5ILqSME/giphy.gif?cid=ecf05e479myrqtfsmnw3tsf81zg8em7pdz1ykm97adrjzwxu&rid=giphy.gif&ct=g', use_column_width=True)
         def randon_string() -> str:
-            return "".join(random.choices(string.ascii_uppercase + string.digits, k=10))
+            return "Message sent!"
 
 
         def chat_actions():
