@@ -470,7 +470,7 @@ def main():
             st.write("Another filter")
             st.write()
             if str(table_df["EUR / SQM"].max()) == "nan":
-                maxeurpersqm = 100
+                maxeurpersqm = 100.00
             else:
                 maxeurpersqm = table_df["EUR / SQM"].max()
             slider_europersqm = st.slider("Chosse an euro per sqm range", table_df["EUR / SQM"].min(), maxeurpersqm, (0.0, maxeurpersqm))
