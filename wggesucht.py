@@ -463,6 +463,7 @@ def main():
             multiselect_neighbourhoods = st.multiselect("Choose a neighbourhood", options=unique_neighbourhoods, help="Please do not leave empty", format_func=lambda x: "Select a neighbourhood" if x == "" else x)
             # Display the selected neighbourhoods and the filtered DataFrame
             st.write("You selected:", multiselect_neighbourhoods)
+            table_df = df_concat[df_concat["Neighbourhood"].isin(multiselect_neighbourhoods)]
 
 
         with col2:
@@ -472,14 +473,13 @@ def main():
             st.write(slider_europersqm[0])
             st.write(slider_europersqm[1])
 
-            europersqm_minslider = df_concat["EUR / SQM"] > slider_europersqm[0]
-            europersqm_maxslider = df_concat["EUR / SQM"] > slider_europersqm[1]
+            europersqm_minslider = table_df["EUR / SQM"] > slider_europersqm[0]
+            europersqm_maxslider = table_df["EUR / SQM"] > slider_europersqm[1]
 
         with col3:
             st.write("Another filter")
 
         if multiselect_neighbourhoods:
-            table_df = df_concat[df_concat["Neighbourhood"].isin(multiselect_neighbourhoods)]
             table_df = table_df[europersqm_minslider]
             table_df = table_df[europersqm_maxslider]
 
