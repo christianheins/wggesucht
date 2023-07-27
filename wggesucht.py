@@ -468,7 +468,7 @@ def main():
 
         with col2:
             st.write("Another filter")
-            slider_europersqm = st.slider("Chosse an euro per sqm range", table_df["EUR / SQM"].min(), table_df["EUR / SQM"].max(), (0.0, table_df["EUR / SQM"].max()))
+            slider_europersqm = st.slider("Chosse an euro per sqm range", df_concat["EUR / SQM"].min(), df_concat["EUR / SQM"].max(), (0.0, df_concat["EUR / SQM"].max()))
             st.write("Your selection:", slider_europersqm)
 
             europersqm_minslider = table_df["EUR / SQM"] > slider_europersqm[0]
@@ -477,7 +477,7 @@ def main():
         with col3:
             st.write("Another filter")
 
-        if europersqm_maxslider[1] != "NaN":
+        if multiselect_neighbourhoods:
             table_df = table_df[europersqm_minslider]
             table_df2 = table_df[europersqm_maxslider]
 
