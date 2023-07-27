@@ -414,7 +414,8 @@ def main():
     dataframe_filter2 = df_concat["Pure Rent"] > 9
     df_concat = df_concat[dataframe_filter1]
     #df_concat = df_concat[dataframe_filter2]
-    st.header("🚧 SAL MAGUDA - WORK IN PROGRESS")
+    st.header("")
+    st.markdown("<h6 style='text-align: left; color: red;'>🚧 SAL MAGUDA - WORK IN PROGRESS</h6><h6 style='text-align: left; color: red;'>🚧 SAL MAGUDA - WORK IN PROGRESS</h6>", unsafe_allow_html=True)
 
     with st.expander("DISCLAIMER"):
         st.markdown("<h6 style='text-align: left; color: red;'>Instructions</h6>", unsafe_allow_html=True)
