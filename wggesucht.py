@@ -472,7 +472,7 @@ def main():
             europersqm_minslider = df_concat["Pure Rent"] > slider_europersqm[0]
             europersqm_maxslider = df_concat["Pure Rent"] > slider_europersqm[1]
 
-    with col3:
+        with col3:
             st.write("Another filter")
 
         if multiselect_neighbourhoods:
