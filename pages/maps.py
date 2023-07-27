@@ -138,17 +138,7 @@ with col2:
     st_map = st_folium(map, width=1500, height=800)
     map.save("output.html")
     print("File created")
-    st.markdown("""
-        <style>
-        .StMarkdown {
-            height: 500px;
-            width: 800px;
-            border-radius: 20px;
-            border: 2px solid #008080;
-            box-shadow: 5px 5px 10px #888888;
-        }
-        </style>
-    """, unsafe_allow_html=True)
+
     #st.json(data)
 #folium.Marker(location=[dfmap["lat"], warehouserow["lon"]],tooltip=row["Property"], popup="example").add_to(map)
 #st_map = st_folium(map, width=1500, height=800)
