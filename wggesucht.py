@@ -453,12 +453,20 @@ def main():
             st.markdown("<img src='https://content.cdn.immowelt.com/iw_group/_processed_/9/b/csm_logo-rgb-immonet_c1dfb328a4.png' width=300></img>", unsafe_allow_html=True)
         st.markdown("""---""")
 
-        st.markdown("<h6 style='text-align: center; color: orange;'>Properties table</h6>", unsafe_allow_html=True)
+        st.markdown("<h4 style='text-align: center; color: orange;'>Properties table</h4>", unsafe_allow_html=True)
         with st.expander("Table"):
 
             st.write(df_concat.columns.to_list())
 
-            st.dataframe(df_concat[["Data ID", "Posting Date", "City", "Neighbourhood", "Address", "Pure Rent" , "Size", "EUR / SQM", "Deposit", "Date From", "Date To", "Date To (Year - Month)", "Lease term","Dataframe Date", "Latitude", "Longitude", "Link"]],
+            col1, col2, col3 = st.columns([0.3, 0.3, 0,3])
+            with col1:
+                multiselect_neighbourhoods = st.multiselect("Choose a neighbourhood", df_concat["Neighbourhoods"].unique())
+                st.write("You selected:", multiselect_neighbourhoods)
+                table_df = df_concat[df_concat["Neighbourhood"].isin(multiselect_neighbourhoods)]
+
+            table_df = table_df[["Data ID", "Posting Date", "City", "Neighbourhood", "Address", "Pure Rent" , "Size", "EUR / SQM", "Deposit", "Date From", "Date To", "Date To (Year - Month)", "Lease term","Dataframe Date", "Latitude", "Longitude", "Link"]]
+
+            st.dataframe(table_df,
                          column_config={
                             "Data ID": st.column_config.NumberColumn(format="%d"),
                             "Pure Rent": st.column_config.NumberColumn(format="%d €"),
