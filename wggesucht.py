@@ -470,6 +470,8 @@ def main():
             slider_europersqm = st.slider("Chosse an euro per sqm range", 0, 100, (25, 75))
             st.write("Your selection:", slider_europersqm)
             st.write(slider_europersqm[0])
+            st.write(slider_europersqm[1])
+
             europersqm_minslider = df_concat["Pure Rent"] > slider_europersqm[1]
             europersqm_maxslider = df_concat["Pure Rent"] > slider_europersqm[2]
 
