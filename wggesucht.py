@@ -458,8 +458,9 @@ def main():
 
         col1, col2, col3 = st.columns([0.3, 0.3, 0.3])
         with col1:
-
-            multiselect_neighbourhoods = st.multiselect("Choose a neighbourhood", options=df_concat["Neighbourhood"].unique().tolist().sort(), help="Please do not leave empty", format_func=lambda x: "Select a neighbourhood" if x == "" else x)
+            unique_neighbourhoods = df_concat["Neighbourhood"].unique().tolist().sort()
+            st.write(unique_neighbourhoods)
+            multiselect_neighbourhoods = st.multiselect("Choose a neighbourhood", options=unique_neighbourhoods, help="Please do not leave empty", format_func=lambda x: "Select a neighbourhood" if x == "" else x)
 
             # Display the selected neighbourhoods and the filtered DataFrame
             st.write("You selected:", multiselect_neighbourhoods)
