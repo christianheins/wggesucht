@@ -415,7 +415,7 @@ def main():
     df_concat = df_concat[dataframe_filter1]
     #df_concat = df_concat[dataframe_filter2]
     col1, col2 = st.columns([0.5, 0.5])
-    st.markdown("---")
+    st.markdown("""---""")
 
     with col1:
         st.markdown("<h3 style='text-align: left; color: black;'>🚧 SAL MAGUDA - WORK IN PROGRESS</h3>", unsafe_allow_html=True)
@@ -433,7 +433,7 @@ def main():
     with col2:
         st.markdown("<a href='https://github.com/christianheins'>🔗 Find me on Github</a>", unsafe_allow_html=True)
 
-    st.markdown("---")
+    st.markdown("""---""")
 
     if selected == "🏘️ Apartments":
         st.markdown("<h1 style='text-align: center; color: orange;'>Property Analysis 🏘</h1>", unsafe_allow_html=True)
@@ -451,6 +451,7 @@ def main():
             st.markdown("<img src='https://content.cdn.immowelt.com/iw_group/_processed_/c/5/csm_immowelt-Logo-thumb_262f254ba2.png' width=300></img>", unsafe_allow_html=True)
             st.markdown("<img src='https://www.lautgegennazis.de/wp-content/uploads/2016/10/WG_Banner.jpg' width=300></img>", unsafe_allow_html=True)
             st.markdown("<img src='https://content.cdn.immowelt.com/iw_group/_processed_/9/b/csm_logo-rgb-immonet_c1dfb328a4.png' width=300></img>", unsafe_allow_html=True)
+        st.markdown("""---""")
 
         st.markdown("<h6 style='text-align: center; color: orange;'>Properties table</h6>", unsafe_allow_html=True)
         with st.expander("Table"):
@@ -486,7 +487,6 @@ def main():
             oldestdate = df_concat["Posting Date"].max()
             st.metric("Max entry date", value=str(oldestdate))
 
-        st.markdown("""---""")
 
         df_concat_neighbourhoods = df_concat[['Posting Date', 'Pure Rent', 'Size', 'EUR / SQM', 'Neighbourhood']].pivot_table(index="Neighbourhood", values="Posting Date", aggfunc="count").reset_index()
         df_concat_neighbourhoods.sort_values(by=["Posting Date"], ascending=[False], inplace=True)
