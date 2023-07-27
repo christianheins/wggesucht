@@ -469,11 +469,17 @@ def main():
             st.write("Another filter")
             slider_europersqm = st.slider("Chosse an euro per sqm range", 0, 100, (25, 75))
             st.write("Your selection:", slider_europersqm)
-        with col3:
+            europersqm_minslider = df_concat["Pure Rent"] > europersqm_maxslider[0]
+            europersqm_maxslider = df_concat["Pure Rent"] > europersqm_maxslider[1]
+
+    with col3:
             st.write("Another filter")
 
         if multiselect_neighbourhoods:
             table_df = df_concat[df_concat["Neighbourhood"].isin(multiselect_neighbourhoods)]
+            table_df = table_df[europersqm_minslider]
+            table_df = table_df[europersqm_maxslider]
+
             table_df = table_df[["Data ID", "Posting Date", "City", "Neighbourhood", "Address", "Pure Rent" , "Size", "EUR / SQM", "Deposit", "Date From", "Date To", "Date To (Year - Month)", "Lease term","Dataframe Date", "Latitude", "Longitude", "Link"]]
 
             st.dataframe(table_df,
