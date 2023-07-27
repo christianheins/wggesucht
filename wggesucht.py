@@ -461,8 +461,6 @@ def main():
             unique_neighbourhoods = df_concat["Neighbourhood"].unique().tolist()
             unique_neighbourhoods = sorted(unique_neighbourhoods)
             multiselect_neighbourhoods = st.multiselect("Choose a neighbourhood", options=unique_neighbourhoods, help="Please do not leave empty", format_func=lambda x: "Select a neighbourhood" if x == "" else x)
-            # Display the selected neighbourhoods and the filtered DataFrame
-            st.write("You selected:", multiselect_neighbourhoods)
             table_df = df_concat[df_concat["Neighbourhood"].isin(multiselect_neighbourhoods)]
 
 
