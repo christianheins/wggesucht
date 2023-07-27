@@ -431,6 +431,7 @@ def main():
     with col2:
         st.markdown("<a href='https://github.com/christianheins'>🔗 Find me on Github</a>", unsafe_allow_html=True)
 
+    st.markdown("---")
 
     if selected == "🏘️ Apartments":
         st.markdown("<h1 style='text-align: center; color: orange;'>Property Analysis 🏘</h1>", unsafe_allow_html=True)
