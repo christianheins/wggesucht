@@ -454,34 +454,33 @@ def main():
         st.markdown("""---""")
 
         st.markdown("<h4 style='text-align: center; color: orange;'>Properties table</h4>", unsafe_allow_html=True)
-        with st.expander("Table"):
 
-            col1, col2, col3 = st.columns([0.3, 0.3, 0.3])
-            with col1:
-                multiselect_neighbourhoods = st.multiselect("Choose a neighbourhood", options=df_concat["Neighbourhood"].unique().tolist(), help="Please do not leave empty")
-                st.write("You selected:", multiselect_neighbourhoods)
-                table_df = df_concat[df_concat["Neighbourhood"].isin(multiselect_neighbourhoods)]
-            with col2:
-                st.write("Another filter")
-            with col3:
-                st.write("Another filter")
+        col1, col2, col3 = st.columns([0.3, 0.3, 0.3])
+        with col1:
+            multiselect_neighbourhoods = st.multiselect("Choose a neighbourhood", options=df_concat["Neighbourhood"].unique().tolist(), help="Please do not leave empty")
+            st.write("You selected:", multiselect_neighbourhoods)
+            table_df = df_concat[df_concat["Neighbourhood"].isin(multiselect_neighbourhoods)]
+        with col2:
+            st.write("Another filter")
+        with col3:
+            st.write("Another filter")
 
-            table_df = table_df[["Data ID", "Posting Date", "City", "Neighbourhood", "Address", "Pure Rent" , "Size", "EUR / SQM", "Deposit", "Date From", "Date To", "Date To (Year - Month)", "Lease term","Dataframe Date", "Latitude", "Longitude", "Link"]]
+        table_df = table_df[["Data ID", "Posting Date", "City", "Neighbourhood", "Address", "Pure Rent" , "Size", "EUR / SQM", "Deposit", "Date From", "Date To", "Date To (Year - Month)", "Lease term","Dataframe Date", "Latitude", "Longitude", "Link"]]
 
-            st.dataframe(table_df,
-                         column_config={
-                            "Data ID": st.column_config.NumberColumn(format="%d"),
-                            "Pure Rent": st.column_config.NumberColumn(format="%d €"),
-                            "Size": st.column_config.NumberColumn(format="%d SQM"),
-                            "EUR / SQM": st.column_config.NumberColumn(format="%.2f €"),
-                            "Deposit": st.column_config.NumberColumn(format="%d €"),
-                            "Link": st.column_config.LinkColumn("Link"),
-                            "DataFrame": st.column_config.NumberColumn(format="%d"),
-                            "Lease term": st.column_config.NumberColumn(format="%d Months"),
-                            "City": st.column_config.ListColumn("City"),
-                            "Neighbourhood": st.column_config.ListColumn("Neighbourhood"),
-                            }
-                         )
+        st.dataframe(table_df,
+                     column_config={
+                        "Data ID": st.column_config.NumberColumn(format="%d"),
+                        "Pure Rent": st.column_config.NumberColumn(format="%d €"),
+                        "Size": st.column_config.NumberColumn(format="%d SQM"),
+                        "EUR / SQM": st.column_config.NumberColumn(format="%.2f €"),
+                        "Deposit": st.column_config.NumberColumn(format="%d €"),
+                        "Link": st.column_config.LinkColumn("Link"),
+                        "DataFrame": st.column_config.NumberColumn(format="%d"),
+                        "Lease term": st.column_config.NumberColumn(format="%d Months"),
+                        "City": st.column_config.ListColumn("City"),
+                        "Neighbourhood": st.column_config.ListColumn("Neighbourhood"),
+                        }
+                     )
 
         col1, col2, col3, col4 = st.columns([0.2, 0.2, 0.35, 0.35])
         with col1:
