@@ -459,7 +459,7 @@ def main():
         col1, col2, col3 = st.columns([0.3, 0.3, 0.3])
         with col1:
 
-            multiselect_neighbourhoods = st.multiselect("Choose a neighbourhood", options=df_concat["Neighbourhood"].unique().tolist(), help="Please do not leave empty", format_func=lambda x: "Select a neighbourhood" if x == "" else x)
+            multiselect_neighbourhoods = st.multiselect("Choose a neighbourhood", options=sorted(df_concat["Neighbourhood"].unique().tolist()), help="Please do not leave empty", format_func=lambda x: "Select a neighbourhood" if x == "" else x)
 
             # Display the selected neighbourhoods and the filtered DataFrame
             st.write("You selected:", multiselect_neighbourhoods)
@@ -486,8 +486,7 @@ def main():
                              "Lease term": st.column_config.NumberColumn(format="%d Months"),
                              "City": st.column_config.ListColumn("City"),
                              "Neighbourhood": st.column_config.ListColumn("Neighbourhood"),
-                         }
-                         )
+                         })
 
         else:
             st.warning("Please select at least one neighbourhood.")
