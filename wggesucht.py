@@ -481,11 +481,11 @@ def main():
 
         if multiselect_neighbourhoods:
             table_df = table_df[europersqm_minslider]
-            table_df = table_df[europersqm_maxslider]
+            table_df2 = table_df[europersqm_maxslider]
 
-            table_df = table_df[["Data ID", "Posting Date", "City", "Neighbourhood", "Address", "Pure Rent" , "Size", "EUR / SQM", "Deposit", "Date From", "Date To", "Date To (Year - Month)", "Lease term","Dataframe Date", "Latitude", "Longitude", "Link"]]
+            table_df2 = table_df2[["Data ID", "Posting Date", "City", "Neighbourhood", "Address", "Pure Rent" , "Size", "EUR / SQM", "Deposit", "Date From", "Date To", "Date To (Year - Month)", "Lease term","Dataframe Date", "Latitude", "Longitude", "Link"]]
 
-            st.dataframe(table_df,
+            st.dataframe(table_df2,
                          column_config={
                              "Data ID": st.column_config.NumberColumn(format="%d"),
                              "Pure Rent": st.column_config.NumberColumn(format="%d €"),
