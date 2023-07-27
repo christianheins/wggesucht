@@ -470,8 +470,6 @@ def main():
             st.write("Another filter")
             slider_europersqm = st.slider("Chosse an euro per sqm range", table_df["EUR / SQM"].min(), table_df["EUR / SQM"].max(), (0.0, table_df["EUR / SQM"].max()))
             st.write("Your selection:", slider_europersqm)
-            st.write(slider_europersqm[0])
-            st.write(slider_europersqm[1])
 
             europersqm_minslider = table_df["EUR / SQM"] > slider_europersqm[0]
             europersqm_maxslider = table_df["EUR / SQM"] < slider_europersqm[1]
