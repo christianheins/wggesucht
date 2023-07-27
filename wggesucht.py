@@ -461,6 +461,10 @@ def main():
                 multiselect_neighbourhoods = st.multiselect("Choose a neighbourhood", df_concat["Neighbourhoods"].unique())
                 st.write("You selected:", multiselect_neighbourhoods)
                 table_df = df_concat[df_concat["Neighbourhood"].isin(multiselect_neighbourhoods)]
+            with col2:
+                st.write("Another filter")
+            with col3:
+                st.write("Another filter")
 
             table_df = table_df[["Data ID", "Posting Date", "City", "Neighbourhood", "Address", "Pure Rent" , "Size", "EUR / SQM", "Deposit", "Date From", "Date To", "Date To (Year - Month)", "Lease term","Dataframe Date", "Latitude", "Longitude", "Link"]]
 
