@@ -30,38 +30,6 @@ show_pages(
     ]
 )
 
-def add_logo():
-    st.markdown(
-        """
-        <style>
-            [data-testid="stHeader"] {
-                background-image: url(https://www.lautgegennazis.de/wp-content/uploads/2016/10/WG_Banner.jpg);
-                background-repeat: no-repeat;
-                background-position: 62%;
-                background-size: contain;
-                padding-top: 100px;
-            }
-            [data-testid="stSidebarNav"] {
-                background-image: url(https://raw.githubusercontent.com/christianheins/wggesucht/main/images/4.jpg);
-                background-repeat: no-repeat;
-                background-size: contain;
-                background-position: 50% 0%;
-                padding-top: 80px;
-            }
-            [data-testid="stSidebarNav"]::before {
-                content: "Pages";
-                margin-left: 20px;
-                margin-top: 20px;
-                font-size: 30px;
-                position: relative;
-                top: 100px;
-            }
-        </style>
-        """,
-        unsafe_allow_html=True,
-    )
-add_logo()
-
 st.sidebar.header("Sections")
 
 st.sidebar.text("Hi!")
@@ -143,4 +111,7 @@ with col2:
 #folium.Marker(location=[dfmap["lat"], warehouserow["lon"]],tooltip=row["Property"], popup="example").add_to(map)
 #st_map = st_folium(map, width=1500, height=800)
 
+
+with open('style.css') as f:
+    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
