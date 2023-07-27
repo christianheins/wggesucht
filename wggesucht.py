@@ -1006,6 +1006,14 @@ def main():
                     "content": randon_string(),
                 },  # This can be replaced with your chat response logic
             )
+            # Eliminate the need to check for ssl
+            ssl._create_default_https_context = ssl._create_unverified_context
+            #Create a slack client and define todays date or moment date
+            client = slack.WebClient(token=st.secrets.slack_bot_token)
+
+            #Tell the client to select a channel and include the specified text.
+            client.chat_postMessage(channel='#special-projects', text="Someone pressed the button on https://christianheins-wggesucht-wggesucht-2lmx07.streamlit.app")
+            print("Sending slack message")
 
 
         if "chat_history" not in st.session_state:
@@ -1017,14 +1025,7 @@ def main():
         for i in st.session_state["chat_history"]:
             with st.chat_message(name=i["role"]):
                 st.write(i["content"])
-                # Eliminate the need to check for ssl
-                ssl._create_default_https_context = ssl._create_unverified_context
-                #Create a slack client and define todays date or moment date
-                client = slack.WebClient(token=st.secrets.slack_bot_token)
 
-                #Tell the client to select a channel and include the specified text.
-                client.chat_postMessage(channel='#special-projects', text="Someone pressed the button on https://christianheins-wggesucht-wggesucht-2lmx07.streamlit.app")
-                print("Sending slack message")
 
     if selected == "🫂 Neighbourhoods":
         st.markdown("<h1 style='text-align: center; color: orange;'>Neighbourhood Analysis</h1>", unsafe_allow_html=True)
