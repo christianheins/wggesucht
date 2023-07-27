@@ -411,7 +411,7 @@ def main():
     dataframe_filter1 = df_concat["Size"] > 9
     dataframe_filter2 = df_concat["Pure Rent"] > 9
     df_concat = df_concat[dataframe_filter1]
-    df_concat = df_concat[dataframe_filter2]
+    #df_concat = df_concat[dataframe_filter2]
     st.header("🚧 SAL MAGUDA - WORK IN PROGRESS")
 
     with st.expander("DISCLAIMER"):
