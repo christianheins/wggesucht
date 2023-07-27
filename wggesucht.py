@@ -424,21 +424,8 @@ def main():
     col1, col2 = st.columns([0.2, 0.8])
     with col1:
         st.markdown("<a href='https://www.linkedin.com/in/christian-h-0545aaa1/'>🔗 Find me on LinkedIn</a>", unsafe_allow_html=True)
-        st.markdown("<a href='https://github.com/christianheins'>🔗 Find me on Github</a>", unsafe_allow_html=True)
     with col2:
-        text = st.text_input("Send me a message on slack 💬")
-        def sendslack():
-            #Create a slack client and define todays date or moment date
-            client = slack.WebClient(token=st.secrets.slack_bot_token)
-
-            #Tell the client to select a channel and include the specified text.
-            client.chat_postMessage(channel='#special-projects', text=f"Message from an user:\n\n{text}")
-            print("Sending slack message")
-        button2 = st.button("Send message")
-        if button2:
-            sendslack()
-            st.success("Message sent!")
-        button2 = False
+        st.markdown("<a href='https://github.com/christianheins'>🔗 Find me on Github</a>", unsafe_allow_html=True)
 
 
     if selected == "🏘️ Apartments":
