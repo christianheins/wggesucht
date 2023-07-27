@@ -402,7 +402,6 @@ def main():
     #df_concat.rename(columns = {"Posting Date":"Eintrag", "Price":"Miete", "Size":"Größe","Date From":"frei ab", "Date To":"frei bis", "Location":"Stadtteil", "Date To (Year - Month)":"frei bis (Year - Month)"}, inplace=True)
     df_immowelt = pd.read_csv("df_immowelt_rebuilt.csv")
     df_concat = pd.concat([df_concat, df_immowelt])
-    st.write(df_concat)
 
     #st.write(df_concat)
     #st.write(df_concat.columns)
