@@ -778,20 +778,20 @@ def main():
 
         st.header("📈 Rent timeline")
 
-        df_2023_05 = pd.read_csv("df_concat_20230531.csv")
+        df_2023_05 = pd.read_csv("df_concat_20230531_rebuilt.csv.csv")
         df_2023_05["Dataframe Date"] = "20230531"
         #df_2023_05["Size"] = df_2023_05["Größe"]
         #df_2023_05.rename(columns={"Unnamed: 8":"Dataframe","Unnamed: 0.1":"Data ID", "Unnamed: 0":"Link", "Latitude":"lat", "Longitude":"lon", "Miete":"Pure Rent"}, inplace=True)
         df_2023_05.reset_index(drop=True, inplace=True)
 
-        df_2023_06 = pd.read_csv("df_concat_20230630.csv")
+        df_2023_06 = pd.read_csv("df_concat_20230630_rebuilt.csv.csv")
         #df_2023_06.rename(columns={"index":"Data ID", "DataFrame": "Dataframe Date", "Pure rent": "Pure Rent"}, inplace=True)
         df_2023_06["Dataframe Date"] = "20230630"
         #df_2023_06["Pure Rent"] = df_2023_06["Price"]
         #df_2023_06["Größe"] = df_2023_06["Size"]
         df_2023_06.reset_index(drop=True, inplace=True)
 
-        df_2023_07 = pd.read_csv("df_concat_20230712.csv")
+        df_2023_07 = pd.read_csv("df_concat_20230712_rebuilt.csv.csv")
         df_2023_07.rename(columns={"Latitude":"lat", "Longitude":"lon"}, inplace=True)
         df_2023_07.fillna(0, inplace=True)
         #df_2023_07.drop(columns=["Unnamed: 0.1", "Unnamed: 0"], inplace=True)
