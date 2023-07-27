@@ -414,8 +414,9 @@ def main():
     dataframe_filter2 = df_concat["Pure Rent"] > 9
     df_concat = df_concat[dataframe_filter1]
     #df_concat = df_concat[dataframe_filter2]
-    col1, col2 = st.columns([0.5, 0.5])
     st.markdown("""---""")
+
+    col1, col2 = st.columns([0.5, 0.5])
 
     with col1:
         st.markdown("<h3 style='text-align: left; color: black;'>🚧 SAL MAGUDA - WORK IN PROGRESS</h3>", unsafe_allow_html=True)
