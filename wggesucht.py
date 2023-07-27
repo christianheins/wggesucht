@@ -469,8 +469,8 @@ def main():
             st.write("Another filter")
             slider_europersqm = st.slider("Chosse an euro per sqm range", 0, 100, (25, 75))
             st.write("Your selection:", slider_europersqm)
-            europersqm_minslider = df_concat["Pure Rent"] > europersqm_maxslider[0]
-            europersqm_maxslider = df_concat["Pure Rent"] > europersqm_maxslider[1]
+            europersqm_minslider = df_concat["Pure Rent"] > slider_europersqm[0]
+            europersqm_maxslider = df_concat["Pure Rent"] > slider_europersqm[1]
 
     with col3:
             st.write("Another filter")
