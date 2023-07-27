@@ -467,7 +467,6 @@ def main():
 
 
         with col2:
-            st.write("Another filter")
             st.write()
             if str(table_df["EUR / SQM"].max()) == "nan":
                 maxeurpersqm = 100.00
