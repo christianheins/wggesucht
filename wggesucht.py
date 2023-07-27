@@ -1007,7 +1007,7 @@ def main():
             st.session_state["chat_history"] = []
 
 
-        st.chat_input("Send me a message on slack", on_submit=chat_actions, key="chat_input")
+        st.chat_input("Send me direct feedback on slack", on_submit=chat_actions, key="chat_input")
 
         for i in st.session_state["chat_history"]:
             with st.chat_message(name=i["role"]):
