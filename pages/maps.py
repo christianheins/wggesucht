@@ -96,7 +96,7 @@ with col1:
     else:
         df_map = df_map[df_map["Name"].isin(warehouse)]
 
-    st.metric("Current Pure Rent:", df_map["Miete"].reset_index(drop=True)[0])
+    st.metric("Current Pure Rent:", df_map["Pure Rent"].reset_index(drop=True)[0])
     st.write(df_map["Neighbourhood"].reset_index(drop=True))
 
 
