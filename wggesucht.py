@@ -477,7 +477,7 @@ def main():
         with col3:
             st.write("Another filter")
 
-        if multiselect_neighbourhoods and slider_europersqm:
+        if multiselect_neighbourhoods and europersqm_maxslider:
             table_df = table_df[europersqm_minslider]
             table_df2 = table_df[europersqm_maxslider]
 
