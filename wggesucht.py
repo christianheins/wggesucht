@@ -484,7 +484,7 @@ def main():
                              "EUR / SQM": st.column_config.NumberColumn(format="%.2f €"),
                              "Deposit": st.column_config.NumberColumn(format="%d €"),
                              "Link": st.column_config.LinkColumn("Link"),
-                             "DataFrame": st.column_config.NumberColumn(format="%d"),
+                             "Dataframe Date": st.column_config.NumberColumn(format="%d"),
                              "Lease term": st.column_config.NumberColumn(format="%d Months"),
                              "City": st.column_config.ListColumn("City"),
                              "Neighbourhood": st.column_config.ListColumn("Neighbourhood"),
