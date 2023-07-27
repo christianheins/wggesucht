@@ -459,7 +459,8 @@ def main():
         col1, col2, col3 = st.columns([0.3, 0.3, 0.3])
         with col1:
             unique_neighbourhoods = df_concat["Neighbourhood"].unique().tolist()
-            st.write(sorted(unique_neighbourhoods))
+            unique_neighbourhoods = sorted(unique_neighbourhoods)
+
             multiselect_neighbourhoods = st.multiselect("Choose a neighbourhood", options=unique_neighbourhoods, help="Please do not leave empty", format_func=lambda x: "Select a neighbourhood" if x == "" else x)
 
             # Display the selected neighbourhoods and the filtered DataFrame
