@@ -430,7 +430,7 @@ def main():
 
     if selected == "🏘️ Apartments":
         st.markdown("<h1 style='text-align: center; color: orange;'>Property Analysis 🏘</h1>", unsafe_allow_html=True)
-        st.markdown("<h3 style='text-align: left; color: black;'>Berlin Real Estate & Streamlit websites</h3>", unsafe_allow_html=True)
+        st.markdown("<h3 style='text-align: left; color: black;'>Berlin Real Estate & Streamlit</h3>", unsafe_allow_html=True)
 
         col1, col2 = st.columns([0.7, 0.3])
         with col1:
