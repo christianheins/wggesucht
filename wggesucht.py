@@ -619,7 +619,7 @@ def main():
             wholechart = alt.layer(chart.mark_bar(color="orange"), chart.mark_text(align='left', dx=8, color="black"))
 
             wholechart = wholechart.properties(
-                height=alt.Step(70)
+                height=alt.Step(30)
             )
             st.markdown("<h6 style='text-align: center; color: orange;'>Average Rent per Neighbourhood</h6>", unsafe_allow_html=True)
             st.altair_chart(wholechart.interactive(), use_container_width=True)
