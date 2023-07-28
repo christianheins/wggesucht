@@ -793,8 +793,8 @@ def main():
         df_concat['lon'].fillna("0", inplace=True)
         df_concat['lat'] = pd.to_numeric(df_concat['lat'])
         df_concat['lon'] = pd.to_numeric(df_concat['lon'])
-        st.write(df_concat)
-        st.map(df_concat.pivot_table(index="Neighbourhood", values="Pure Rent", aggfunc="sum"))
+        st.write(df_concat.pivot_table(index="Neighbourhood", values="Pure Rent", aggfunc="sum"))
+        st.map(df_concat)
 
         # Timelines
         st.header("📈 Rent timeline")
