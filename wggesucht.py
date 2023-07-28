@@ -619,7 +619,7 @@ def main():
             wholechart = alt.layer(chart.mark_bar(color="orange"), chart.mark_text(align='left', dx=8, color="black"))
 
             wholechart = wholechart.properties(
-                height=alt.Step(20),
+                height=alt.Step(10),
                 width="container"
             ).configure_scale(
                 bandPaddingInner=0.1
