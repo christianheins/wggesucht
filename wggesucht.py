@@ -608,7 +608,7 @@ def main():
             df_concat_pivot_releasedate = df_concat[['Posting Date', 'Pure Rent', 'Size', 'EUR / SQM', 'Neighbourhood']].pivot_table(index="Neighbourhood", values="Pure Rent", aggfunc={"Pure Rent":["count","mean"]}).reset_index()
 
             chart = alt.Chart(df_concat_pivot_releasedate).encode(
-                x=alt.X('mean:Q', axis=alt.Axis(title='Average Euro per advert'), sort='-y'),
+                x=alt.X('mean:Q', axis=alt.Axis(title='Average Euro per advert'), sort='y'),
                 y=alt.Y('Neighbourhood:N'),
                 text=alt.Text('mean:Q', format='.1f'),
             )
