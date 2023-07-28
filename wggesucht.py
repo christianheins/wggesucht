@@ -496,7 +496,7 @@ def main():
                              "Lease term": st.column_config.NumberColumn(format="%d Months"),
                              "City": st.column_config.ListColumn("City"),
                              "Neighbourhood": st.column_config.ListColumn("Neighbourhood"),
-                         })
+                         }, use_container_width=True)
 
         else:
             st.warning("Please select at least one neighbourhood.")
