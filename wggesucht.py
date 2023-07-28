@@ -619,7 +619,7 @@ def main():
             wholechart = alt.layer(chart.mark_bar(color="orange"), chart.mark_text(align='left', dx=8, color="black"))
 
             wholechart = wholechart.encode(
-                x=alt.X().scale(clamp=True)
+                x=alt.X(sort="descending").scale(clamp=True)
             ).properties(
                 height=500
             )
