@@ -607,6 +607,7 @@ def main():
         with col3:
             df_concat_pivot_releasedate = df_concat[['Posting Date', 'Pure Rent', 'Size', 'EUR / SQM', 'Neighbourhood']].pivot_table(index="Neighbourhood", values="Pure Rent", aggfunc={"Pure Rent":["count","mean"]}).reset_index()
 
+            # First Chart
             chart = alt.Chart(df_concat_pivot_releasedate).encode(
                 x=alt.X('mean:Q', axis=alt.Axis(title='Average Euro per advert')),
                 y=alt.Y('Neighbourhood:N', sort="-x"),
@@ -623,21 +624,22 @@ def main():
             )
             st.markdown("<h6 style='text-align: center; color: orange;'>Average Rent per Neighbourhood</h6>", unsafe_allow_html=True)
 
-            st.altair_chart(chart.interactive(), use_container_width=True)
+            st.altair_chart(wholechart.interactive(), use_container_width=True)
 
             df_concat_pivot_releasedate = df_concat[['Posting Date', 'Pure Rent', 'Size', 'EUR / SQM', 'Neighbourhood']].pivot_table(index="Posting Date", values="Pure Rent", aggfunc={"Pure Rent":["count","mean"]}).reset_index()
             df_concat_pivot_releasedate['Posting Date'] = pd.to_datetime(df_concat_pivot_releasedate['Posting Date'], format='%d.%m.%Y', dayfirst=True)
             df_concat_pivot_releasedate.sort_values(by=["Posting Date"], ascending=[False], inplace=True)
             df_concat_pivot_releasedate['Posting Date'] = df_concat_pivot_releasedate['Posting Date'].dt.strftime('%Y/%m/%d')
 
+            # Second Chart
             st.markdown("<h6 style='text-align: center; color: orange;'>Number of entries per release date</h6>", unsafe_allow_html=True)
             chart = alt.Chart(df_concat_pivot_releasedate).encode(
                 x=alt.X('count:Q', axis=alt.Axis(title='Count')),
                 y=alt.Y('Posting Date:T', axis=alt.Axis(title='Entry date')), #use 'sort=None' to preserve the order of categories
                 text=alt.Text('count', format='.1f')
             )
-            #Combine bar chart with text chart, weird isnt?
 
+            # Combine bar chart with text chart, weird isnt?
             #wholechart = chart.mark_bar(color="orange") + chart.mark_text(align='left', dx=8, color="black")
 
             wholechart = alt.layer(chart.mark_bar(color="orange"), chart.mark_text(align='left', dx=8, color="black"))
