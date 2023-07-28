@@ -24,6 +24,9 @@ div.row-widget.stMultiSelect {
     width: 50%;
 }
 
+[@id="root"]/div[1]/div[1]/div/div/div/section[2]/div[1]/div[1]/div/div[12]/div[1]/div[1]/div/div/div{
+    width: 50%;
+}
 
 [data-testid="stSidebarNav"] {
     background-image: url(https://raw.githubusercontent.com/christianheins/wggesucht/main/images/2.jpg);
