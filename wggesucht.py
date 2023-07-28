@@ -640,7 +640,9 @@ def main():
             #wholechart = chart.mark_bar(color="orange") + chart.mark_text(align='left', dx=8, color="black")
 
             wholechart = alt.layer(chart.mark_bar(color="orange"), chart.mark_text(align='left', dx=8, color="black"))
-            wholechart = wholechart.properties(
+            wholechart = wholechart.encode(
+                y=alt.Y(clamp=True)
+            ).properties(
                 height=500
             )
             st.altair_chart(wholechart.interactive(), use_container_width=True)
