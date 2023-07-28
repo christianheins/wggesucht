@@ -20,7 +20,7 @@ div.css-1fcdlhc.e1s6o5jp0 {
     background-color: #EEEEEE;
 }
 
-.stMultiSelect {
+.stMultiSelect [class=row-widget] {
     width: 100px;
 }
 
