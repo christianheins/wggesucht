@@ -618,15 +618,9 @@ def main():
             chart = chart.mark_bar(color="orange")
             wholechart = alt.layer(chart.mark_bar(color="orange"), chart.mark_text(align='left', dx=8, color="black"))
 
-            wholechart = wholechart.properties(
+            wholechart = wholechart.configure_axisY(clip=False).properties(
                 height=500,
                 width="container"
-            ).configure_scale(
-                bandPaddingInner=0.5
-            ).configure_view(
-                clip=False,
-                continuousHeight=500,
-                step=10,
             )
 
             st.markdown("<h6 style='text-align: center; color: orange;'>Average Rent per Neighbourhood</h6>", unsafe_allow_html=True)
