@@ -621,9 +621,11 @@ def main():
             wholechart = wholechart.properties(
                 height=500,
                 width="container"
+            ).configure_view(
+                clip=True
             )
-            st.markdown("<h6 style='text-align: center; color: orange;'>Average Rent per Neighbourhood</h6>", unsafe_allow_html=True)
 
+            st.markdown("<h6 style='text-align: center; color: orange;'>Average Rent per Neighbourhood</h6>", unsafe_allow_html=True)
             st.altair_chart(wholechart.interactive(), use_container_width=True)
 
             df_concat_pivot_releasedate = df_concat[['Posting Date', 'Pure Rent', 'Size', 'EUR / SQM', 'Neighbourhood']].pivot_table(index="Posting Date", values="Pure Rent", aggfunc={"Pure Rent":["count","mean"]}).reset_index()
@@ -645,8 +647,6 @@ def main():
             wholechart = alt.layer(chart.mark_bar(color="orange"), chart.mark_text(align='left', dx=8, color="black"))
             wholechart = wholechart.properties(
                 height=500
-            ).configure_view(
-                clip=True
             )
             st.altair_chart(wholechart.interactive(), use_container_width=True)
 
