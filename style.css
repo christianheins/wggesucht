@@ -20,11 +20,9 @@ div.css-1fcdlhc.e1s6o5jp0 {
     background-color: #EEEEEE;
 }
 
-.stMultiSelect [class=row-widget] span{
-    width: 100px;
+*[@id="root"]/div[1]/div[1]/div/div/div/section[2]/div[1]/div[1]/div/div[12]/div[1]/div[1]/div/div/div{
+  width: 100px;
 }
-
-
 
 [data-testid="stSidebarNav"] {
     background-image: url(https://raw.githubusercontent.com/christianheins/wggesucht/main/images/2.jpg);
