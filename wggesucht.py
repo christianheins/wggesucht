@@ -618,7 +618,7 @@ def main():
             chart = chart.mark_bar(color="orange")
             wholechart = alt.layer(chart.mark_bar(color="orange"), chart.mark_text(align='left', dx=8, color="black"))
 
-            wholechart = wholechart.configure_axisY(clip=False).properties(
+            wholechart = wholechart.properties(
                 height=500,
                 width="container"
             )
