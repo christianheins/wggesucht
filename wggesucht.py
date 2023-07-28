@@ -624,7 +624,7 @@ def main():
             ).configure_scale(
                 bandPaddingInner=0.5
             ).configure_view(
-                continuousHeight=500
+                discreteHeight=500
             )
 
             st.markdown("<h6 style='text-align: center; color: orange;'>Average Rent per Neighbourhood</h6>", unsafe_allow_html=True)
