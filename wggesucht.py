@@ -622,7 +622,7 @@ def main():
                 height=500,
                 width="container"
             ).configure_scale(
-                bandPaddingInner=0.1
+                bandPaddingInner=0.5
             ).configure_view(
                 continuousHeight=500
             )
