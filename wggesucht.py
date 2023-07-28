@@ -794,18 +794,10 @@ def main():
         df_concat['lat'] = pd.to_numeric(df_concat['lat'])
         df_concat['lon'] = pd.to_numeric(df_concat['lon'])
         st.write(df_concat)
-        st.map(df_concat)
+        st.map(df_concat.pivot_table(index="Neighbourhood", aggfunc="sum"))
 
-        with st.container():
-            st.write("This is inside the container")
-
-            # You can call any Streamlit command, including custom components:
-            st.bar_chart(np.random.randn(50, 3))
-
-        st.write("This is outside the container")
-
+        # Timelines
         st.header("📈 Rent timeline")
-
         df_2023_05 = pd.read_csv("df_concat_20230531_rebuilt.csv")
         df_2023_05["Dataframe Date"] = "20230531"
         #df_2023_05["Size"] = df_2023_05["Größe"]
