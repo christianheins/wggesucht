@@ -639,7 +639,7 @@ def main():
 
             #wholechart = chart.mark_bar(color="orange") + chart.mark_text(align='left', dx=8, color="black")
 
-            wholechart = alt.layer(chart.mark_bar(color="orange").encode(sort="ascending"), chart.mark_text(align='left', dx=8, color="black"))
+            wholechart = alt.layer(chart.mark_bar(color="orange"), chart.mark_text(align='left', dx=8, color="black"))
             wholechart = wholechart.properties(
                 height=500
             )
