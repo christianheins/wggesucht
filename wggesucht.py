@@ -609,7 +609,7 @@ def main():
 
             chart = alt.Chart(df_concat_pivot_releasedate).encode(
                 x=alt.X('mean:Q', axis=alt.Axis(title='Average Euro per advert')),
-                y=alt.Y('Neighbourhood:N', sort=None), #use 'sort=None' to preserve the order of categories
+                y=alt.Y('Neighbourhood:N', sort=None).scale(clamp=True), #use 'sort=None' to preserve the order of categories
                 text=alt.Text('mean:Q', format='.1f'),
             )
             #Combine bar chart with text chart, weird isnt?
@@ -640,9 +640,7 @@ def main():
             #wholechart = chart.mark_bar(color="orange") + chart.mark_text(align='left', dx=8, color="black")
 
             wholechart = alt.layer(chart.mark_bar(color="orange"), chart.mark_text(align='left', dx=8, color="black"))
-            wholechart = wholechart.encode(
-                y=alt.Y(clamp=True)
-            ).properties(
+            wholechart = wholechart.properties(
                 height=500
             )
             st.altair_chart(wholechart.interactive(), use_container_width=True)
