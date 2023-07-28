@@ -609,7 +609,7 @@ def main():
 
             chart = alt.Chart(df_concat_pivot_releasedate).encode(
                 x=alt.X('mean:Q', sort="descending", axis=alt.Axis(title='Average Euro per advert')),
-                y=alt.Y('Neighbourhood:N').scale(clamp=True), #use 'sort=None' to preserve the order of categories
+                y=alt.Y('Neighbourhood:N'), #use 'sort=None' to preserve the order of categories
                 text=alt.Text('mean:Q', format='.1f'),
             )
             #Combine bar chart with text chart, weird isnt?
