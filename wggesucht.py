@@ -796,7 +796,7 @@ def main():
 
         col1, col2 = st.columns([0.2, 0.8])
         with col1:
-            st.dataframe(df_concat.pivot_table(index="Neighbourhood", values="Pure Rent", aggfunc="mean"), use_container_width=True)
+            st.dataframe(df_concat.pivot_table(index="Neighbourhood", values="Pure Rent", aggfunc="mean").rename(columns={"Pure Rent", "Average Pure Rent"}), use_container_width=True)
         with col2:
             st.map(df_concat)
 
