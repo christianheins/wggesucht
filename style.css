@@ -21,6 +21,9 @@ div.css-1fcdlhc.e1s6o5jp0 {
 }
 
 
+[data-testid="stMultiSelect"] {
+    width: 50%;
+}
 
 [data-testid="stSidebarNav"] {
     background-image: url(https://raw.githubusercontent.com/christianheins/wggesucht/main/images/2.jpg);
