@@ -608,8 +608,8 @@ def main():
             df_concat_pivot_releasedate = df_concat[['Posting Date', 'Pure Rent', 'Size', 'EUR / SQM', 'Neighbourhood']].pivot_table(index="Neighbourhood", values="Pure Rent", aggfunc={"Pure Rent":["count","mean"]}).reset_index()
 
             chart = alt.Chart(df_concat_pivot_releasedate).encode(
-                x=alt.X('mean:Q', axis=alt.Axis(title='Average Euro per advert')),
-                y=alt.Y('Neighbourhood:N', sort="descending").scale(clamp=True), #use 'sort=None' to preserve the order of categories
+                x=alt.X('mean:Q', sort="descending", axis=alt.Axis(title='Average Euro per advert')),
+                y=alt.Y('Neighbourhood:N').scale(clamp=True), #use 'sort=None' to preserve the order of categories
                 text=alt.Text('mean:Q', format='.1f'),
             )
             #Combine bar chart with text chart, weird isnt?
