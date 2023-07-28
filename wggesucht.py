@@ -614,8 +614,6 @@ def main():
             )
             #Combine bar chart with text chart, weird isnt?
 
-            #wholechart = chart.mark_bar(color="orange") + chart.mark_text(align='left', dx=8, color="black")
-            chart = chart.mark_bar(color="orange")
             wholechart = alt.layer(chart.mark_bar(color="orange"), chart.mark_text(align='left', dx=8, color="black"))
 
             wholechart = wholechart.properties(
