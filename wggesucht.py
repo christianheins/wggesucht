@@ -619,7 +619,8 @@ def main():
             wholechart = alt.layer(chart.mark_bar(color="orange"), chart.mark_text(align='left', dx=8, color="black"))
 
             wholechart = wholechart.properties(
-                height=500
+                height="container",
+                width="container"
             )
             st.markdown("<h6 style='text-align: center; color: orange;'>Average Rent per Neighbourhood</h6>", unsafe_allow_html=True)
 
