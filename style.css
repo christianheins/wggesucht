@@ -2,7 +2,6 @@
 .stMultiSelect [data-baseweb=select] span{
     max-width: 300px;
     font-size: 0.7rem;
-    width: 50%;
 }
 
 
@@ -19,6 +18,10 @@ div.css-12w0qpk.e1tzin5v1 {
 /* Metric objects*/
 div.css-1fcdlhc.e1s6o5jp0 {
     background-color: #EEEEEE;
+}
+
+.stMultiSelect [data-baseweb=select] span{
+    width: 50%;
 }
 
 
