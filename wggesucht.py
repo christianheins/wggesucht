@@ -454,7 +454,7 @@ def main():
             st.markdown("<img src='https://content.cdn.immowelt.com/iw_group/_processed_/9/b/csm_logo-rgb-immonet_c1dfb328a4.png' width=300></img>", unsafe_allow_html=True)
         st.markdown("""---""")
 
-        st.markdown("<h4 style='text-align: center; color: orange;'>Properties table</h4>", unsafe_allow_html=True)
+        st.markdown("<h4 style='text-align: center; color: orange;'>Units table</h4>", unsafe_allow_html=True)
 
         col1, col2, col3 = st.columns([0.3, 0.3, 0.3])
         with col1:
@@ -500,6 +500,7 @@ def main():
 
         else:
             st.warning("Please select at least one neighbourhood.")
+        st.markdown("""---""")
 
         col1, col2, col3, col4 = st.columns([0.2, 0.2, 0.35, 0.35])
         with col1:
