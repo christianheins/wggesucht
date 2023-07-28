@@ -1,9 +1,13 @@
+.stMultiSelect {
+    max-width: 300px;
+    font-size: 0.7rem;
+}
+
 /* All multiselect, adjusting the text inside the menus*/
 .stMultiSelect [data-baseweb=select] span{
     max-width: 300px;
     font-size: 0.7rem;
 }
-
 
 /* Expanders*/
 div.css-12w0qpk.e1tzin5v1 {
@@ -20,9 +24,6 @@ div.css-1fcdlhc.e1s6o5jp0 {
     background-color: #EEEEEE;
 }
 
-*[@id="root"]/div[1]/div[1]/div/div/div/section[2]/div[1]/div[1]/div/div[12]/div[1]/div[1]/div/div/div{
-  width: 100px;
-}
 
 [data-testid="stSidebarNav"] {
     background-image: url(https://raw.githubusercontent.com/christianheins/wggesucht/main/images/2.jpg);
@@ -32,6 +33,7 @@ div.css-1fcdlhc.e1s6o5jp0 {
     padding-top: 130px;
 
 }
+
 [data-testid="stSidebarNav"]::before {
     content: "Pages";
     margin-left: 20px;
