@@ -645,6 +645,8 @@ def main():
             wholechart = alt.layer(chart.mark_bar(color="orange"), chart.mark_text(align='left', dx=8, color="black"))
             wholechart = wholechart.properties(
                 height=500
+            ).configure_view(
+                clip=True
             )
             st.altair_chart(wholechart.interactive(), use_container_width=True)
 
