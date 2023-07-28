@@ -631,7 +631,7 @@ def main():
 
             st.markdown("<h6 style='text-align: center; color: orange;'>Number of entries per release date</h6>", unsafe_allow_html=True)
             chart = alt.Chart(df_concat_pivot_releasedate).encode(
-                x=alt.X('count:Q', sort="ascending", axis=alt.Axis(title='Count')),
+                x=alt.X('count:Q', axis=alt.Axis(title='Count')),
                 y=alt.Y('Posting Date:T', axis=alt.Axis(title='Entry date')), #use 'sort=None' to preserve the order of categories
                 text=alt.Text('count', format='.1f')
             )
@@ -639,7 +639,7 @@ def main():
 
             #wholechart = chart.mark_bar(color="orange") + chart.mark_text(align='left', dx=8, color="black")
 
-            wholechart = alt.layer(chart.mark_bar(color="orange"), chart.mark_text(align='left', dx=8, color="black"))
+            wholechart = alt.layer(chart.mark_bar(color="orange").encode(sort="ascending"), chart.mark_text(align='left', dx=8, color="black"))
             wholechart = wholechart.properties(
                 height=500
             )
