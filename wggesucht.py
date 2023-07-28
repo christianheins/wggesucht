@@ -622,7 +622,8 @@ def main():
                 height=500
             )
             st.markdown("<h6 style='text-align: center; color: orange;'>Average Rent per Neighbourhood</h6>", unsafe_allow_html=True)
-            st.altair_chart(wholechart.interactive(), use_container_width=True)
+
+            st.altair_chart(chart.interactive(), use_container_width=True)
 
             df_concat_pivot_releasedate = df_concat[['Posting Date', 'Pure Rent', 'Size', 'EUR / SQM', 'Neighbourhood']].pivot_table(index="Posting Date", values="Pure Rent", aggfunc={"Pure Rent":["count","mean"]}).reset_index()
             df_concat_pivot_releasedate['Posting Date'] = pd.to_datetime(df_concat_pivot_releasedate['Posting Date'], format='%d.%m.%Y', dayfirst=True)
