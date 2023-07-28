@@ -622,7 +622,7 @@ def main():
                 height=500,
                 width="container"
             ).configure_scale(
-                bandPaddingInner=5
+                bandPaddingInner=0.9
             )
 
             st.markdown("<h6 style='text-align: center; color: orange;'>Average Rent per Neighbourhood</h6>", unsafe_allow_html=True)
