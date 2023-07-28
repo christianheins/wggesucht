@@ -624,7 +624,7 @@ def main():
             ).configure_scale(
                 bandPaddingInner=0.5
             ).configure_view(
-                clip=True,
+                clip=False,
                 continuousHeight=500
             )
 
