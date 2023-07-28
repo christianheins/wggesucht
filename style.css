@@ -2,6 +2,7 @@
 .stMultiSelect [data-baseweb=select] span{
     max-width: 300px;
     font-size: 0.7rem;
+    width: 50%;
 }
 
 
@@ -20,10 +21,6 @@ div.css-1fcdlhc.e1s6o5jp0 {
     background-color: #EEEEEE;
 }
 
-
-[data-testid="stMultiSelect"] {
-    width: 50%;
-}
 
 [data-testid="stSidebarNav"] {
     background-image: url(https://raw.githubusercontent.com/christianheins/wggesucht/main/images/2.jpg);
