@@ -807,7 +807,7 @@ def main():
         col1, col2 = st.columns([0.4, 0.6])
         with col1:
             df_neighbourhoods = df_concat.pivot_table(index="Neighbourhood", aggfunc={"Pure Rent":["mean","sum"], "Size":["mean","sum"]})
-            df_neighbourhoods.columns = [''.join(col).strip() for col in df_neighbourhoods.columns.values]
+            df_neighbourhoods.columns = ['-'.join(col).strip() for col in df_neighbourhoods.columns.values]
             st.dataframe(df_neighbourhoods, use_container_width=True)
         with col2:
             st.map(df_concat)
