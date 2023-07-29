@@ -1,5 +1,8 @@
 .stMultiSelect {
     max-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* All multiselect, adjusting the text inside the menus*/
@@ -7,6 +10,8 @@
     max-width: 300px;
     font-size: 0.7rem;
 }
+
+div.
 
 /* Expanders*/
 div.css-12w0qpk.e1tzin5v1 {

@@ -35,6 +35,17 @@ def main():
         'About': "# This is a header. This is an *extremely* cool app!"
     })
 
+    #Pages
+    page_real_estate_general_dashboard = "wggesucht.py"
+    page_maps = "pages/maps.py"
+
+    show_pages(
+        [
+            Page(page_real_estate_general_dashboard, "General Dashboard", "🏠"),
+            Page(page_maps, "Maps", "🗺️"),
+        ]
+    )
+
 
     with open('style.css') as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
@@ -461,7 +472,6 @@ def main():
             unique_neighbourhoods = sorted(unique_neighbourhoods)
             multiselect_neighbourhoods = st.multiselect("Choose a neighbourhood", options=unique_neighbourhoods, help="Please do not leave empty", format_func=lambda x: "Select a neighbourhood" if x == "" else x)
             table_df = df_concat[df_concat["Neighbourhood"].isin(multiselect_neighbourhoods)]
-
 
         with col2:
             st.write()
