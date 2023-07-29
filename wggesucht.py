@@ -29,10 +29,10 @@ def main():
     #Streamlit
 
 
-    st.set_page_config(page_title="WG Gesucht Analysis", layout="wide", initial_sidebar_state="expanded", menu_items={
+    st.set_page_config(page_title="Proplist, property listings.", layout="wide", initial_sidebar_state="expanded", menu_items={
         'Get Help': 'https://www.extremelycoolapp.com/help',
         'Report a bug': "https://www.extremelycoolapp.com/bug",
-        'About': "# This is a header. This is an *extremely* cool app!"
+        'About': "# Welcome to our property listings. This is an *extremely* cool app!"
     })
 
     #Pages
