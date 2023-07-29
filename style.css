@@ -1,6 +1,5 @@
 .stMultiSelect {
-    max-width: 100px;
-    font-size: 0.7rem;
+    max-width: 50%;
 }
 
 /* All multiselect, adjusting the text inside the menus*/
