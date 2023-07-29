@@ -479,10 +479,11 @@ def main():
                 maxeurpersqm = 100.00
             else:
                 maxeurpersqm = table_df["EUR / SQM"].max()
+
             slider_europersqm = st.slider("Chosse an euro per sqm range", table_df["EUR / SQM"].min(), maxeurpersqm, (0.0, maxeurpersqm))
 
-            europersqm_minslider = table_df["EUR / SQM"] > slider_europersqm[0]
-            europersqm_maxslider = table_df["EUR / SQM"] < slider_europersqm[1]
+            europersqm_minslider = table_df[table_df["EUR / SQM"] > slider_europersqm[0]]
+            europersqm_maxslider = table_df[table_df["EUR / SQM"] < slider_europersqm[1]]
             st.write(europersqm_maxslider)
 
         with col3:
