@@ -634,7 +634,7 @@ def main():
 
             wholechart = wholechart.properties(
                 height=500,
-                width=alt.Step(30)
+                width=alt.Step(60)
             )
 
             st.markdown("<h6 style='text-align: center; color: orange;'>Average Rent per Neighbourhood</h6>", unsafe_allow_html=True)
