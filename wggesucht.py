@@ -624,11 +624,10 @@ def main():
             df_pivot_neighbourhoods = df_pivot_neighbourhoods[:20]
 
 
-
             # First Chart
             chart = alt.Chart(df_pivot_neighbourhoods).encode(
-                x=alt.X('mean:Q', axis=alt.Axis(title='Average Euro per advert')),
-                y=alt.Y('Neighbourhood:O', sort="-x"),
+                x=alt.X('Neighbourhood:O', axis=alt.Axis(title='Average Euro per advert')),
+                y=alt.Y('mean:Q', sort="-x"),
                 text=alt.Text('mean:Q', format='.1f'),
             )
             #Combine bar chart with text chart, weird isnt?
