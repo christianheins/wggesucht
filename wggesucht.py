@@ -630,11 +630,11 @@ def main():
             )
             #Combine bar chart with text chart, weird isnt?
 
-            wholechart = alt.layer(chart.mark_bar(color="orange"), chart.mark_text(align='left', dx=8, color="black"))
+            wholechart = alt.layer(chart.mark_bar(color="orange", width=20), chart.mark_text(align='left', dx=8, color="black"))
 
             wholechart = wholechart.properties(
                 height=500,
-                width="container"
+                width=alt.Step(30)
             )
 
             st.markdown("<h6 style='text-align: center; color: orange;'>Average Rent per Neighbourhood</h6>", unsafe_allow_html=True)
