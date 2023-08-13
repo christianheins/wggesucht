@@ -104,7 +104,7 @@ with col2:
 
     #folium.GeoJson(data, name="Polygons 2").add_to(map)
     #folium.GeoJson(data2, name="Polygons").add_to(map)
-    st_map = st_folium(map, width=500, height=500, bordersStyle={border-radius: 40px;})
+    st_map = st_folium(map, width=500, height=500)
     map.save("output.html")
     print("File created")
 
