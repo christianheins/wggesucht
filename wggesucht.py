@@ -524,7 +524,7 @@ def main():
             st.metric("Oldest entry date", value=str(oldestdate))
         with col4:
             df_concat['Posting Date'] = pd.to_datetime(df_concat['Posting Date'], format='%d.%m.%Y', dayfirst=True)
-            oldestdate = df_concat["Posting Date"].max()
+            oldestdate = str(df_concat["Posting Date"].max())[:10]
             st.metric("Max entry date", value=str(oldestdate))
 
 
