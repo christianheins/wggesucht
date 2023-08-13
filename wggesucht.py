@@ -520,7 +520,7 @@ def main():
             st.metric("Unique neighbourhoods", value="{:,.0f}".format(len(df_concat[['Posting Date', 'Pure Rent', 'Size', 'EUR / SQM', 'Neighbourhood']].pivot_table(index="Neighbourhood", values="Posting Date", aggfunc="count").reset_index())))
         with col3:
             df_concat['Posting Date'] = pd.to_datetime(df_concat['Posting Date'], format='%d.%m.%Y', dayfirst=True)
-            oldestdate = df_concat["Posting Date"].min()
+            oldestdate = str(df_concat["Posting Date"].min())[:9]
             st.metric("Oldest entry date", value=str(oldestdate))
         with col4:
             df_concat['Posting Date'] = pd.to_datetime(df_concat['Posting Date'], format='%d.%m.%Y', dayfirst=True)
