@@ -616,14 +616,16 @@ def main():
             st.altair_chart(chart.interactive(), use_container_width=True)
 
         with col3:
-            df_concat_pivot_releasedate = df_concat[['Posting Date', 'Pure Rent', 'Size', 'EUR / SQM', 'Neighbourhood']].pivot_table(index="Neighbourhood", values="Pure Rent", aggfunc={"Pure Rent":["count","mean"]}).reset_index()
-            df_concat_pivot_releasedate.sort_values(by=["Pure Rent"], ascending=[False], inplace=True)
-            df_concat_pivot_releasedate = df_concat_pivot_releasedate[:20]
+            df_neighbourhoods = df_concat[['Posting Date', 'Pure Rent', 'Size', 'EUR / SQM', 'Neighbourhood']].pivot_table(index="Neighbourhood", values="Pure Rent", aggfunc={"Pure Rent":["count","mean"]}).reset_index()
+            df_neighbourhoods.columns = [' - '.join(col).strip() for col in df_neighbourhoods.columns.values]
+
+            df_neighbourhoods.sort_values(by=["Pure Rent - mean"], ascending=[False], inplace=True)
+            df_neighbourhoods = df_neighbourhoods[:20]
 
 
 
             # First Chart
-            chart = alt.Chart(df_concat_pivot_releasedate).encode(
+            chart = alt.Chart(df_neighbourhoods).encode(
                 x=alt.X('mean:Q', axis=alt.Axis(title='Average Euro per advert')),
                 y=alt.Y('Neighbourhood:O', sort="-x"),
                 text=alt.Text('mean:Q', format='.1f'),
@@ -639,6 +641,7 @@ def main():
 
             st.markdown("<h6 style='text-align: center; color: orange;'>Average Rent per Neighbourhood</h6>", unsafe_allow_html=True)
             st.altair_chart(wholechart.interactive(), use_container_width=True)
+
 
             df_concat_pivot_releasedate = df_concat[['Posting Date', 'Pure Rent', 'Size', 'EUR / SQM', 'Neighbourhood']].pivot_table(index="Posting Date", values="Pure Rent", aggfunc={"Pure Rent":["count","mean"]}).reset_index()
             df_concat_pivot_releasedate['Posting Date'] = pd.to_datetime(df_concat_pivot_releasedate['Posting Date'], format='%d.%m.%Y', dayfirst=True)
