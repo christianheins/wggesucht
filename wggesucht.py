@@ -650,7 +650,7 @@ def main():
             st.markdown("<h6 style='text-align: center; color: orange;'>Number of entries per release date</h6>", unsafe_allow_html=True)
             chart = alt.Chart(df_concat_pivot_releasedate).encode(
                 x=alt.X('count:Q', axis=alt.Axis(title='Count')),
-                y=alt.Y('month(Posting Date):T', axis=alt.Axis(title='Entry date')), #use 'sort=None' to preserve the order of categories
+                y=alt.Y('week(Posting Date):T', axis=alt.Axis(title='Entry date')), #use 'sort=None' to preserve the order of categories
                 text=alt.Text('count', format='.1f')
             )
 
