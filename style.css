@@ -44,9 +44,8 @@ div.css-1fcdlhc.e1s6o5jp0 {
     top: 100px;
 }
 
-class="leaflet-pane leaflet-map-pane"{
+#map_div > div.leaflet-pane.leaflet-map-pane {
     border-radius: 25px;
 }
-
 
 
