@@ -619,7 +619,7 @@ def main():
             df_pivot_neighbourhoods = df_concat[['Posting Date', 'Pure Rent', 'Size', 'EUR / SQM', 'Neighbourhood']].pivot_table(index="Neighbourhood", values="Pure Rent", aggfunc={"Pure Rent":["count","mean"]}).reset_index()
             #df_pivot_neighbourhoods.columns = [' - '.join(col).strip() for col in df_pivot_neighbourhoods.columns]
             df_pivot_neighbourhoods.sort_values(by=["mean"], ascending=[False], inplace=True)
-            df_pivot_neighbourhoods = df_pivot_neighbourhoods[:20]
+            df_pivot_neighbourhoods = df_pivot_neighbourhoods
 
 
             # First Chart
