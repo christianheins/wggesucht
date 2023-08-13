@@ -590,7 +590,7 @@ def main():
             )
 
             chart = chart.properties(
-                height=300
+                height=500
             )
 
             st.altair_chart(chart.interactive(), use_container_width=True)
