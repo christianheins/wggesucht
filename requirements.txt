@@ -13,3 +13,4 @@ slack
 slack_sdk
 aiohttp
 openpyxl>=3.1.2
+matplotlib
