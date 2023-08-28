@@ -1031,6 +1031,25 @@ def main():
                     st.image('https://media.giphy.com/media/XathaB5ILqSME/giphy.gif?cid=ecf05e479myrqtfsmnw3tsf81zg8em7pdz1ykm97adrjzwxu&rid=giphy.gif&ct=g', use_column_width=True)
                 with col2:
                     st.image('https://media.giphy.com/media/XathaB5ILqSME/giphy.gif?cid=ecf05e479myrqtfsmnw3tsf81zg8em7pdz1ykm97adrjzwxu&rid=giphy.gif&ct=g', use_column_width=True)
+
+        import numpy as np
+        import matplotlib.pyplot as plt
+        # Generate sample data
+        data = pd.DataFrame({
+            'x': np.arange(1, 1001),
+            'y': np.random.randn(1000).cumsum()
+        })
+        # Streamlit app
+        st.title('Scrollable Chart with Streamlit')
+        # Sidebar controls
+        start_index = st.slider('Start Index', 0, len(data) - 1, 0)
+        end_index = st.slider('End Index', start_index, len(data), len(data))
+        # Plot the chart
+        fig, ax = plt.subplots()
+        ax.plot(data['x'][start_index:end_index], data['y'][start_index:end_index])
+        ax.set_xlabel('X')
+        ax.set_ylabel('Y')
+        st.pyplot(fig)
         def randon_string() -> str:
             return "Message sent!"
 
