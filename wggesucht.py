@@ -1097,16 +1097,6 @@ def main():
         st.write(df_concat)
         df_concat_pivot_neighbourhoods = df_concat.pivot_table(index="Neighbourhood", aggfunc={"Miete":["count","mean","sum"], "Größe":["count", "mean", "sum"]})
         st.write(df_concat_pivot_neighbourhoods)
-    #Pages
-    page_real_estate_general_dashboard = "wggesucht.py"
-    page_maps = "pages/maps.py"
-
-    show_pages(
-        [
-            Page(page_real_estate_general_dashboard, "General Dashboard", "🏠"),
-            Page(page_maps, "Maps", "🗺️"),
-        ]
-    )
 
 if __name__ == "__main__":
     main()
